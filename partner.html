@@ -1,0 +1,293 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>Partner with TinkerHub — governments, CSR and donors</title>
+<meta name="description" content="TinkerHub is a free, student-run learning community in Kerala where students learn tech by building real projects together.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Bricolage+Grotesque:opsz,wght@12..96,500..800&amp;family=Instrument+Sans:wght@400..700&amp;display=swap" rel="stylesheet">
+<style>
+body{margin:0;background:#FAF7F0}
+a{color:inherit;text-decoration:none}
+a:hover{opacity:.86}
+input::placeholder,textarea::placeholder{color:#77716A}
+a:focus-visible,button:focus-visible,input:focus-visible,select:focus-visible,textarea:focus-visible{outline:3px solid #2346C8;outline-offset:3px}
+.tv-tick{animation:tvtick 46s linear infinite}
+@keyframes tvtick{from{transform:translateX(0)}to{transform:translateX(-50%)}}
+@media (prefers-reduced-motion: reduce){.tv-tick{animation:none}}
+</style>
+<script src="vendor/preact.umd.js"></script>
+<script src="vendor/three.min.js"></script>
+<script src="js/tinker-runtime.js"></script>
+</head>
+<body>
+<div id="app"></div>
+<template id="page">
+<div style="font-family: 'Instrument Sans', system-ui, -apple-system, 'Segoe UI', sans-serif; color: #111111; background: #FAF7F0; width: 100%; overflow: hidden; font-size: 17px; line-height: 1.55">
+<header style="background: #FAF7F0; border-bottom: 2px solid #111111">
+<div style="background: #111111; color: #FAF7F0; overflow: hidden; border-bottom: 2px solid #111111">
+<div class="tv-tick" aria-hidden="true" style="display: flex; width: max-content; padding: 7px 0; font-family: 'Instrument Sans', system-ui, sans-serif; font-size: 12px; letter-spacing: 0.08em; text-transform: uppercase"><span style="padding: 0 28px">New events every week at TinkerSpace Kochi &amp; Kozhikode</span><span style="padding: 0 28px; color: {{accent}}">✦</span><span style="padding: 0 28px">72 campus communities across 13 districts</span><span style="padding: 0 28px; color: {{accent}}">✦</span><span style="padding: 0 28px">Free for students</span><span style="padding: 0 28px; color: {{accent}}">✦</span><span style="padding: 0 28px">Be kind · Get involved · Make a change</span><span style="padding: 0 28px; color: {{accent}}">✦</span><span style="padding: 0 28px">New events every week at TinkerSpace Kochi &amp; Kozhikode</span><span style="padding: 0 28px; color: {{accent}}">✦</span><span style="padding: 0 28px">72 campus communities across 13 districts</span><span style="padding: 0 28px; color: {{accent}}">✦</span><span style="padding: 0 28px">Free for students</span><span style="padding: 0 28px; color: {{accent}}">✦</span><span style="padding: 0 28px">Be kind · Get involved · Make a change</span><span style="padding: 0 28px; color: {{accent}}">✦</span></div>
+</div>
+<nav aria-label="Primary" style="max-width: 1280px; margin: 0 auto; padding-left: clamp(20px, 4vw, 56px); padding-right: clamp(20px, 4vw, 56px); box-sizing: border-box; padding-top: 14px; padding-bottom: 14px; display: flex; flex-wrap: wrap; align-items: center; justify-content: space-between; gap: 12px 28px">
+<a href="index.html" style="display: flex; align-items: baseline; gap: 8px">
+<span style="font-family: 'Bricolage Grotesque', 'Instrument Sans', system-ui, sans-serif; font-weight: 800; font-size: 34px; line-height: 1; letter-spacing: -0.02em">tinkerhub</span>
+<span style="font-family: 'Instrument Sans', system-ui, sans-serif; font-size: 11px; color: #4B4740">foundation</span>
+</a>
+<div style="display: flex; flex-wrap: wrap; align-items: center; gap: 6px 22px; font-weight: 600; font-size: 15px">
+<a href="programs.html" style="padding: 6px 2px; border-bottom: 2px solid transparent">Programs</a>
+<a href="events-community.html" style="padding: 6px 2px; border-bottom: 2px solid transparent">Events &amp; Community</a>
+<a href="impact.html" style="padding: 6px 2px; border-bottom: 2px solid transparent">Impact</a>
+<a href="reports.html" style="padding: 6px 2px; border-bottom: 2px solid transparent">Reports</a>
+<a href="partner.html" aria-current="page" style="padding: 6px 2px; border-bottom: 2px solid #111111">Partner with us</a>
+<a href="events-community.html" style="background: #111111; color: #FAF7F0; padding: 0 18px; min-height: 44px; display: inline-flex; align-items: center; border-radius: 14px">Get involved →</a>
+</div>
+</nav>
+</header>
+<!-- HEADER -->
+<section style="background-color: #FFF1DC; border-bottom: 2px solid #111111">
+<div style="max-width: 1280px; margin: 0 auto; padding-left: clamp(20px, 4vw, 56px); padding-right: clamp(20px, 4vw, 56px); box-sizing: border-box; padding-top: clamp(48px, 6vw, 96px); padding-bottom: clamp(48px, 6vw, 80px); display: flex; flex-direction: column; gap: 22px">
+<div style="display: flex; gap: 14px"><span style="font-family: 'Instrument Sans', system-ui, sans-serif; font-size: 12px; font-weight: 700; letter-spacing: 0.08em; text-transform: uppercase; color: #4B4740">Partner with us</span>
+</div>
+<h1 style="margin: 0; font-family: 'Bricolage Grotesque', 'Instrument Sans', system-ui, sans-serif; font-weight: 800; font-size: clamp(52px, 7vw, 112px); line-height: 0.95; letter-spacing: -0.04em">Back students who are <em style="font-style: normal; background: #FFD23F; color: #111111; padding: 0 0.18em; border-radius: 0.18em; box-decoration-break: clone; -webkit-box-decoration-break: clone">already building.</em></h1>
+<p style="margin: 0; font-size: 19px; line-height: 1.6; color: #2C2925; max-width: 720px">For government departments, public institutions, companies and funders. Everything you need to evaluate TinkerHub: the problem, the model, the evidence, and how a partnership would work.</p>
+<nav aria-label="On this page" style="display: flex; flex-wrap: wrap; gap: 10px"><a href="#gov" style="display: inline-flex; align-items: center; gap: 10px; min-height: 52px; padding: 0 26px; border-radius: 999px; font-weight: 700; font-size: 16px; box-sizing: border-box; border: 2px solid #111111; background: transparent; color: #111111">Government &amp; institutions</a>
+<a href="#csr" style="display: inline-flex; align-items: center; gap: 10px; min-height: 52px; padding: 0 26px; border-radius: 999px; font-weight: 700; font-size: 16px; box-sizing: border-box; border: 2px solid #111111; background: transparent; color: #111111">Companies &amp; CSR</a>
+<a href="#donors" style="display: inline-flex; align-items: center; gap: 10px; min-height: 52px; padding: 0 26px; border-radius: 999px; font-weight: 700; font-size: 16px; box-sizing: border-box; border: 2px solid #111111; background: transparent; color: #111111">Donors &amp; grantmakers</a>
+<a href="#talk" style="display: inline-flex; align-items: center; gap: 10px; min-height: 52px; padding: 0 26px; border-radius: 999px; font-weight: 700; font-size: 16px; box-sizing: border-box; border: 2px solid #111111; background: {{accent}}; color: #111111; box-shadow: 4px 4px 0 #111111">Request a conversation →</a>
+</nav>
+</div>
+</section>
+
+<!-- PROBLEM + APPROACH -->
+<section style="border-bottom: 2px solid #111111">
+<div style="max-width: 1280px; margin: 0 auto; padding-left: clamp(20px, 4vw, 56px); padding-right: clamp(20px, 4vw, 56px); box-sizing: border-box; padding-top: clamp(64px, 8vw, 104px); padding-bottom: clamp(64px, 8vw, 104px); display: grid; grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); gap: 40px">
+<div style="display: flex; flex-direction: column; gap: 14px"><span style="font-family: 'Instrument Sans', system-ui, sans-serif; font-size: 12px; font-weight: 700; letter-spacing: 0.08em; text-transform: uppercase; color: {{accent2}}">The problem</span>
+<h3 style="margin: 0; font-family: 'Bricolage Grotesque', 'Instrument Sans', system-ui, sans-serif; font-weight: 800; font-size: clamp(30px, 3vw, 40px); line-height: 1.05; letter-spacing: -0.02em; color: #111111">Students can finish a degree without ever building something real.</h3>
+<p style="margin: 0; font-size: 16px; line-height: 1.6; color: #2C2925; max-width: 640px">Hands-on projects, modern tools, mentors and teammates are unevenly available, especially outside large city colleges. Students who get them early tend to find their direction sooner.</p>
+</div>
+<div style="display: flex; flex-direction: column; gap: 14px"><span style="font-family: 'Instrument Sans', system-ui, sans-serif; font-size: 12px; font-weight: 700; letter-spacing: 0.08em; text-transform: uppercase; color: {{accent2}}">The approach</span>
+<h3 style="margin: 0; font-family: 'Bricolage Grotesque', 'Instrument Sans', system-ui, sans-serif; font-weight: 800; font-size: clamp(30px, 3vw, 40px); line-height: 1.05; letter-spacing: -0.02em; color: #111111">Peer learning, on campus and in open spaces.</h3>
+<p style="margin: 0; font-size: 16px; line-height: 1.6; color: #2C2925; max-width: 640px">Student-run campus communities, free hackathons and programs, and two open maker spaces. Students learn by building with peers; those who learn teach the next group. It keeps costs low and lets the network grow itself.</p>
+</div>
+<div style="display: flex; flex-direction: column; gap: 14px"><span style="font-family: 'Instrument Sans', system-ui, sans-serif; font-size: 12px; font-weight: 700; letter-spacing: 0.08em; text-transform: uppercase; color: {{accent2}}">The evidence</span>
+<div style="display: grid; grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 16px">
+<div><span style="font-family: 'Bricolage Grotesque', 'Instrument Sans', system-ui, sans-serif; font-weight: 800; font-size: 44px; line-height: 1">26,005</span><br><span style="font-size: 13px; color: #4B4740">people took part in person</span></div>
+<div><span style="font-family: 'Bricolage Grotesque', 'Instrument Sans', system-ui, sans-serif; font-weight: 800; font-size: 44px; line-height: 1">12,848</span><br><span style="font-size: 13px; color: #4B4740">people helped build a project</span></div>
+<div><span style="font-family: 'Bricolage Grotesque', 'Instrument Sans', system-ui, sans-serif; font-weight: 800; font-size: 44px; line-height: 1">72</span><br><span style="font-size: 13px; color: #4B4740">active campus communities, 13 districts</span></div>
+<div><span style="font-family: 'Bricolage Grotesque', 'Instrument Sans', system-ui, sans-serif; font-weight: 800; font-size: 44px; line-height: 1">59%</span><br><span style="font-size: 13px; color: #4B4740">of project contributors are women</span></div>
+</div>
+<a href="impact.html" style="display: inline-flex; align-items: center; gap: 10px; min-height: 52px; padding: 0 26px; border-radius: 999px; font-weight: 700; font-size: 16px; box-sizing: border-box; border: 2px solid #111111; background: #111111; color: #FAF7F0; box-shadow: 4px 4px 0 {{accent}}">Full evidence and definitions →</a>
+</div>
+</div>
+</section>
+
+<!-- GOVERNMENT -->
+<section id="gov" style="background-color: #FFF1DC; border-bottom: 2px solid #111111">
+<div style="max-width: 1280px; margin: 0 auto; padding-left: clamp(20px, 4vw, 56px); padding-right: clamp(20px, 4vw, 56px); box-sizing: border-box; padding-top: clamp(64px, 8vw, 104px); padding-bottom: clamp(64px, 8vw, 104px); display: flex; flex-direction: column; gap: 28px">
+<div style="display: flex; flex-wrap: wrap; gap: 20px 48px; align-items: flex-end; justify-content: space-between">
+<div style="display: flex; flex-direction: column; gap: 18px; flex: 1 1 620px; min-width: 0">
+<span style="align-self: flex-start; display: inline-flex; align-items: center; gap: 8px; padding: 6px 14px; border-radius: 999px; font-weight: 700; font-size: 13px; letter-spacing: 0.04em; text-transform: uppercase; background: #111111; color: #FAF7F0">For government &amp; public institutions</span>
+<h2 style="margin: 0; font-family: 'Bricolage Grotesque', 'Instrument Sans', system-ui, sans-serif; font-weight: 800; font-size: clamp(42px, 5.6vw, 84px); line-height: 1; letter-spacing: -0.035em; color: #111111">A briefing in <em style="font-style: normal; background: #FFD23F; color: #111111; padding: 0 0.18em; border-radius: 0.18em; box-decoration-break: clone; -webkit-box-decoration-break: clone">eight answers.</em></h2>
+</div>
+</div>
+<dl style="margin: 0; border-bottom: 2px solid #111111">
+<div style="display: flex; flex-wrap: wrap; gap: 6px 32px; padding: 18px 0; border-top: 2px solid #111111"><dt style="flex: 1 1 260px; font-family: 'Bricolage Grotesque', 'Instrument Sans', system-ui, sans-serif; font-weight: 800; font-size: 24px; line-height: 1.15">What problem does TinkerHub address?</dt><dd style="flex: 2 1 420px; margin: 0; font-size: 16px; line-height: 1.6">The gap between classroom learning and the practical, collaborative skills needed to build things and solve real problems.</dd></div>
+<div style="display: flex; flex-wrap: wrap; gap: 6px 32px; padding: 18px 0; border-top: 2px solid #111111"><dt style="flex: 1 1 260px; font-family: 'Bricolage Grotesque', 'Instrument Sans', system-ui, sans-serif; font-weight: 800; font-size: 24px; line-height: 1.15">Who does it serve?</dt><dd style="flex: 2 1 420px; margin: 0; font-size: 16px; line-height: 1.6">Students and young people across Kerala. 72% of platform members identify as students; 47% are women.</dd></div>
+<div style="display: flex; flex-wrap: wrap; gap: 6px 32px; padding: 18px 0; border-top: 2px solid #111111"><dt style="flex: 1 1 260px; font-family: 'Bricolage Grotesque', 'Instrument Sans', system-ui, sans-serif; font-weight: 800; font-size: 24px; line-height: 1.15">What is the learning model?</dt><dd style="flex: 2 1 420px; margin: 0; font-size: 16px; line-height: 1.6">Learning by building, with peers. Students attend a session, build a project, and teach what they learned. Campus leads are trained to run this locally.</dd></div>
+<div style="display: flex; flex-wrap: wrap; gap: 6px 32px; padding: 18px 0; border-top: 2px solid #111111"><dt style="flex: 1 1 260px; font-family: 'Bricolage Grotesque', 'Instrument Sans', system-ui, sans-serif; font-weight: 800; font-size: 24px; line-height: 1.15">Where does it operate?</dt><dd style="flex: 2 1 420px; margin: 0; font-size: 16px; line-height: 1.6">72 active campus communities in 13 of 14 districts, and TinkerSpaces in Kochi and Kozhikode. Wayanad has no campus community yet.</dd></div>
+<div style="display: flex; flex-wrap: wrap; gap: 6px 32px; padding: 18px 0; border-top: 2px solid #111111"><dt style="flex: 1 1 260px; font-family: 'Bricolage Grotesque', 'Instrument Sans', system-ui, sans-serif; font-weight: 800; font-size: 24px; line-height: 1.15">What activities does it deliver?</dt><dd style="flex: 2 1 420px; margin: 0; font-size: 16px; line-height: 1.6">Hackathons, bootcamps, multi-week learning programs, weekly meetups and open maker space access: more than 2,700 public events so far.</dd></div>
+<div style="display: flex; flex-wrap: wrap; gap: 6px 32px; padding: 18px 0; border-top: 2px solid #111111"><dt style="flex: 1 1 260px; font-family: 'Bricolage Grotesque', 'Instrument Sans', system-ui, sans-serif; font-weight: 800; font-size: 24px; line-height: 1.15">What outcomes can be shown?</dt><dd style="flex: 2 1 420px; margin: 0; font-size: 16px; line-height: 1.6">Participation (26,005 attended), building (12,848 contributors, 10,093 projects) and leadership (723 campus leads).</dd></div>
+<div style="display: flex; flex-wrap: wrap; gap: 6px 32px; padding: 18px 0; border-top: 2px solid #111111"><dt style="flex: 1 1 260px; font-family: 'Bricolage Grotesque', 'Instrument Sans', system-ui, sans-serif; font-weight: 800; font-size: 24px; line-height: 1.15">How does it work with institutions?</dt><dd style="flex: 2 1 420px; margin: 0; font-size: 16px; line-height: 1.6">Through campus communities hosted by colleges, joint programs with public bodies such as Kerala Startup Mission, and events at partner venues.</dd></div>
+</dl>
+<div style="display: flex; flex-wrap: wrap; gap: 12px"><a href="impact.html" style="display: inline-flex; align-items: center; gap: 10px; min-height: 52px; padding: 0 26px; border-radius: 999px; font-weight: 700; font-size: 16px; box-sizing: border-box; border: 2px solid #111111; background: #111111; color: #FAF7F0; box-shadow: 4px 4px 0 {{accent}}">Read the evidence</a>
+<a href="#talk" style="display: inline-flex; align-items: center; gap: 10px; min-height: 52px; padding: 0 26px; border-radius: 999px; font-weight: 700; font-size: 16px; box-sizing: border-box; border: 2px solid #111111; background: transparent; color: #111111">Request a briefing</a>
+</div>
+</div>
+</section>
+
+<!-- CSR -->
+<section id="csr" style="border-bottom: 2px solid #111111">
+<div style="max-width: 1280px; margin: 0 auto; padding-left: clamp(20px, 4vw, 56px); padding-right: clamp(20px, 4vw, 56px); box-sizing: border-box; padding-top: clamp(64px, 8vw, 104px); padding-bottom: clamp(64px, 8vw, 104px); display: flex; flex-direction: column; gap: 28px">
+<div style="display: flex; flex-wrap: wrap; gap: 20px 48px; align-items: flex-end; justify-content: space-between">
+<div style="display: flex; flex-direction: column; gap: 18px; flex: 1 1 620px; min-width: 0">
+<span style="align-self: flex-start; display: inline-flex; align-items: center; gap: 8px; padding: 6px 14px; border-radius: 999px; font-weight: 700; font-size: 13px; letter-spacing: 0.04em; text-transform: uppercase; background: #111111; color: #FAF7F0">For companies &amp; CSR teams</span>
+<h2 style="margin: 0; font-family: 'Bricolage Grotesque', 'Instrument Sans', system-ui, sans-serif; font-weight: 800; font-size: clamp(42px, 5.6vw, 84px); line-height: 1; letter-spacing: -0.035em; color: #111111">Partnerships with <em style="font-style: normal; background: #FFD23F; color: #111111; padding: 0 0.18em; border-radius: 0.18em; box-decoration-break: clone; -webkit-box-decoration-break: clone">reporting built in.</em></h2>
+</div>
+<p style="margin: 0; font-size: 18px; line-height: 1.6; color: #2C2925; max-width: 420px">Every program runs on the TinkerHub platform, so attendance, projects and feedback are recorded from day one.</p>
+</div>
+<div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(260px, 1fr)); gap: 18px">
+<div style="background: #FFFFFF; border: 2px solid #111111; border-radius: 22px; padding: 24px; display: flex; flex-direction: column; gap: 12px">
+<h3 style="margin: 0; font-family: 'Bricolage Grotesque', 'Instrument Sans', system-ui, sans-serif; font-weight: 800; font-size: 28px; line-height: 1.05; letter-spacing: -0.02em; color: #111111">Program partner</h3>
+<span style="font-size: 15px; line-height: 1.55">Fund or co-design a hackathon, bootcamp or learning program around a theme you care about.</span>
+<ul style="margin: 0; padding-left: 18px; font-size: 14px; line-height: 1.6; color: #2C2925"><li>Registrations, check-ins and repeat attendance</li><li>Projects submitted and themes</li><li>Participant feedback scores</li></ul>
+</div>
+<div style="background: #FFFFFF; border: 2px solid #111111; border-radius: 22px; padding: 24px; display: flex; flex-direction: column; gap: 12px">
+<h3 style="margin: 0; font-family: 'Bricolage Grotesque', 'Instrument Sans', system-ui, sans-serif; font-weight: 800; font-size: 28px; line-height: 1.05; letter-spacing: -0.02em; color: #111111">Talent &amp; mentoring</h3>
+<span style="font-size: 15px; line-height: 1.55">Engineers mentor at hackathons, run workshops or set real problem statements.</span>
+<ul style="margin: 0; padding-left: 18px; font-size: 14px; line-height: 1.6; color: #2C2925"><li>Mentor hours and sessions</li><li>Projects built on your challenge</li><li>Listings on the opportunities board</li></ul>
+</div>
+<div style="background: #FFFFFF; border: 2px solid #111111; border-radius: 22px; padding: 24px; display: flex; flex-direction: column; gap: 12px">
+<h3 style="margin: 0; font-family: 'Bricolage Grotesque', 'Instrument Sans', system-ui, sans-serif; font-weight: 800; font-size: 28px; line-height: 1.05; letter-spacing: -0.02em; color: #111111">Maker space support</h3>
+<span style="font-size: 15px; line-height: 1.55">Equip or extend TinkerSpace: tools, components, 3D printers.</span>
+<ul style="margin: 0; padding-left: 18px; font-size: 14px; line-height: 1.6; color: #2C2925"><li>Space check-ins and unique visitors</li><li>Projects built with the equipment</li><li>Public credit at the space</li></ul>
+</div>
+<div style="background: #FFFFFF; border: 2px solid #111111; border-radius: 22px; padding: 24px; display: flex; flex-direction: column; gap: 12px">
+<h3 style="margin: 0; font-family: 'Bricolage Grotesque', 'Instrument Sans', system-ui, sans-serif; font-weight: 800; font-size: 28px; line-height: 1.05; letter-spacing: -0.02em; color: #111111">Employee volunteering</h3>
+<span style="font-size: 15px; line-height: 1.55">Teams volunteer as judges, mentors or campus advisers.</span>
+<ul style="margin: 0; padding-left: 18px; font-size: 14px; line-height: 1.6; color: #2C2925"><li>Volunteer hours</li><li>Events supported</li><li>Stories, with participant consent</li></ul>
+</div>
+</div>
+</div>
+</section>
+
+<!-- DONORS -->
+<section id="donors" style="background: #111111; color: #FAF7F0; border-bottom: 2px solid #111111">
+<div style="max-width: 1280px; margin: 0 auto; padding-left: clamp(20px, 4vw, 56px); padding-right: clamp(20px, 4vw, 56px); box-sizing: border-box; padding-top: clamp(64px, 8vw, 104px); padding-bottom: clamp(64px, 8vw, 104px); display: flex; flex-direction: column; gap: 28px">
+<div style="display: flex; flex-wrap: wrap; gap: 20px 48px; align-items: flex-end; justify-content: space-between">
+<div style="display: flex; flex-direction: column; gap: 18px; flex: 1 1 620px; min-width: 0">
+<span style="align-self: flex-start; display: inline-flex; align-items: center; gap: 8px; padding: 6px 14px; border-radius: 999px; font-weight: 700; font-size: 13px; letter-spacing: 0.04em; text-transform: uppercase; background: {{accent}}; color: #111111">For donors &amp; grantmakers</span>
+<h2 style="margin: 0; font-family: 'Bricolage Grotesque', 'Instrument Sans', system-ui, sans-serif; font-weight: 800; font-size: clamp(42px, 5.6vw, 84px); line-height: 1; letter-spacing: -0.035em; color: #FAF7F0">Fund a specific <em style="color: {{accent}}">initiative.</em></h2>
+</div>
+<p style="margin: 0; font-size: 18px; line-height: 1.6; color: #D8D2C7; max-width: 420px">Programs that could use your support. Ask us for a program budget.</p>
+</div>
+<div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(240px, 1fr)); gap: 0 36px">
+<div style="display: flex; flex-direction: column; gap: 8px; padding: 20px 0; border-top: 2px solid #FAF7F0"><span style="font-family: 'Instrument Sans', system-ui, sans-serif; font-size: 12px; font-weight: 700; letter-spacing: 0.08em; text-transform: uppercase; color: {{accent}}">Reach</span>
+<span style="font-family: 'Bricolage Grotesque', 'Instrument Sans', system-ui, sans-serif; font-weight: 800; font-size: 28px; line-height: 1.1">A first campus in Wayanad</span><span style="font-size: 15px; color: #D8D2C7; line-height: 1.55">The only district without an active TinkerHub campus community.</span></div>
+<div style="display: flex; flex-direction: column; gap: 8px; padding: 20px 0; border-top: 2px solid #FAF7F0"><span style="font-family: 'Instrument Sans', system-ui, sans-serif; font-size: 12px; font-weight: 700; letter-spacing: 0.08em; text-transform: uppercase; color: {{accent}}">Inclusion</span>
+<span style="font-family: 'Bricolage Grotesque', 'Instrument Sans', system-ui, sans-serif; font-weight: 800; font-size: 28px; line-height: 1.1">Tink-Her-Hack</span><span style="font-size: 15px; color: #D8D2C7; line-height: 1.55">Women-only hackathon at many venues at once; 2,581 projects submitted so far.</span></div>
+<div style="display: flex; flex-direction: column; gap: 8px; padding: 20px 0; border-top: 2px solid #FAF7F0"><span style="font-family: 'Instrument Sans', system-ui, sans-serif; font-size: 12px; font-weight: 700; letter-spacing: 0.08em; text-transform: uppercase; color: {{accent}}">Access</span>
+<span style="font-family: 'Bricolage Grotesque', 'Instrument Sans', system-ui, sans-serif; font-weight: 800; font-size: 28px; line-height: 1.1">Keeping TinkerSpace open</span><span style="font-size: 15px; color: #D8D2C7; line-height: 1.55">Two maker spaces with 11,179 visitors so far.</span></div>
+</div>
+<div style="display: flex; flex-wrap: wrap; gap: 12px"><a href="#talk" style="display: inline-flex; align-items: center; gap: 10px; min-height: 52px; padding: 0 26px; border-radius: 999px; font-weight: 700; font-size: 16px; box-sizing: border-box; border: 2px solid #111111; background: {{accent}}; color: #111111; box-shadow: 4px 4px 0 #111111">Ask for a program budget →</a>
+<a href="https://tinkerhub.org/donate" style="display: inline-flex; align-items: center; gap: 10px; min-height: 52px; padding: 0 26px; border-radius: 999px; font-weight: 700; font-size: 16px; box-sizing: border-box; border: 2px solid #111111; background: transparent; color: #FAF7F0; border-color: #FAF7F0">Donate now</a>
+</div>
+</div>
+</section>
+
+<!-- TOOLKIT -->
+<section id="toolkit" style="background-color: #FFF1DC; border-bottom: 2px solid #111111">
+<div style="max-width: 1280px; margin: 0 auto; padding-left: clamp(20px, 4vw, 56px); padding-right: clamp(20px, 4vw, 56px); box-sizing: border-box; padding-top: clamp(64px, 8vw, 104px); padding-bottom: clamp(64px, 8vw, 104px); display: flex; flex-direction: column; gap: 28px">
+<div style="display: flex; flex-wrap: wrap; gap: 20px 48px; align-items: flex-end; justify-content: space-between">
+<div style="display: flex; flex-direction: column; gap: 18px; flex: 1 1 620px; min-width: 0">
+<span style="align-self: flex-start; display: inline-flex; align-items: center; gap: 8px; padding: 6px 14px; border-radius: 999px; font-weight: 700; font-size: 13px; letter-spacing: 0.04em; text-transform: uppercase; background: #111111; color: #FAF7F0">Fundraising toolkit</span>
+<h2 style="margin: 0; font-family: 'Bricolage Grotesque', 'Instrument Sans', system-ui, sans-serif; font-weight: 800; font-size: clamp(42px, 5.6vw, 84px); line-height: 1; letter-spacing: -0.035em; color: #111111">Facts you can <em style="font-style: normal; background: #FFD23F; color: #111111; padding: 0 0.18em; border-radius: 0.18em; box-decoration-break: clone; -webkit-box-decoration-break: clone">quote.</em></h2>
+</div>
+<p style="margin: 0; font-size: 18px; line-height: 1.6; color: #2C2925; max-width: 420px">Copy-ready statements for proposals and decks, each with its source and date. Please keep the wording; it matches our definitions.</p>
+</div>
+<div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(320px, 1fr)); gap: 14px">
+<div style="border: 2px solid #111111; border-radius: 22px; background: #FFFFFF; padding: 18px 20px; display: flex; flex-direction: column; gap: 8px">
+<span style="font-family: 'Bricolage Grotesque', 'Instrument Sans', system-ui, sans-serif; font-weight: 800; font-size: 24px; line-height: 1.2">“26,005 people have attended a TinkerHub event in person.”</span>
+<span style="font-family: 'Instrument Sans', system-ui, sans-serif; font-size: 11px; font-weight: 700; letter-spacing: 0.08em; text-transform: uppercase; color: #4B4740">TinkerHub platform · attendees, checked in, unique</span>
+</div>
+<div style="border: 2px solid #111111; border-radius: 22px; background: #FFFFFF; padding: 18px 20px; display: flex; flex-direction: column; gap: 8px">
+<span style="font-family: 'Bricolage Grotesque', 'Instrument Sans', system-ui, sans-serif; font-weight: 800; font-size: 24px; line-height: 1.2">“12,848 people have contributed to a project on the TinkerHub platform.”</span>
+<span style="font-family: 'Instrument Sans', system-ui, sans-serif; font-size: 11px; font-weight: 700; letter-spacing: 0.08em; text-transform: uppercase; color: #4B4740">projects, status not rejected, unique contributors</span>
+</div>
+<div style="border: 2px solid #111111; border-radius: 22px; background: #FFFFFF; padding: 18px 20px; display: flex; flex-direction: column; gap: 8px">
+<span style="font-family: 'Bricolage Grotesque', 'Instrument Sans', system-ui, sans-serif; font-weight: 800; font-size: 24px; line-height: 1.2">“TinkerHub has 72 active student-run campus communities across 13 of Kerala’s 14 districts.”</span>
+<span style="font-family: 'Instrument Sans', system-ui, sans-serif; font-size: 11px; font-weight: 700; letter-spacing: 0.08em; text-transform: uppercase; color: #4B4740">sub_orgs, state active</span>
+</div>
+<div style="border: 2px solid #111111; border-radius: 22px; background: #FFFFFF; padding: 18px 20px; display: flex; flex-direction: column; gap: 8px">
+<span style="font-family: 'Bricolage Grotesque', 'Instrument Sans', system-ui, sans-serif; font-weight: 800; font-size: 24px; line-height: 1.2">“59% of people listed on TinkerHub project submissions are women.”</span>
+<span style="font-family: 'Instrument Sans', system-ui, sans-serif; font-size: 11px; font-weight: 700; letter-spacing: 0.08em; text-transform: uppercase; color: #4B4740">project_collaborators × self-reported gender</span>
+</div>
+<div style="border: 2px solid #111111; border-radius: 22px; background: #FFFFFF; padding: 18px 20px; display: flex; flex-direction: column; gap: 8px">
+<span style="font-family: 'Bricolage Grotesque', 'Instrument Sans', system-ui, sans-serif; font-weight: 800; font-size: 24px; line-height: 1.2">“Students have submitted 10,093 projects on the TinkerHub platform.”</span>
+<span style="font-family: 'Instrument Sans', system-ui, sans-serif; font-size: 11px; font-weight: 700; letter-spacing: 0.08em; text-transform: uppercase; color: #4B4740">projects, status not rejected</span>
+</div>
+<div style="border: 2px solid #111111; border-radius: 22px; background: #FFFFFF; padding: 18px 20px; display: flex; flex-direction: column; gap: 8px">
+<span style="font-family: 'Bricolage Grotesque', 'Instrument Sans', system-ui, sans-serif; font-weight: 800; font-size: 24px; line-height: 1.2">“TinkerHub’s two maker spaces have welcomed 11,179 unique visitors.”</span>
+<span style="font-family: 'Instrument Sans', system-ui, sans-serif; font-size: 11px; font-weight: 700; letter-spacing: 0.08em; text-transform: uppercase; color: #4B4740">space_check_in, unique people</span>
+</div>
+</div>
+</div>
+</section>
+
+<!-- CONTACT -->
+<section id="talk" style="background: #FAF7F0; border-bottom: 2px solid #111111">
+<div style="max-width: 1280px; margin: 0 auto; padding-left: clamp(20px, 4vw, 56px); padding-right: clamp(20px, 4vw, 56px); box-sizing: border-box; padding-top: clamp(64px, 8vw, 104px); padding-bottom: clamp(64px, 8vw, 104px); display: flex; flex-wrap: wrap; gap: 40px 64px; align-items: flex-start">
+<div style="flex: 1 1 420px; min-width: 0; display: flex; flex-direction: column; gap: 16px">
+<div style="display: flex; gap: 14px"><span style="font-family: 'Instrument Sans', system-ui, sans-serif; font-size: 12px; font-weight: 700; letter-spacing: 0.08em; text-transform: uppercase; color: #4B4740">Request a conversation</span>
+</div>
+<h2 style="margin: 0; font-family: 'Bricolage Grotesque', 'Instrument Sans', system-ui, sans-serif; font-weight: 800; font-size: clamp(42px, 5.6vw, 84px); line-height: 1; letter-spacing: -0.035em; color: #111111">Let’s <em style="font-style: normal; background: #FFD23F; color: #111111; padding: 0 0.18em; border-radius: 0.18em; box-decoration-break: clone; -webkit-box-decoration-break: clone">talk.</em></h2>
+<p style="margin: 0; font-size: 18px; line-height: 1.6; color: #2C2925; max-width: 640px">Tell us who you are, your organisation, and what you have in mind: a program, a district, a maker space, or something new.</p>
+</div>
+<div style="flex: 1 1 420px; min-width: 0; display: flex; flex-wrap: wrap; gap: 12px; align-items: flex-start"><a href="https://tinkerhub.org/donate" style="display: inline-flex; align-items: center; gap: 10px; min-height: 52px; padding: 0 26px; border-radius: 999px; font-weight: 700; font-size: 16px; box-sizing: border-box; border: 2px solid #111111; background: {{accent}}; color: #111111; box-shadow: 4px 4px 0 #111111">Donate →</a>
+<a href="https://tinkerhub-foundation.notion.site/Volunteer-with-TinkerHub-198bd5ba1a8680358d99fe60055bc892" style="display: inline-flex; align-items: center; gap: 10px; min-height: 52px; padding: 0 26px; border-radius: 999px; font-weight: 700; font-size: 16px; box-sizing: border-box; border: 2px solid #111111; background: transparent; color: #111111">Volunteer</a>
+<a href="https://tinkerhub.org" style="display: inline-flex; align-items: center; gap: 10px; min-height: 52px; padding: 0 26px; border-radius: 999px; font-weight: 700; font-size: 16px; box-sizing: border-box; border: 2px solid #111111; background: transparent; color: #111111">Visit tinkerhub.org</a>
+</div>
+</div>
+</section>
+<footer style="background: #111111; color: #CFC8BC">
+<div style="max-width: 1280px; margin: 0 auto; padding-left: clamp(20px, 4vw, 56px); padding-right: clamp(20px, 4vw, 56px); box-sizing: border-box; padding-top: 64px; padding-bottom: 36px; display: flex; flex-wrap: wrap; gap: 48px; justify-content: space-between">
+<div style="flex: 1 1 300px; max-width: 400px; display: flex; flex-direction: column; gap: 14px">
+<span style="font-family: 'Bricolage Grotesque', 'Instrument Sans', system-ui, sans-serif; font-weight: 800; font-size: 44px; line-height: 1; color: #FAF7F0">tinkerhub</span>
+<span style="font-size: 15px; line-height: 1.6">TinkerHub Foundation is a non-profit, student-focused learning community in Kerala. Students learn by building real things, together, for free.</span>
+<span style="font-size: 14px; color: #9C958A">TinkerSpace Kochi: Kalamassery, near CUSAT · TinkerSpace Kozhikode: Medical College P.O.</span>
+</div>
+<div style="display: flex; flex-wrap: wrap; gap: 40px">
+<div style="display: flex; flex-direction: column; gap: 10px; min-width: 150px">
+<span style="font-family: 'Instrument Sans', system-ui, sans-serif; font-size: 12px; font-weight: 700; letter-spacing: 0.08em; text-transform: uppercase; color: #9C958A">Explore</span>
+<a href="programs.html" style="color: #FAF7F0; font-size: 15px">Programs</a>
+<a href="events-community.html" style="color: #FAF7F0; font-size: 15px">Opportunities</a>
+<a href="events-community.html#campuses" style="color: #FAF7F0; font-size: 15px">Campus communities</a>
+<a href="index.html#stories" style="color: #FAF7F0; font-size: 15px">Stories</a>
+</div>
+<div style="display: flex; flex-direction: column; gap: 10px; min-width: 150px">
+<span style="font-family: 'Instrument Sans', system-ui, sans-serif; font-size: 12px; font-weight: 700; letter-spacing: 0.08em; text-transform: uppercase; color: #9C958A">Our work</span>
+<a href="impact.html" style="color: #FAF7F0; font-size: 15px">Impact</a>
+<a href="major-events.html" style="color: #FAF7F0; font-size: 15px">Major events</a>
+<a href="reports.html" style="color: #FAF7F0; font-size: 15px">Reports</a>
+<a href="reports.html#newsletters" style="color: #FAF7F0; font-size: 15px">Newsletter</a>
+</div>
+<div style="display: flex; flex-direction: column; gap: 10px; min-width: 150px">
+<span style="font-family: 'Instrument Sans', system-ui, sans-serif; font-size: 12px; font-weight: 700; letter-spacing: 0.08em; text-transform: uppercase; color: #9C958A">Get involved</span>
+<a href="partner.html" style="color: #FAF7F0; font-size: 15px">Partner with us</a>
+<a href="https://tinkerhub.org/donate" style="color: #FAF7F0; font-size: 15px">Donate</a>
+<a href="https://tinkerhub-foundation.notion.site/Volunteer-with-TinkerHub-198bd5ba1a8680358d99fe60055bc892" style="color: #FAF7F0; font-size: 15px">Volunteer</a>
+<a href="https://airtable.com/appdFV7VvqOIlQ36v/shrKV8t5K5JgtfUOj" style="color: #FAF7F0; font-size: 15px">Start a campus</a>
+</div>
+<div style="display: flex; flex-direction: column; gap: 10px; min-width: 150px">
+<span style="font-family: 'Instrument Sans', system-ui, sans-serif; font-size: 12px; font-weight: 700; letter-spacing: 0.08em; text-transform: uppercase; color: #9C958A">Read</span>
+<a href="https://medium.com/tinkerhub" style="color: #FAF7F0; font-size: 15px">Stories on Medium</a>
+<a href="https://tinkerhub.org/events" style="color: #FAF7F0; font-size: 15px">Live events calendar</a>
+<a href="https://tinkerhub.org" style="color: #FAF7F0; font-size: 15px">tinkerhub.org</a>
+</div>
+</div>
+</div>
+<div style="max-width: 1280px; margin: 0 auto; padding-left: clamp(20px, 4vw, 56px); padding-right: clamp(20px, 4vw, 56px); box-sizing: border-box; padding-top: 18px; padding-bottom: 30px; border-top: 1px solid #2E2C29; display: flex; flex-wrap: wrap; gap: 8px 24px; justify-content: space-between; font-size: 13px; color: #9C958A">
+<span>© 2026 TinkerHub Foundation</span>
+<span>Made with care in Kerala</span>
+</div>
+</footer>
+</div>
+</template>
+<script>
+class Component extends DCLogic {
+  constructor(props) {
+    super(props);
+    this.state = { name: "", email: "", org: "", kind: "Government or public institution", msg: "", sent: false, err: false };
+    const set = (k) => (e) => this.setState({ [k]: e && e.target ? e.target.value : "", err: false });
+    this.onName = set("name"); this.onEmail = set("email"); this.onOrg = set("org"); this.onKind = set("kind"); this.onMsg = set("msg");
+    this.submit = () => {
+      const ok = this.state.name.trim() && /^[^@\s]+@[^@\s]+\.[^@\s]+$/.test(this.state.email.trim());
+      if (!ok) { this.setState({ err: true }); return; }
+      this.setState({ sent: true });
+    };
+  }
+  renderVals() {
+    const s = this.state;
+    return {
+      accent: this.props.accent ?? "#FF5A36",
+      accent2: this.props.accent2 ?? "#2346C8",
+      f: { name: s.name, email: s.email, org: s.org, kind: s.kind, msg: s.msg, kindLower: s.kind.toLowerCase().replace("or ", "/ ") },
+      onName: this.onName, onEmail: this.onEmail, onOrg: this.onOrg, onKind: this.onKind, onMsg: this.onMsg,
+      submit: this.submit, sent: s.sent, notSent: !s.sent, showErr: s.err
+    };
+  }
+}
+TinkerRuntime.mount(Component, document.getElementById("page"), document.getElementById("app"), {"accent": "#FF5A36", "accent2": "#2346C8"});
+</script>
+</body>
+</html>

@@ -1,0 +1,521 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>Programs — TinkerHub</title>
+<meta name="description" content="TinkerHub is a free, student-run learning community in Kerala where students learn tech by building real projects together.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Bricolage+Grotesque:opsz,wght@12..96,500..800&amp;family=Instrument+Sans:wght@400..700&amp;display=swap" rel="stylesheet">
+<style>
+body{margin:0;background:#FAF7F0}
+a{color:inherit;text-decoration:none}
+a:hover{opacity:.86}
+input::placeholder,textarea::placeholder{color:#77716A}
+a:focus-visible,button:focus-visible,input:focus-visible,select:focus-visible,textarea:focus-visible{outline:3px solid #2346C8;outline-offset:3px}
+.tv-tick{animation:tvtick 46s linear infinite}
+@keyframes tvtick{from{transform:translateX(0)}to{transform:translateX(-50%)}}
+@media (prefers-reduced-motion: reduce){.tv-tick{animation:none}}
+</style>
+<script src="vendor/preact.umd.js"></script>
+<script src="vendor/three.min.js"></script>
+<script src="js/tinker-runtime.js"></script>
+</head>
+<body>
+<div id="app"></div>
+<template id="page">
+<div style="font-family: 'Instrument Sans', system-ui, -apple-system, 'Segoe UI', sans-serif; color: #111111; background: #FAF7F0; width: 100%; overflow: hidden; font-size: 17px; line-height: 1.55">
+<header style="background: #FAF7F0; border-bottom: 2px solid #111111">
+<div style="background: #111111; color: #FAF7F0; overflow: hidden; border-bottom: 2px solid #111111">
+<div class="tv-tick" aria-hidden="true" style="display: flex; width: max-content; padding: 7px 0; font-family: 'Instrument Sans', system-ui, sans-serif; font-size: 12px; letter-spacing: 0.08em; text-transform: uppercase"><span style="padding: 0 28px">New events every week at TinkerSpace Kochi &amp; Kozhikode</span><span style="padding: 0 28px; color: {{accent}}">✦</span><span style="padding: 0 28px">72 campus communities across 13 districts</span><span style="padding: 0 28px; color: {{accent}}">✦</span><span style="padding: 0 28px">Free for students</span><span style="padding: 0 28px; color: {{accent}}">✦</span><span style="padding: 0 28px">Be kind · Get involved · Make a change</span><span style="padding: 0 28px; color: {{accent}}">✦</span><span style="padding: 0 28px">New events every week at TinkerSpace Kochi &amp; Kozhikode</span><span style="padding: 0 28px; color: {{accent}}">✦</span><span style="padding: 0 28px">72 campus communities across 13 districts</span><span style="padding: 0 28px; color: {{accent}}">✦</span><span style="padding: 0 28px">Free for students</span><span style="padding: 0 28px; color: {{accent}}">✦</span><span style="padding: 0 28px">Be kind · Get involved · Make a change</span><span style="padding: 0 28px; color: {{accent}}">✦</span></div>
+</div>
+<nav aria-label="Primary" style="max-width: 1280px; margin: 0 auto; padding-left: clamp(20px, 4vw, 56px); padding-right: clamp(20px, 4vw, 56px); box-sizing: border-box; padding-top: 14px; padding-bottom: 14px; display: flex; flex-wrap: wrap; align-items: center; justify-content: space-between; gap: 12px 28px">
+<a href="index.html" style="display: flex; align-items: baseline; gap: 8px">
+<span style="font-family: 'Bricolage Grotesque', 'Instrument Sans', system-ui, sans-serif; font-weight: 800; font-size: 34px; line-height: 1; letter-spacing: -0.02em">tinkerhub</span>
+<span style="font-family: 'Instrument Sans', system-ui, sans-serif; font-size: 11px; color: #4B4740">foundation</span>
+</a>
+<div style="display: flex; flex-wrap: wrap; align-items: center; gap: 6px 22px; font-weight: 600; font-size: 15px">
+<a href="programs.html" aria-current="page" style="padding: 6px 2px; border-bottom: 2px solid #111111">Programs</a>
+<a href="events-community.html" style="padding: 6px 2px; border-bottom: 2px solid transparent">Events &amp; Community</a>
+<a href="impact.html" style="padding: 6px 2px; border-bottom: 2px solid transparent">Impact</a>
+<a href="reports.html" style="padding: 6px 2px; border-bottom: 2px solid transparent">Reports</a>
+<a href="partner.html" style="padding: 6px 2px; border-bottom: 2px solid transparent">Partner with us</a>
+<a href="events-community.html" style="background: #111111; color: #FAF7F0; padding: 0 18px; min-height: 44px; display: inline-flex; align-items: center; border-radius: 14px">Get involved →</a>
+</div>
+</nav>
+</header>
+<!-- HEADER -->
+<section style="background-color: #FFF1DC; border-bottom: 2px solid #111111">
+<div style="max-width: 1280px; margin: 0 auto; padding-left: clamp(20px, 4vw, 56px); padding-right: clamp(20px, 4vw, 56px); box-sizing: border-box; padding-top: clamp(48px, 6vw, 96px); padding-bottom: clamp(32px, 4vw, 56px); display: flex; flex-direction: column; gap: 22px">
+<div style="display: flex; gap: 14px"><span style="font-family: 'Instrument Sans', system-ui, sans-serif; font-size: 12px; font-weight: 700; letter-spacing: 0.08em; text-transform: uppercase; color: #4B4740">Programs</span>
+</div>
+<h1 style="margin: 0; font-family: 'Bricolage Grotesque', 'Instrument Sans', system-ui, sans-serif; font-weight: 800; font-size: clamp(52px, 7.4vw, 116px); line-height: 0.95; letter-spacing: -0.04em">Five ways in. <em style="font-style: normal; background: #FFD23F; color: #111111; padding: 0 0.18em; border-radius: 0.18em; box-decoration-break: clone; -webkit-box-decoration-break: clone">Zero</em> prerequisites.</h1>
+<p style="margin: 0; font-size: 19px; line-height: 1.6; color: #2C2925; max-width: 720px">TinkerHub’s action plan has five tracks, and everything we run belongs to one of them. Pick an object on the workbench to see what a track includes, who it is for, and what the numbers say.</p>
+</div>
+</section>
+
+<!-- D · PLAYGROUND -->
+<section aria-labelledby="pg-title" style="background: #FAF7F0; border-bottom: 2px solid #111111">
+<div style="max-width: 1280px; margin: 0 auto; padding-left: clamp(20px, 4vw, 56px); padding-right: clamp(20px, 4vw, 56px); box-sizing: border-box; padding-top: clamp(40px, 5vw, 72px); padding-bottom: clamp(56px, 7vw, 96px); display: flex; flex-wrap: wrap; gap: 24px">
+<div style="flex: 999 1 600px; min-width: 0; position: relative; height: clamp(440px, 44vw, 600px); border: 2px solid #111111; border-radius: 22px; overflow: hidden; background-color: #FFF1DC">
+<canvas ref="{{setPlay}}" role="img" aria-label="A workbench with five objects: a flask, a robot, a lattice of connected blocks, a set of gears and a circuit board. Each stands for one of TinkerHub’s five tracks; use the buttons beside it to choose one." style="display: block; width: 100%; height: 100%; touch-action: pan-y"></canvas>
+<sc-if value="{{playFailed}}" hint-placeholder-val="{{ false }}">
+<div style="position: absolute; inset: 0; display: flex; align-items: center; justify-content: center; padding: 24px; text-align: center">The 3D workbench needs WebGL. Use the program buttons alongside.</div>
+</sc-if>
+<span style="position: absolute; right: 16px; bottom: 14px; display: flex; align-items: center; gap: 6px; color: #2346C8"><span style="font-family: 'Bricolage Grotesque', system-ui, sans-serif; font-weight: 700; font-weight: 600; font-size: 24px; line-height: 1.1; color: {{accent2}}">{{hoverLabel}}</span>
+</span>
+</div>
+<div style="flex: 1 1 360px; min-width: 0; display: flex; flex-direction: column; gap: 18px">
+<div role="group" aria-label="Choose a track" style="display: flex; flex-wrap: wrap; gap: 8px">
+<sc-for list="{{progBtns}}" as="pb" hint-placeholder-count="5">
+<sc-if value="{{pb.on}}" hint-placeholder-val="{{ false }}">
+<button type="button" onClick="{{pb.pick}}" aria-pressed="true" style="font-family: inherit; cursor: pointer; min-height: 42px; padding: 0 14px; border-radius: 14px; border: 2px solid #111111; background: #111111; color: #FAF7F0; font-weight: 600; font-size: 14px">{{pb.short}}</button>
+</sc-if>
+<sc-if value="{{pb.off}}" hint-placeholder-val="{{ true }}">
+<button type="button" onClick="{{pb.pick}}" aria-pressed="false" style="font-family: inherit; cursor: pointer; min-height: 42px; padding: 0 14px; border-radius: 14px; border: 2px solid #111111; background: transparent; color: #111111; font-weight: 600; font-size: 14px">{{pb.short}}</button>
+</sc-if>
+</sc-for>
+</div>
+<div style="background: #FFFFFF; border: 2px solid #111111; border-radius: 22px; padding: 26px; display: flex; flex-direction: column; gap: 14px; position: relative">
+<span aria-hidden="true" style="position: absolute; left: 30px; top: -12px; width: 74px; height: 22px; background: rgba(255,225,90,0.75); transform: rotate(-3deg); border: 1px solid rgba(17,17,17,0.12)"></span>
+<span style="font-family: 'Instrument Sans', system-ui, sans-serif; font-size: 12px; font-weight: 700; letter-spacing: 0.08em; text-transform: uppercase; color: {{accent2}}">{{prog.kicker}}</span>
+<h2 id="pg-title" style="margin: 0; font-family: 'Bricolage Grotesque', 'Instrument Sans', system-ui, sans-serif; font-weight: 800; font-weight: 400; font-size: clamp(38px, 3.6vw, 52px); line-height: 0.98">{{prog.name}}</h2>
+<p style="margin: 0; font-size: 17px; line-height: 1.6">{{prog.body}}</p>
+<div style="display: flex; flex-wrap: wrap; gap: 6px"><sc-for list="{{prog.acts}}" as="ac" hint-placeholder-count="3"><span style="border: 2px solid #111111; border-radius: 999px; padding: 3px 12px; font-size: 13px; font-weight: 600">{{ac.label}}</span></sc-for></div>
+<dl style="margin: 0; display: grid; grid-template-columns: max-content 1fr; gap: 8px 16px; font-size: 15px">
+<dt style="font-family: 'Instrument Sans', system-ui, sans-serif; font-size: 12px; text-transform: uppercase; color: #4B4740; padding-top: 2px">For</dt><dd style="margin: 0">{{prog.who}}</dd>
+<dt style="font-family: 'Instrument Sans', system-ui, sans-serif; font-size: 12px; text-transform: uppercase; color: #4B4740; padding-top: 2px">Format</dt><dd style="margin: 0">{{prog.format}}</dd>
+<dt style="font-family: 'Instrument Sans', system-ui, sans-serif; font-size: 12px; text-transform: uppercase; color: #4B4740; padding-top: 2px">Cost</dt><dd style="margin: 0">Free</dd>
+</dl>
+<div style="display: flex; flex-wrap: wrap; gap: 20px; border-top: 2px solid #111111; padding-top: 14px">
+<sc-for list="{{prog.facts}}" as="f" hint-placeholder-count="2">
+<div style="display: flex; flex-direction: column; gap: 2px; min-width: 150px; flex: 1">
+<span style="font-family: 'Bricolage Grotesque', 'Instrument Sans', system-ui, sans-serif; font-weight: 800; font-size: 40px; line-height: 1">{{f.n}}</span>
+<span style="font-size: 13px; line-height: 1.4; color: #4B4740">{{f.l}}</span>
+</div>
+</sc-for>
+</div>
+<a href="{{prog.href}}" style="align-self: flex-start; display: inline-flex; align-items: center; min-height: 48px; padding: 0 20px; border-radius: 14px; border: 2px solid #111111; background: {{accent}}; color: #111111; font-weight: 600; box-shadow: 4px 4px 0 #111111">{{prog.cta}}</a>
+</div>
+</div>
+</div>
+</section>
+<!-- INDEX -->
+<section style="background: #FAF7F0; border-bottom: 2px solid #111111">
+<div style="max-width: 1280px; margin: 0 auto; padding-left: clamp(20px, 4vw, 56px); padding-right: clamp(20px, 4vw, 56px); box-sizing: border-box; padding-top: clamp(64px, 8vw, 112px); padding-bottom: clamp(64px, 8vw, 112px); display: flex; flex-direction: column; gap: 32px">
+<div style="display: flex; flex-wrap: wrap; gap: 20px 48px; align-items: flex-end; justify-content: space-between">
+<div style="display: flex; flex-direction: column; gap: 18px; flex: 1 1 620px; min-width: 0">
+<span style="align-self: flex-start; display: inline-flex; align-items: center; gap: 8px; padding: 6px 14px; border-radius: 999px; font-weight: 700; font-size: 13px; letter-spacing: 0.04em; text-transform: uppercase; background: #111111; color: #FAF7F0">The action plan</span>
+<h2 style="margin: 0; font-family: 'Bricolage Grotesque', 'Instrument Sans', system-ui, sans-serif; font-weight: 800; font-size: clamp(42px, 5.6vw, 84px); line-height: 1; letter-spacing: -0.035em; color: #111111">Five tracks, <em style="font-style: normal; background: #FFD23F; color: #111111; padding: 0 0.18em; border-radius: 0.18em; box-decoration-break: clone; -webkit-box-decoration-break: clone">one standard.</em></h2>
+</div>
+<p style="margin: 0; font-size: 18px; line-height: 1.6; color: #2C2925; max-width: 420px">Every program, event and opportunity on this site is filed under one of these tracks.</p>
+</div>
+<div style="border-top: 2px solid #111111">
+<div style="display: flex; flex-wrap: wrap; gap: 10px 32px; padding: 24px 0; border-bottom: 2px solid #111111; align-items: baseline">
+<span style="font-family: 'Bricolage Grotesque', 'Instrument Sans', system-ui, sans-serif; font-weight: 800; font-size: 40px; line-height: 0.9; color: {{accent2}}; min-width: 56px">01</span>
+<span style="font-family: 'Bricolage Grotesque', 'Instrument Sans', system-ui, sans-serif; font-weight: 800; font-size: clamp(30px, 2.8vw, 40px); line-height: 1; flex: 1 1 240px">Learn &amp; Lead</span>
+<span style="display: flex; flex-direction: column; gap: 10px; flex: 2 1 380px"><span style="font-size: 16px; line-height: 1.5">Peer-driven learning stations and mentor-guided projects. Students who learn go on to lead the next group.</span><span style="display: flex; flex-wrap: wrap; gap: 6px"><span style="border: 2px solid #111111; border-radius: 999px; padding: 2px 10px; font-size: 12px; font-weight: 600">Learning programs</span><span style="border: 2px solid #111111; border-radius: 999px; padding: 2px 10px; font-size: 12px; font-weight: 600">Campus communities</span><span style="border: 2px solid #111111; border-radius: 999px; padding: 2px 10px; font-size: 12px; font-weight: 600">Study circles</span></span></span>
+<span style="font-size: 14px; font-weight: 600; flex: 1 1 200px">10,330 people attended a learning session</span>
+</div>
+<div style="display: flex; flex-wrap: wrap; gap: 10px 32px; padding: 24px 0; border-bottom: 2px solid #111111; align-items: baseline">
+<span style="font-family: 'Bricolage Grotesque', 'Instrument Sans', system-ui, sans-serif; font-weight: 800; font-size: 40px; line-height: 0.9; color: {{accent2}}; min-width: 56px">02</span>
+<span style="font-family: 'Bricolage Grotesque', 'Instrument Sans', system-ui, sans-serif; font-weight: 800; font-size: clamp(30px, 2.8vw, 40px); line-height: 1; flex: 1 1 240px">Build &amp; Innovate</span>
+<span style="display: flex; flex-direction: column; gap: 10px; flex: 2 1 380px"><span style="font-size: 16px; line-height: 1.5">Turn ideas into working things through hands-on bootcamps and hackathons.</span><span style="display: flex; flex-wrap: wrap; gap: 6px"><span style="border: 2px solid #111111; border-radius: 999px; padding: 2px 10px; font-size: 12px; font-weight: 600">Hackathons</span><span style="border: 2px solid #111111; border-radius: 999px; padding: 2px 10px; font-size: 12px; font-weight: 600">Bootcamps</span><span style="border: 2px solid #111111; border-radius: 999px; padding: 2px 10px; font-size: 12px; font-weight: 600">Useless Projects</span><span style="border: 2px solid #111111; border-radius: 999px; padding: 2px 10px; font-size: 12px; font-weight: 600">Tink-Her-Hack</span></span></span>
+<span style="font-size: 14px; font-weight: 600; flex: 1 1 200px">11,921 people checked in at a hackathon</span>
+</div>
+<div style="display: flex; flex-wrap: wrap; gap: 10px 32px; padding: 24px 0; border-bottom: 2px solid #111111; align-items: baseline">
+<span style="font-family: 'Bricolage Grotesque', 'Instrument Sans', system-ui, sans-serif; font-weight: 800; font-size: 40px; line-height: 0.9; color: {{accent2}}; min-width: 56px">03</span>
+<span style="font-family: 'Bricolage Grotesque', 'Instrument Sans', system-ui, sans-serif; font-weight: 800; font-size: clamp(30px, 2.8vw, 40px); line-height: 1; flex: 1 1 240px">Connect &amp; Grow</span>
+<span style="display: flex; flex-direction: column; gap: 10px; flex: 2 1 380px"><span style="font-size: 16px; line-height: 1.5">Meet practitioners and fellow makers at meetups, talks and TinkerDays.</span><span style="display: flex; flex-wrap: wrap; gap: 6px"><span style="border: 2px solid #111111; border-radius: 999px; padding: 2px 10px; font-size: 12px; font-weight: 600">AI Wednesdays</span><span style="border: 2px solid #111111; border-radius: 999px; padding: 2px 10px; font-size: 12px; font-weight: 600">Maker Thursdays</span><span style="border: 2px solid #111111; border-radius: 999px; padding: 2px 10px; font-size: 12px; font-weight: 600">Talks</span><span style="border: 2px solid #111111; border-radius: 999px; padding: 2px 10px; font-size: 12px; font-weight: 600">TinkerDays</span></span></span>
+<span style="font-size: 14px; font-weight: 600; flex: 1 1 200px">8,622 people at a meetup</span>
+</div>
+<div style="display: flex; flex-wrap: wrap; gap: 10px 32px; padding: 24px 0; border-bottom: 2px solid #111111; align-items: baseline">
+<span style="font-family: 'Bricolage Grotesque', 'Instrument Sans', system-ui, sans-serif; font-weight: 800; font-size: 40px; line-height: 0.9; color: {{accent2}}; min-width: 56px">04</span>
+<span style="font-family: 'Bricolage Grotesque', 'Instrument Sans', system-ui, sans-serif; font-weight: 800; font-size: clamp(30px, 2.8vw, 40px); line-height: 1; flex: 1 1 240px">Skill Up</span>
+<span style="display: flex; flex-direction: column; gap: 10px; flex: 2 1 380px"><span style="font-size: 16px; line-height: 1.5">Training for careers, and internships, fellowships and jobs shared with the community.</span><span style="display: flex; flex-wrap: wrap; gap: 6px"><span style="border: 2px solid #111111; border-radius: 999px; padding: 2px 10px; font-size: 12px; font-weight: 600">Opportunities board</span><span style="border: 2px solid #111111; border-radius: 999px; padding: 2px 10px; font-size: 12px; font-weight: 600">Fellowships</span><span style="border: 2px solid #111111; border-radius: 999px; padding: 2px 10px; font-size: 12px; font-weight: 600">Internships</span></span></span>
+<span style="font-size: 14px; font-weight: 600; flex: 1 1 200px">151 fellowships, internships and jobs shared</span>
+</div>
+<div style="display: flex; flex-wrap: wrap; gap: 10px 32px; padding: 24px 0; border-bottom: 2px solid #111111; align-items: baseline">
+<span style="font-family: 'Bricolage Grotesque', 'Instrument Sans', system-ui, sans-serif; font-weight: 800; font-size: 40px; line-height: 0.9; color: {{accent2}}; min-width: 56px">05</span>
+<span style="font-family: 'Bricolage Grotesque', 'Instrument Sans', system-ui, sans-serif; font-weight: 800; font-size: clamp(30px, 2.8vw, 40px); line-height: 1; flex: 1 1 240px">Tinker &amp; Shine</span>
+<span style="display: flex; flex-direction: column; gap: 10px; flex: 2 1 380px"><span style="font-size: 16px; line-height: 1.5">Use maker spaces with real tools, and get recognised for what you build.</span><span style="display: flex; flex-wrap: wrap; gap: 6px"><span style="border: 2px solid #111111; border-radius: 999px; padding: 2px 10px; font-size: 12px; font-weight: 600">TinkerSpace Kochi</span><span style="border: 2px solid #111111; border-radius: 999px; padding: 2px 10px; font-size: 12px; font-weight: 600">TinkerSpace Kozhikode</span><span style="border: 2px solid #111111; border-radius: 999px; padding: 2px 10px; font-size: 12px; font-weight: 600">Maker of the Month</span><span style="border: 2px solid #111111; border-radius: 999px; padding: 2px 10px; font-size: 12px; font-weight: 600">Campus of the Month</span></span></span>
+<span style="font-size: 14px; font-weight: 600; flex: 1 1 200px">11,179 people have visited a TinkerSpace</span>
+</div>
+</div>
+</div>
+</section>
+<!-- CAMPUS GUIDE -->
+<section id="campus" style="background-color: #FFF1DC; border-bottom: 2px solid #111111">
+<div style="max-width: 1280px; margin: 0 auto; padding-left: clamp(20px, 4vw, 56px); padding-right: clamp(20px, 4vw, 56px); box-sizing: border-box; padding-top: clamp(64px, 8vw, 112px); padding-bottom: clamp(64px, 8vw, 112px); display: flex; flex-direction: column; gap: 36px">
+<div style="display: flex; flex-wrap: wrap; gap: 20px 48px; align-items: flex-end; justify-content: space-between">
+<div style="display: flex; flex-direction: column; gap: 18px; flex: 1 1 620px; min-width: 0">
+<span style="align-self: flex-start; display: inline-flex; align-items: center; gap: 8px; padding: 6px 14px; border-radius: 999px; font-weight: 700; font-size: 13px; letter-spacing: 0.04em; text-transform: uppercase; background: #111111; color: #FAF7F0">For campus community leaders</span>
+<h2 style="margin: 0; font-family: 'Bricolage Grotesque', 'Instrument Sans', system-ui, sans-serif; font-weight: 800; font-size: clamp(42px, 5.6vw, 84px); line-height: 1; letter-spacing: -0.035em; color: #111111">Start a chapter. <em style="font-style: normal; background: #FFD23F; color: #111111; padding: 0 0.18em; border-radius: 0.18em; box-decoration-break: clone; -webkit-box-decoration-break: clone">Keep it alive.</em></h2>
+</div>
+<p style="margin: 0; font-size: 18px; line-height: 1.6; color: #2C2925; max-width: 420px">How TinkerHub campus communities start, run and grow. 723 students have led one so far.</p>
+</div>
+<ol style="list-style: none; margin: 0; padding: 0; display: grid; grid-template-columns: repeat(auto-fit, minmax(220px, 1fr)); gap: 16px">
+<li style="display: flex; flex-direction: column; gap: 10px; padding: 22px; border: 2px solid #111111; border-radius: 22px; background: #FFFFFF">
+<span style="font-family: 'Bricolage Grotesque', 'Instrument Sans', system-ui, sans-serif; font-weight: 800; font-size: 54px; line-height: 0.8; color: {{accent2}}">1</span>
+<h3 style="margin: 0; font-family: 'Bricolage Grotesque', 'Instrument Sans', system-ui, sans-serif; font-weight: 800; font-size: 26px; line-height: 1.05; letter-spacing: -0.02em; color: #111111">Gather a core team</h3>
+<span style="font-size: 15px; line-height: 1.55">Find three or more students who want to learn by building. You do not need a club budget or a faculty title to begin.</span>
+</li>
+<li style="display: flex; flex-direction: column; gap: 10px; padding: 22px; border: 2px solid #111111; border-radius: 22px; background: #FFFFFF">
+<span style="font-family: 'Bricolage Grotesque', 'Instrument Sans', system-ui, sans-serif; font-weight: 800; font-size: 54px; line-height: 0.8; color: {{accent2}}">2</span>
+<h3 style="margin: 0; font-family: 'Bricolage Grotesque', 'Instrument Sans', system-ui, sans-serif; font-weight: 800; font-size: 26px; line-height: 1.05; letter-spacing: -0.02em; color: #111111">Apply</h3>
+<span style="font-size: 15px; line-height: 1.55">Tell us about your campus and your team. We follow up to plan an onboarding call.</span>
+</li>
+<li style="display: flex; flex-direction: column; gap: 10px; padding: 22px; border: 2px solid #111111; border-radius: 22px; background: #FFFFFF">
+<span style="font-family: 'Bricolage Grotesque', 'Instrument Sans', system-ui, sans-serif; font-weight: 800; font-size: 54px; line-height: 0.8; color: {{accent2}}">3</span>
+<h3 style="margin: 0; font-family: 'Bricolage Grotesque', 'Instrument Sans', system-ui, sans-serif; font-weight: 800; font-size: 26px; line-height: 1.05; letter-spacing: -0.02em; color: #111111">Get trained</h3>
+<span style="font-size: 15px; line-height: 1.55">Your core team learns how to run events, use the TinkerHub platform for sign-ups and check-ins, and support first-time makers.</span>
+</li>
+<li style="display: flex; flex-direction: column; gap: 10px; padding: 22px; border: 2px solid #111111; border-radius: 22px; background: #FFFFFF">
+<span style="font-family: 'Bricolage Grotesque', 'Instrument Sans', system-ui, sans-serif; font-weight: 800; font-size: 54px; line-height: 0.8; color: {{accent2}}">4</span>
+<h3 style="margin: 0; font-family: 'Bricolage Grotesque', 'Instrument Sans', system-ui, sans-serif; font-weight: 800; font-size: 26px; line-height: 1.05; letter-spacing: -0.02em; color: #111111">Run your first build</h3>
+<span style="font-size: 15px; line-height: 1.55">Start small: a workshop or a build night. Log it on the platform so your campus shows up in the community.</span>
+</li>
+<li style="display: flex; flex-direction: column; gap: 10px; padding: 22px; border: 2px solid #111111; border-radius: 22px; background: #FFFFFF">
+<span style="font-family: 'Bricolage Grotesque', 'Instrument Sans', system-ui, sans-serif; font-weight: 800; font-size: 54px; line-height: 0.8; color: {{accent2}}">5</span>
+<h3 style="margin: 0; font-family: 'Bricolage Grotesque', 'Instrument Sans', system-ui, sans-serif; font-weight: 800; font-size: 26px; line-height: 1.05; letter-spacing: -0.02em; color: #111111">Grow and hand over</h3>
+<span style="font-size: 15px; line-height: 1.55">Run regular events, join state-wide programs like Tink-Her-Hack, and train next year’s team before you graduate.</span>
+</li>
+</ol>
+<div style="display: flex; flex-wrap: wrap; gap: 14px; align-items: center">
+<a href="https://airtable.com/appdFV7VvqOIlQ36v/shrKV8t5K5JgtfUOj" style="display: inline-flex; align-items: center; gap: 10px; min-height: 52px; padding: 0 26px; border-radius: 999px; font-weight: 700; font-size: 16px; box-sizing: border-box; border: 2px solid #111111; background: {{accent}}; color: #111111; box-shadow: 4px 4px 0 #111111">Apply to start a chapter →</a>
+<a href="events-community.html#campuses" style="display: inline-flex; align-items: center; gap: 10px; min-height: 52px; padding: 0 26px; border-radius: 999px; font-weight: 700; font-size: 16px; box-sizing: border-box; border: 2px solid #111111; background: transparent; color: #111111">Is there one at my college?</a>
+</div>
+</div>
+</section>
+<footer style="background: #111111; color: #CFC8BC">
+<div style="max-width: 1280px; margin: 0 auto; padding-left: clamp(20px, 4vw, 56px); padding-right: clamp(20px, 4vw, 56px); box-sizing: border-box; padding-top: 64px; padding-bottom: 36px; display: flex; flex-wrap: wrap; gap: 48px; justify-content: space-between">
+<div style="flex: 1 1 300px; max-width: 400px; display: flex; flex-direction: column; gap: 14px">
+<span style="font-family: 'Bricolage Grotesque', 'Instrument Sans', system-ui, sans-serif; font-weight: 800; font-size: 44px; line-height: 1; color: #FAF7F0">tinkerhub</span>
+<span style="font-size: 15px; line-height: 1.6">TinkerHub Foundation is a non-profit, student-focused learning community in Kerala. Students learn by building real things, together, for free.</span>
+<span style="font-size: 14px; color: #9C958A">TinkerSpace Kochi: Kalamassery, near CUSAT · TinkerSpace Kozhikode: Medical College P.O.</span>
+</div>
+<div style="display: flex; flex-wrap: wrap; gap: 40px">
+<div style="display: flex; flex-direction: column; gap: 10px; min-width: 150px">
+<span style="font-family: 'Instrument Sans', system-ui, sans-serif; font-size: 12px; font-weight: 700; letter-spacing: 0.08em; text-transform: uppercase; color: #9C958A">Explore</span>
+<a href="programs.html" style="color: #FAF7F0; font-size: 15px">Programs</a>
+<a href="events-community.html" style="color: #FAF7F0; font-size: 15px">Opportunities</a>
+<a href="events-community.html#campuses" style="color: #FAF7F0; font-size: 15px">Campus communities</a>
+<a href="index.html#stories" style="color: #FAF7F0; font-size: 15px">Stories</a>
+</div>
+<div style="display: flex; flex-direction: column; gap: 10px; min-width: 150px">
+<span style="font-family: 'Instrument Sans', system-ui, sans-serif; font-size: 12px; font-weight: 700; letter-spacing: 0.08em; text-transform: uppercase; color: #9C958A">Our work</span>
+<a href="impact.html" style="color: #FAF7F0; font-size: 15px">Impact</a>
+<a href="major-events.html" style="color: #FAF7F0; font-size: 15px">Major events</a>
+<a href="reports.html" style="color: #FAF7F0; font-size: 15px">Reports</a>
+<a href="reports.html#newsletters" style="color: #FAF7F0; font-size: 15px">Newsletter</a>
+</div>
+<div style="display: flex; flex-direction: column; gap: 10px; min-width: 150px">
+<span style="font-family: 'Instrument Sans', system-ui, sans-serif; font-size: 12px; font-weight: 700; letter-spacing: 0.08em; text-transform: uppercase; color: #9C958A">Get involved</span>
+<a href="partner.html" style="color: #FAF7F0; font-size: 15px">Partner with us</a>
+<a href="https://tinkerhub.org/donate" style="color: #FAF7F0; font-size: 15px">Donate</a>
+<a href="https://tinkerhub-foundation.notion.site/Volunteer-with-TinkerHub-198bd5ba1a8680358d99fe60055bc892" style="color: #FAF7F0; font-size: 15px">Volunteer</a>
+<a href="https://airtable.com/appdFV7VvqOIlQ36v/shrKV8t5K5JgtfUOj" style="color: #FAF7F0; font-size: 15px">Start a campus</a>
+</div>
+<div style="display: flex; flex-direction: column; gap: 10px; min-width: 150px">
+<span style="font-family: 'Instrument Sans', system-ui, sans-serif; font-size: 12px; font-weight: 700; letter-spacing: 0.08em; text-transform: uppercase; color: #9C958A">Read</span>
+<a href="https://medium.com/tinkerhub" style="color: #FAF7F0; font-size: 15px">Stories on Medium</a>
+<a href="https://tinkerhub.org/events" style="color: #FAF7F0; font-size: 15px">Live events calendar</a>
+<a href="https://tinkerhub.org" style="color: #FAF7F0; font-size: 15px">tinkerhub.org</a>
+</div>
+</div>
+</div>
+<div style="max-width: 1280px; margin: 0 auto; padding-left: clamp(20px, 4vw, 56px); padding-right: clamp(20px, 4vw, 56px); box-sizing: border-box; padding-top: 18px; padding-bottom: 30px; border-top: 1px solid #2E2C29; display: flex; flex-wrap: wrap; gap: 8px 24px; justify-content: space-between; font-size: 13px; color: #9C958A">
+<span>© 2026 TinkerHub Foundation</span>
+<span>Made with care in Kerala</span>
+</div>
+</footer>
+</div>
+</template>
+<script>
+const TRACKS = [{"id": "learn", "n": "01", "name": "Learn & Lead", "line": "Peer-driven learning stations and mentor-guided projects. Students who learn go on to lead the next group.", "acts": ["Learning programs", "Campus communities", "Study circles"], "who": "Any student. No experience needed.", "format": "Weekly sessions and cohorts, on campus or online.", "facts": [["10,330", "people attended a learning session"], ["723", "students have held a campus lead role"]], "href": "events-community.html", "cta": "Find a learning program →"}, {"id": "build", "n": "02", "name": "Build & Innovate", "line": "Turn ideas into working things through hands-on bootcamps and hackathons.", "acts": ["Hackathons", "Bootcamps", "Useless Projects", "Tink-Her-Hack"], "who": "Students and young makers. Come solo and find a team.", "format": "Bootcamps, overnight and weekend hackathons, in person.", "facts": [["11,921", "people checked in at a hackathon"], ["10,093", "projects submitted"]], "href": "major-events.html", "cta": "See flagship events →"}, {"id": "connect", "n": "03", "name": "Connect & Grow", "line": "Meet practitioners and fellow makers at meetups, talks and TinkerDays.", "acts": ["AI Wednesdays", "Maker Thursdays", "Talks", "TinkerDays"], "who": "Anyone curious. Drop in.", "format": "Weekly evenings at TinkerSpace; monthly TinkerDays across districts.", "facts": [["8,622", "people at a meetup"], ["4,900", "people at a talk"]], "href": "events-community.html", "cta": "This week’s meetups →"}, {"id": "skill", "n": "04", "name": "Skill Up", "line": "Training for careers, and internships, fellowships and jobs shared with the community.", "acts": ["Opportunities board", "Fellowships", "Internships"], "who": "Students and recent graduates.", "format": "Listings on the TinkerHub platform, open to apply.", "facts": [["151", "fellowships, internships and jobs shared"]], "href": "events-community.html", "cta": "Open opportunities →"}, {"id": "shine", "n": "05", "name": "Tinker & Shine", "line": "Use maker spaces with real tools, and get recognised for what you build.", "acts": ["TinkerSpace Kochi", "TinkerSpace Kozhikode", "Maker of the Month", "Campus of the Month"], "who": "Anyone working on something.", "format": "Open spaces with 3D printers and electronics benches; monthly awards.", "facts": [["11,179", "people have visited a TinkerSpace"], ["83,855", "space check-ins recorded"]], "href": "index.html#stories", "cta": "Meet the makers →"}];
+const TK = {
+  reduce() { try { return !!(window.matchMedia && window.matchMedia("(prefers-reduced-motion: reduce)").matches); } catch (e) { return false; } },
+  low() { const c = navigator.hardwareConcurrency || 8; const m = navigator.deviceMemory || 8; return c <= 4 || m <= 4 || (window.innerWidth || 1200) < 640; },
+  whenThree(owner, cb, n) {
+    n = n || 0;
+    if (owner.disposed) return;
+    if (window.THREE) { cb(window.THREE); return; }
+    if (n > 120) { cb(null); return; }
+    owner.timers.push(setTimeout(() => TK.whenThree(owner, cb, n + 1), 120));
+  },
+  lazy(owner, el, fn) {
+    if (!el) return;
+    if (!window.IntersectionObserver) { fn(); return; }
+    const io = new IntersectionObserver((es) => { if (es.some((e) => e.isIntersecting)) { io.disconnect(); fn(); } }, { rootMargin: "300px 0px" });
+    io.observe(el);
+    owner.disposers.push(() => io.disconnect());
+  },
+  stage(T, canvas, owner, fov) {
+    const low = TK.low();
+    const renderer = new T.WebGLRenderer({ canvas: canvas, antialias: !low, alpha: true, powerPreference: "low-power" });
+    renderer.setPixelRatio(Math.min(window.devicePixelRatio || 1, low ? 1.25 : 1.75));
+    renderer.setClearColor(0x000000, 0);
+    const scene = new T.Scene();
+    const camera = new T.PerspectiveCamera(fov || 35, 1, 0.1, 300);
+    scene.add(new T.HemisphereLight(0xffffff, 0x8f8a80, 0.9));
+    const sun = new T.DirectionalLight(0xffffff, 0.85);
+    sun.position.set(5, 10, 7);
+    scene.add(sun);
+    const st = { T: T, renderer: renderer, scene: scene, camera: camera, canvas: canvas, visible: true, update: null, raf: 0, low: low, reduce: TK.reduce(), clock: new T.Clock(), acc: [], acc2: [], ink: new T.LineBasicMaterial({ color: 0x111111 }) };
+    const resize = () => {
+      const w = canvas.clientWidth || 400, h = canvas.clientHeight || 400;
+      renderer.setSize(w, h, false);
+      camera.aspect = w / h;
+      camera.updateProjectionMatrix();
+    };
+    resize();
+    let ro = null, io = null;
+    if (window.ResizeObserver) { ro = new ResizeObserver(resize); ro.observe(canvas); }
+    if (window.IntersectionObserver) { io = new IntersectionObserver((es) => { st.visible = es[0].isIntersecting; }); io.observe(canvas); }
+    const cA = new T.Color(), cB = new T.Color();
+    const loop = () => {
+      if (owner.disposed) return;
+      st.raf = requestAnimationFrame(loop);
+      const dt = Math.min(st.clock.getDelta(), 0.05);
+      if (!st.visible) return;
+      cA.set(owner.props.accent ?? "#FF5A36");
+      cB.set(owner.props.accent2 ?? "#2346C8");
+      st.acc.forEach((m) => m.color.copy(cA));
+      st.acc2.forEach((m) => m.color.copy(cB));
+      if (st.update) st.update(dt, st.clock.elapsedTime);
+      renderer.render(scene, camera);
+    };
+    st.start = () => loop();
+    owner.disposers.push(() => {
+      cancelAnimationFrame(st.raf);
+      if (ro) ro.disconnect();
+      if (io) io.disconnect();
+      scene.traverse((o) => {
+        if (o.geometry) o.geometry.dispose();
+        if (o.material) (Array.isArray(o.material) ? o.material : [o.material]).forEach((m) => m.dispose());
+      });
+      renderer.dispose();
+    });
+    return st;
+  },
+  mat(st, color, role) {
+    const m = new st.T.MeshToonMaterial({ color: color });
+    if (role === "a") st.acc.push(m);
+    if (role === "b") st.acc2.push(m);
+    return m;
+  },
+  solid(st, geo, color, role) {
+    const m = new st.T.Mesh(geo, TK.mat(st, color, role));
+    m.add(new st.T.LineSegments(new st.T.EdgesGeometry(geo, 25), st.ink));
+    return m;
+  },
+  wire(st, geo, role) {
+    const lm = new st.T.LineBasicMaterial({ color: 0x2346c8, transparent: true, opacity: 1 });
+    if (role === "b") st.acc2.push(lm);
+    if (role === "a") st.acc.push(lm);
+    return new st.T.LineSegments(new st.T.EdgesGeometry(geo, 1), lm);
+  },
+  pointer(owner, el, h) {
+    const rel = (e) => { const r = el.getBoundingClientRect(); return { x: ((e.clientX - r.left) / r.width) * 2 - 1, y: -((e.clientY - r.top) / r.height) * 2 + 1, cx: e.clientX }; };
+    const mv = (e) => h.move && h.move(rel(e), e);
+    const dn = (e) => h.down && h.down(rel(e), e);
+    const lv = (e) => h.leave && h.leave(e);
+    const up = (e) => h.up && h.up(e);
+    el.addEventListener("pointermove", mv);
+    el.addEventListener("pointerdown", dn);
+    el.addEventListener("pointerleave", lv);
+    window.addEventListener("pointerup", up);
+    owner.disposers.push(() => { el.removeEventListener("pointermove", mv); el.removeEventListener("pointerdown", dn); el.removeEventListener("pointerleave", lv); window.removeEventListener("pointerup", up); });
+  },
+  gear(st, r, teeth, depth, color, role) {
+    const T = st.T, sh = new T.Shape(), step = Math.PI * 2 / teeth;
+    for (let i = 0; i < teeth; i++) {
+      const a = i * step;
+      [[r, a], [r + 0.3, a + step * 0.15], [r + 0.3, a + step * 0.45], [r, a + step * 0.6]].forEach((q, k) => {
+        const x = Math.cos(q[1]) * q[0], y = Math.sin(q[1]) * q[0];
+        if (i === 0 && k === 0) sh.moveTo(x, y); else sh.lineTo(x, y);
+      });
+    }
+    sh.closePath();
+    const hole = new T.Path();
+    hole.absarc(0, 0, r * 0.36, 0, Math.PI * 2, true);
+    sh.holes.push(hole);
+    const g = new T.ExtrudeGeometry(sh, { depth: depth, bevelEnabled: false, curveSegments: 12 });
+    g.translate(0, 0, -depth / 2);
+    return TK.solid(st, g, color, role);
+  },
+  robot(st) {
+    const T = st.T, g = new T.Group();
+    const body = TK.solid(st, new T.BoxGeometry(0.9, 0.85, 0.7), 0xf5f1e8); body.position.y = 0.95; g.add(body);
+    const head = TK.solid(st, new T.BoxGeometry(0.66, 0.52, 0.54), 0x2346c8, "b"); head.position.y = 1.68; g.add(head);
+    [-0.15, 0.15].forEach((x) => { const e = TK.solid(st, new T.BoxGeometry(0.12, 0.1, 0.05), 0xff5a36, "a"); e.position.set(x, 1.72, 0.28); g.add(e); });
+    [-0.62, 0.62].forEach((x) => { const a = TK.solid(st, new T.BoxGeometry(0.22, 0.7, 0.22), 0xff5a36, "a"); a.position.set(x, 1.0, 0); g.add(a); });
+    [-0.22, 0.22].forEach((x) => { const l = TK.solid(st, new T.BoxGeometry(0.26, 0.55, 0.26), 0x9a958c); l.position.set(x, 0.28, 0); g.add(l); });
+    const ant = TK.solid(st, new T.CylinderGeometry(0.04, 0.04, 0.35, 6), 0x111111); ant.position.y = 2.1; g.add(ant);
+    const tip = TK.solid(st, new T.SphereGeometry(0.1, 10, 8), 0xffe15a); tip.position.y = 2.32; g.add(tip);
+    return g;
+  },
+  board(st) {
+    const T = st.T, g = new T.Group();
+    g.add(TK.solid(st, new T.BoxGeometry(2.0, 0.12, 1.3), 0x2346c8, "b"));
+    const chip = TK.solid(st, new T.BoxGeometry(0.6, 0.12, 0.6), 0x111111); chip.position.set(-0.3, 0.12, 0); g.add(chip);
+    const pinGeo = new T.BoxGeometry(0.08, 0.16, 0.08), pinMat = new T.MeshToonMaterial({ color: 0xf5f1e8 });
+    for (let i = 0; i < 7; i++) { const pin = new T.Mesh(pinGeo, pinMat); pin.position.set(-0.85 + i * 0.27, 0.13, 0.5); g.add(pin); }
+    const led = TK.solid(st, new T.CylinderGeometry(0.12, 0.12, 0.28, 10), 0xff5a36, "a"); led.position.set(0.6, 0.2, -0.2); g.add(led);
+    return g;
+  },
+  lerp(a, b, k) { return a + (b - a) * k; },
+  ease(t) { t = Math.max(0, Math.min(1, t)); return 1 - Math.pow(1 - t, 3); }
+};
+
+const OBJ = { learn: "Flask", build: "Robot", connect: "Connected blocks", skill: "Gears", shine: "Circuit board" };
+const PROGS = TRACKS.map((t) => ({ id: t.id, short: t.n + " " + t.name, kicker: "Track " + t.n + " · " + OBJ[t.id], name: t.name, body: t.line, who: t.who, format: t.format, acts: t.acts.map((x) => ({ label: x })), facts: t.facts.map((f) => ({ n: f[0], l: f[1] })), href: t.href, cta: t.cta }));
+class Component extends DCLogic {
+  constructor(props) {
+    super(props);
+    this.state = { prog: "learn", hover: null, playFailed: false };
+    this.disposers = []; this.timers = [];
+    this.setPlay = (el) => { this.playEl = el; };
+  }
+  componentDidMount() {
+    TK.whenThree(this, (T) => {
+      if (!T) { this.setState({ playFailed: true }); return; }
+      TK.lazy(this, this.playEl, () => { try { this.initPlay(T); } catch (e) { this.setState({ playFailed: true }); } });
+    });
+  }
+  componentWillUnmount() {
+    this.disposed = true;
+    this.timers.forEach((t) => clearTimeout(t));
+    this.disposers.forEach((f) => { try { f(); } catch (e) {} });
+  }
+  initPlay(T) {
+    if (!this.playEl) return;
+    const st = TK.stage(T, this.playEl, this, 34);
+    const { scene, camera } = st;
+    camera.position.set(0, 7.2, 11.5);
+    camera.lookAt(0, 0.4, 0.2);
+    const table = new T.Group();
+    scene.add(table);
+    const top = TK.solid(st, new T.BoxGeometry(11, 0.3, 6.4), 0xece5d6);
+    top.position.y = -0.15;
+    table.add(top);
+    const grid = new T.GridHelper(10.4, 26, 0x2346c8, 0xb8c3ea);
+    grid.position.y = 0.01;
+    table.add(grid);
+
+    const mk = {};
+    mk.build = () => { const g = TK.robot(st); g.scale.setScalar(0.62); return g; };
+    mk.shine = () => { const g = TK.board(st); g.scale.setScalar(0.62); g.position.y = 0.1; return g; };
+    mk.learn = () => {
+      const pts = [[0.05, 0], [0.55, 0], [0.62, 0.08], [0.6, 0.35], [0.22, 0.95], [0.18, 1.35], [0.24, 1.42]].map((q) => new T.Vector2(q[0], q[1]));
+      const g = new T.Group();
+      const glass = TK.solid(st, new T.LatheGeometry(pts, 18), 0xf5f1e8);
+      g.add(glass);
+      const liquid = TK.solid(st, new T.CylinderGeometry(0.42, 0.56, 0.32, 18), 0xff5a36, "a");
+      liquid.position.y = 0.2;
+      g.add(liquid);
+      const bubble = TK.solid(st, new T.SphereGeometry(0.08, 8, 6), 0xffe15a);
+      bubble.position.set(0.05, 1.6, 0);
+      g.add(bubble);
+      g.userData.bubble = bubble;
+      return g;
+    };
+    mk.connect = () => {
+      const g = new T.Group();
+      for (let x = 0; x < 3; x++) for (let y = 0; y < 3; y++) for (let z = 0; z < 2; z++) {
+        if ((x + y + z) % 2) continue;
+        const c = TK.wire(st, new T.BoxGeometry(0.34, 0.34, 0.34), "b");
+        c.position.set((x - 1) * 0.42, 0.25 + y * 0.42, (z - 0.5) * 0.42);
+        g.add(c);
+      }
+      const core = TK.solid(st, new T.BoxGeometry(0.34, 0.34, 0.34), 0xffe15a);
+      core.position.set(0, 0.67, 0);
+      g.add(core);
+      return g;
+    };
+    mk.skill = () => {
+      const g = new T.Group();
+      const a = TK.gear(st, 0.5, 10, 0.22, 0xffe15a); a.rotation.x = -Math.PI / 2; a.position.set(-0.36, 0.2, 0); g.add(a);
+      const b = TK.gear(st, 0.32, 7, 0.22, 0x2346c8, "b"); b.rotation.x = -Math.PI / 2; b.position.set(0.55, 0.2, 0.28); g.add(b);
+      const c = TK.gear(st, 0.3, 7, 0.22, 0xff5a36, "a"); c.rotation.x = -Math.PI / 2; c.position.set(0.25, 0.48, -0.55); g.add(c);
+      g.userData.gears = [a, b, c];
+      return g;
+    };
+    const order = ["learn", "build", "connect", "skill", "shine"];
+    const slots = [[-3.6, 0, -1.3], [0, 0, -1.3], [3.6, 0, -1.3], [-1.8, 0, 1.5], [1.8, 0, 1.5]];
+    const objs = [];
+    order.forEach((id, i) => {
+      const g = mk[id]();
+      const holder = new T.Group();
+      holder.position.set(slots[i][0], slots[i][1], slots[i][2]);
+      const pad = new T.Mesh(new T.CylinderGeometry(1.05, 1.05, 0.04, 40), new T.MeshBasicMaterial({ color: 0xff5a36, transparent: true, opacity: 0 }));
+      st.acc.push(pad.material);
+      pad.position.y = 0.03;
+      holder.add(pad);
+      holder.add(g);
+      const hit = new T.Mesh(new T.CylinderGeometry(1.0, 1.0, 2.2, 12), new T.MeshBasicMaterial({ visible: false }));
+      hit.position.y = 1.0;
+      hit.userData.id = id;
+      holder.add(hit);
+      table.add(holder);
+      objs.push({ id: id, holder: holder, g: g, pad: pad, hit: hit, lift: 0 });
+    });
+    const ray = new T.Raycaster();
+    const ndc = new T.Vector2();
+    let hovered = null, px = 0;
+    const pick = (r) => {
+      ndc.set(r.x, r.y);
+      ray.setFromCamera(ndc, camera);
+      const h = ray.intersectObjects(objs.map((o) => o.hit), false);
+      return h.length ? h[0].object.userData.id : null;
+    };
+    TK.pointer(this, this.playEl, {
+      move: (r) => {
+        px = r.x;
+        const id = pick(r);
+        if (id !== hovered) {
+          hovered = id;
+          this.playEl.style.cursor = id ? "pointer" : "default";
+          this.setState({ hover: id });
+        }
+      },
+      down: (r) => { const id = pick(r); if (id) this.setState({ prog: id }); },
+      leave: () => { px = 0; if (hovered) { hovered = null; this.setState({ hover: null }); } }
+    });
+    st.update = (dt, t) => {
+      const sel = this.state.prog;
+      const k = st.reduce ? 1 : 1 - Math.exp(-dt * 8);
+      objs.forEach((o, i) => {
+        const active = o.id === sel, hov = o.id === hovered;
+        const tl = active ? 0.35 : (hov ? 0.2 : 0);
+        o.lift += (tl - o.lift) * k;
+        o.g.position.y = o.lift + (st.reduce ? 0 : Math.sin(t * 1.4 + i) * 0.04);
+        o.pad.material.opacity += ((active ? 0.9 : (hov ? 0.35 : 0)) - o.pad.material.opacity) * k;
+        if (!st.reduce) {
+          o.g.rotation.y += dt * (active ? 0.9 : (hov ? 0.6 : 0.12));
+          if (o.g.userData.gears) { const gs = o.g.userData.gears; gs[0].rotation.z += dt * 0.8; gs[1].rotation.z -= dt * 1.25; gs[2].rotation.z -= dt * 1.3; }
+          if (o.g.userData.bubble) { o.g.userData.bubble.position.y = 1.5 + ((t * 0.5) % 1) * 0.6; }
+        }
+      });
+      table.rotation.y += ((px * 0.12) - table.rotation.y) * 0.06;
+    };
+    st.start();
+  }
+  renderVals() {
+    const accent = this.props.accent ?? "#FF5A36";
+    const accent2 = this.props.accent2 ?? "#2346C8";
+    const prog = PROGS.find((p) => p.id === this.state.prog) || PROGS[0];
+    const hp = PROGS.find((p) => p.id === this.state.hover);
+    return {
+      accent, accent2,
+      setPlay: this.setPlay, playFailed: this.state.playFailed,
+      prog: prog,
+      hoverLabel: hp ? hp.name + " →" : "pick an object",
+      progBtns: PROGS.map((p) => ({ short: p.short, on: p.id === prog.id, off: p.id !== prog.id, pick: () => this.setState({ prog: p.id }) }))
+    };
+  }
+}
+TinkerRuntime.mount(Component, document.getElementById("page"), document.getElementById("app"), {"accent": "#FF5A36", "accent2": "#2346C8"});
+</script>
+</body>
+</html>

@@ -1,0 +1,605 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>Impact — TinkerHub</title>
+<meta name="description" content="TinkerHub is a free, student-run learning community in Kerala where students learn tech by building real projects together.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Bricolage+Grotesque:opsz,wght@12..96,500..800&amp;family=Instrument+Sans:wght@400..700&amp;display=swap" rel="stylesheet">
+<style>
+body{margin:0;background:#FAF7F0}
+a{color:inherit;text-decoration:none}
+a:hover{opacity:.86}
+input::placeholder,textarea::placeholder{color:#77716A}
+a:focus-visible,button:focus-visible,input:focus-visible,select:focus-visible,textarea:focus-visible{outline:3px solid #2346C8;outline-offset:3px}
+.tv-tick{animation:tvtick 46s linear infinite}
+@keyframes tvtick{from{transform:translateX(0)}to{transform:translateX(-50%)}}
+@media (prefers-reduced-motion: reduce){.tv-tick{animation:none}}
+</style>
+<script src="vendor/preact.umd.js"></script>
+<script src="vendor/three.min.js"></script>
+<script src="js/tinker-runtime.js"></script>
+</head>
+<body>
+<div id="app"></div>
+<template id="page">
+<div style="font-family: 'Instrument Sans', system-ui, -apple-system, 'Segoe UI', sans-serif; color: #111111; background: #FAF7F0; width: 100%; overflow: hidden; font-size: 17px; line-height: 1.55">
+<header style="background: #FAF7F0; border-bottom: 2px solid #111111">
+<div style="background: #111111; color: #FAF7F0; overflow: hidden; border-bottom: 2px solid #111111">
+<div class="tv-tick" aria-hidden="true" style="display: flex; width: max-content; padding: 7px 0; font-family: 'Instrument Sans', system-ui, sans-serif; font-size: 12px; letter-spacing: 0.08em; text-transform: uppercase"><span style="padding: 0 28px">New events every week at TinkerSpace Kochi &amp; Kozhikode</span><span style="padding: 0 28px; color: {{accent}}">✦</span><span style="padding: 0 28px">72 campus communities across 13 districts</span><span style="padding: 0 28px; color: {{accent}}">✦</span><span style="padding: 0 28px">Free for students</span><span style="padding: 0 28px; color: {{accent}}">✦</span><span style="padding: 0 28px">Be kind · Get involved · Make a change</span><span style="padding: 0 28px; color: {{accent}}">✦</span><span style="padding: 0 28px">New events every week at TinkerSpace Kochi &amp; Kozhikode</span><span style="padding: 0 28px; color: {{accent}}">✦</span><span style="padding: 0 28px">72 campus communities across 13 districts</span><span style="padding: 0 28px; color: {{accent}}">✦</span><span style="padding: 0 28px">Free for students</span><span style="padding: 0 28px; color: {{accent}}">✦</span><span style="padding: 0 28px">Be kind · Get involved · Make a change</span><span style="padding: 0 28px; color: {{accent}}">✦</span></div>
+</div>
+<nav aria-label="Primary" style="max-width: 1280px; margin: 0 auto; padding-left: clamp(20px, 4vw, 56px); padding-right: clamp(20px, 4vw, 56px); box-sizing: border-box; padding-top: 14px; padding-bottom: 14px; display: flex; flex-wrap: wrap; align-items: center; justify-content: space-between; gap: 12px 28px">
+<a href="index.html" style="display: flex; align-items: baseline; gap: 8px">
+<span style="font-family: 'Bricolage Grotesque', 'Instrument Sans', system-ui, sans-serif; font-weight: 800; font-size: 34px; line-height: 1; letter-spacing: -0.02em">tinkerhub</span>
+<span style="font-family: 'Instrument Sans', system-ui, sans-serif; font-size: 11px; color: #4B4740">foundation</span>
+</a>
+<div style="display: flex; flex-wrap: wrap; align-items: center; gap: 6px 22px; font-weight: 600; font-size: 15px">
+<a href="programs.html" style="padding: 6px 2px; border-bottom: 2px solid transparent">Programs</a>
+<a href="events-community.html" style="padding: 6px 2px; border-bottom: 2px solid transparent">Events &amp; Community</a>
+<a href="impact.html" aria-current="page" style="padding: 6px 2px; border-bottom: 2px solid #111111">Impact</a>
+<a href="reports.html" style="padding: 6px 2px; border-bottom: 2px solid transparent">Reports</a>
+<a href="partner.html" style="padding: 6px 2px; border-bottom: 2px solid transparent">Partner with us</a>
+<a href="events-community.html" style="background: #111111; color: #FAF7F0; padding: 0 18px; min-height: 44px; display: inline-flex; align-items: center; border-radius: 14px">Get involved →</a>
+</div>
+</nav>
+</header>
+<!-- HEADER -->
+<section style="background-color: #FFF1DC; border-bottom: 2px solid #111111">
+<div style="max-width: 1280px; margin: 0 auto; padding-left: clamp(20px, 4vw, 56px); padding-right: clamp(20px, 4vw, 56px); box-sizing: border-box; padding-top: clamp(48px, 6vw, 96px); padding-bottom: clamp(48px, 6vw, 80px); display: flex; flex-direction: column; gap: 22px">
+<div style="display: flex; gap: 14px; flex-wrap: wrap"><span style="font-family: 'Instrument Sans', system-ui, sans-serif; font-size: 12px; font-weight: 700; letter-spacing: 0.08em; text-transform: uppercase; color: #4B4740">Impact</span>
+</div>
+<h1 style="margin: 0; font-family: 'Bricolage Grotesque', 'Instrument Sans', system-ui, sans-serif; font-weight: 800; font-size: clamp(52px, 7vw, 112px); line-height: 0.95; letter-spacing: -0.04em">What changes when students <em style="font-style: normal; background: #FFD23F; color: #111111; padding: 0 0.18em; border-radius: 0.18em; box-decoration-break: clone; -webkit-box-decoration-break: clone">build.</em></h1>
+<p style="margin: 0; font-size: 19px; line-height: 1.6; color: #2C2925; max-width: 760px">Every sign-up, event check-in and project at TinkerHub is recorded. Here is what that record shows about the people who come, what they build, and where they go next.</p>
+<div style="display: flex; flex-wrap: wrap; gap: 12px"><a href="major-events.html" style="display: inline-flex; align-items: center; gap: 10px; min-height: 52px; padding: 0 26px; border-radius: 999px; font-weight: 700; font-size: 16px; box-sizing: border-box; border: 2px solid #111111; background: #111111; color: #FAF7F0; box-shadow: 4px 4px 0 {{accent}}">Major events →</a>
+<a href="reports.html" style="display: inline-flex; align-items: center; gap: 10px; min-height: 52px; padding: 0 26px; border-radius: 999px; font-weight: 700; font-size: 16px; box-sizing: border-box; border: 2px solid #111111; background: transparent; color: #111111">Reports &amp; newsletter</a>
+</div>
+</div>
+</section>
+
+<!-- AT A GLANCE -->
+<section style="border-bottom: 2px solid #111111">
+<div style="max-width: 1280px; margin: 0 auto; padding-left: clamp(20px, 4vw, 56px); padding-right: clamp(20px, 4vw, 56px); box-sizing: border-box; padding-top: clamp(56px, 7vw, 96px); padding-bottom: clamp(56px, 7vw, 96px)">
+<div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(230px, 1fr)); gap: 28px">
+<div style="display: flex; flex-direction: column; gap: 8px; padding: 20px 0 0; border-top: 2px solid #111111">
+<span style="font-family: 'Bricolage Grotesque', 'Instrument Sans', system-ui, sans-serif; font-weight: 800; font-size: clamp(48px, 4.6vw, 70px); line-height: 0.9">26,005</span>
+<span style="font-weight: 600">learners took part</span>
+<span style="font-size: 14px; color: #4B4740; line-height: 1.5">Checked in at one or more events.</span>
+</div>
+<div style="display: flex; flex-direction: column; gap: 8px; padding: 20px 0 0; border-top: 2px solid #111111">
+<span style="font-family: 'Bricolage Grotesque', 'Instrument Sans', system-ui, sans-serif; font-weight: 800; font-size: clamp(48px, 4.6vw, 70px); line-height: 0.9">12,848</span>
+<span style="font-weight: 600">built something</span>
+<span style="font-size: 14px; color: #4B4740; line-height: 1.5">Listed on a submitted project.</span>
+</div>
+<div style="display: flex; flex-direction: column; gap: 8px; padding: 20px 0 0; border-top: 2px solid #111111">
+<span style="font-family: 'Bricolage Grotesque', 'Instrument Sans', system-ui, sans-serif; font-weight: 800; font-size: clamp(48px, 4.6vw, 70px); line-height: 0.9">11,800</span>
+<span style="font-weight: 600">came back</span>
+<span style="font-size: 14px; color: #4B4740; line-height: 1.5">Checked in at two or more different events.</span>
+</div>
+<div style="display: flex; flex-direction: column; gap: 8px; padding: 20px 0 0; border-top: 2px solid #111111">
+<span style="font-family: 'Bricolage Grotesque', 'Instrument Sans', system-ui, sans-serif; font-weight: 800; font-size: clamp(48px, 4.6vw, 70px); line-height: 0.9">723</span>
+<span style="font-weight: 600">took on leadership</span>
+<span style="font-size: 14px; color: #4B4740; line-height: 1.5">Held a campus lead or core-team role.</span>
+</div>
+</div>
+</div>
+</section>
+<section style="border-bottom: 2px solid #111111">
+<div style="max-width: 1280px; margin: 0 auto; padding-left: clamp(20px, 4vw, 56px); padding-right: clamp(20px, 4vw, 56px); box-sizing: border-box; padding-top: clamp(64px, 8vw, 104px); padding-bottom: clamp(64px, 8vw, 104px); display: flex; flex-direction: column; gap: 30px">
+<div style="display: flex; flex-wrap: wrap; gap: 20px 48px; align-items: flex-end; justify-content: space-between">
+<div style="display: flex; flex-direction: column; gap: 18px; flex: 1 1 620px; min-width: 0">
+<span style="align-self: flex-start; display: inline-flex; align-items: center; gap: 8px; padding: 6px 14px; border-radius: 999px; font-weight: 700; font-size: 13px; letter-spacing: 0.04em; text-transform: uppercase; background: #111111; color: #FAF7F0">Story 1 · The participation journey</span>
+<h2 style="margin: 0; font-family: 'Bricolage Grotesque', 'Instrument Sans', system-ui, sans-serif; font-weight: 800; font-size: clamp(42px, 5.6vw, 84px); line-height: 1; letter-spacing: -0.035em; color: #111111">From sign-up to <em style="font-style: normal; background: #FFD23F; color: #111111; padding: 0 0.18em; border-radius: 0.18em; box-decoration-break: clone; -webkit-box-decoration-break: clone">leading a campus.</em></h2>
+</div>
+</div>
+<figure style="margin: 0; display: flex; flex-direction: column; gap: 12px; border-top: 2px solid #111111; padding-top: 16px">
+<figcaption style="font-weight: 700; font-size: 16px">Unique people at each step</figcaption>
+<div style="overflow-x: auto"><div style="min-width: 460px; display: flex; flex-direction: column; gap: 10px">
+<div style="display: grid; grid-template-columns: minmax(150px, 220px) 1fr minmax(70px, auto); gap: 12px; align-items: center">
+<span style="font-size: 15px; line-height: 1.3">Joined the platform</span>
+<div style="height: 26px; background: #EAE3D3; border: 2px solid #111111; border-radius: 3px; overflow: hidden"><div style="width: 100%; height: 100%; background: #111111"></div></div>
+<span style="font-family: 'Instrument Sans', system-ui, sans-serif; font-size: 14px; font-weight: 700; text-align: right">52,573</span>
+</div>
+<div style="display: grid; grid-template-columns: minmax(150px, 220px) 1fr minmax(70px, auto); gap: 12px; align-items: center">
+<span style="font-size: 15px; line-height: 1.3">Attended an event<br><span style="font-size: 12px; color: #4B4740">49% of those who joined</span></span>
+<div style="height: 26px; background: #EAE3D3; border: 2px solid #111111; border-radius: 3px; overflow: hidden"><div style="width: 49.5%; height: 100%; background: {{accent}}"></div></div>
+<span style="font-family: 'Instrument Sans', system-ui, sans-serif; font-size: 14px; font-weight: 700; text-align: right">26,005</span>
+</div>
+<div style="display: grid; grid-template-columns: minmax(150px, 220px) 1fr minmax(70px, auto); gap: 12px; align-items: center">
+<span style="font-size: 15px; line-height: 1.3">Built a project<br><span style="font-size: 12px; color: #4B4740">92% of builders also attended in person</span></span>
+<div style="height: 26px; background: #EAE3D3; border: 2px solid #111111; border-radius: 3px; overflow: hidden"><div style="width: 24.4%; height: 100%; background: {{accent2}}"></div></div>
+<span style="font-family: 'Instrument Sans', system-ui, sans-serif; font-size: 14px; font-weight: 700; text-align: right">12,848</span>
+</div>
+<div style="display: grid; grid-template-columns: minmax(150px, 220px) 1fr minmax(70px, auto); gap: 12px; align-items: center">
+<span style="font-size: 15px; line-height: 1.3">Came back for 2+ events<br><span style="font-size: 12px; color: #4B4740">45% of attendees</span></span>
+<div style="height: 26px; background: #EAE3D3; border: 2px solid #111111; border-radius: 3px; overflow: hidden"><div style="width: 22.4%; height: 100%; background: {{accent}}"></div></div>
+<span style="font-family: 'Instrument Sans', system-ui, sans-serif; font-size: 14px; font-weight: 700; text-align: right">11,800</span>
+</div>
+<div style="display: grid; grid-template-columns: minmax(150px, 220px) 1fr minmax(70px, auto); gap: 12px; align-items: center">
+<span style="font-size: 15px; line-height: 1.3">Held a campus lead role</span>
+<div style="height: 26px; background: #EAE3D3; border: 2px solid #111111; border-radius: 3px; overflow: hidden"><div style="width: 1.4%; height: 100%; background: #FFE15A"></div></div>
+<span style="font-family: 'Instrument Sans', system-ui, sans-serif; font-size: 14px; font-weight: 700; text-align: right">723</span>
+</div>
+</div></div>
+</figure>
+<div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(260px, 1fr)); gap: 14px">
+<div style="display: flex; flex-direction: column; gap: 6px; padding: 18px 20px; border: 2px solid #111111; border-radius: 22px; background: #FFFFFF">
+<span style="font-family: 'Instrument Sans', system-ui, sans-serif; font-size: 12px; font-weight: 700; letter-spacing: 0.08em; text-transform: uppercase; color: #111111">What we see</span>
+<span style="font-size: 16px; line-height: 1.55">About half of everyone who signs up shows up in person. Of those who show up, 45% come back at least once. 3,693 people have attended five or more events.</span>
+</div>
+<div style="display: flex; flex-direction: column; gap: 6px; padding: 18px 20px; border: 2px solid #111111; border-radius: 22px; background: #FFD23F">
+<span style="font-family: 'Instrument Sans', system-ui, sans-serif; font-size: 12px; font-weight: 700; letter-spacing: 0.08em; text-transform: uppercase; color: #111111">What it looks like</span>
+<span style="font-size: 16px; line-height: 1.55">For example: sign up for Useless Projects, come to one build night, return for a hackathon, and a year later help run your campus chapter.</span>
+</div>
+</div>
+</div>
+</section>
+<section style="border-bottom: 2px solid #111111">
+<div style="max-width: 1280px; margin: 0 auto; padding-left: clamp(20px, 4vw, 56px); padding-right: clamp(20px, 4vw, 56px); box-sizing: border-box; padding-top: clamp(64px, 8vw, 104px); padding-bottom: clamp(64px, 8vw, 104px); display: flex; flex-direction: column; gap: 30px">
+<div style="display: flex; flex-wrap: wrap; gap: 20px 48px; align-items: flex-end; justify-content: space-between">
+<div style="display: flex; flex-direction: column; gap: 18px; flex: 1 1 620px; min-width: 0">
+<span style="align-self: flex-start; display: inline-flex; align-items: center; gap: 8px; padding: 6px 14px; border-radius: 999px; font-weight: 700; font-size: 13px; letter-spacing: 0.04em; text-transform: uppercase; background: #111111; color: #FAF7F0">Story 2 · Who builds</span>
+<h2 style="margin: 0; font-family: 'Bricolage Grotesque', 'Instrument Sans', system-ui, sans-serif; font-weight: 800; font-size: clamp(42px, 5.6vw, 84px); line-height: 1; letter-spacing: -0.035em; color: #111111">Women are <em style="font-style: normal; background: #FFD23F; color: #111111; padding: 0 0.18em; border-radius: 0.18em; box-decoration-break: clone; -webkit-box-decoration-break: clone">the majority</em> of builders.</h2>
+</div>
+</div>
+<figure style="margin: 0; display: flex; flex-direction: column; gap: 12px; border-top: 2px solid #111111; padding-top: 16px">
+<figcaption style="font-weight: 700; font-size: 16px">Share who are women</figcaption>
+<div style="overflow-x: auto"><div style="min-width: 460px; display: flex; flex-direction: column; gap: 10px">
+<div style="display: grid; grid-template-columns: minmax(150px, 220px) 1fr minmax(70px, auto); gap: 12px; align-items: center">
+<span style="font-size: 15px; line-height: 1.3">Members on the platform<br><span style="font-size: 12px; color: #4B4740">24,457 of 52,387 with recorded gender</span></span>
+<div style="height: 26px; background: #EAE3D3; border: 2px solid #111111; border-radius: 3px; overflow: hidden"><div style="width: 47%; height: 100%; background: {{accent2}}"></div></div>
+<span style="font-family: 'Instrument Sans', system-ui, sans-serif; font-size: 14px; font-weight: 700; text-align: right">47%</span>
+</div>
+<div style="display: grid; grid-template-columns: minmax(150px, 220px) 1fr minmax(70px, auto); gap: 12px; align-items: center">
+<span style="font-size: 15px; line-height: 1.3">People listed on a project submission<br><span style="font-size: 12px; color: #4B4740">7,729 of 13,107, all submissions</span></span>
+<div style="height: 26px; background: #EAE3D3; border: 2px solid #111111; border-radius: 3px; overflow: hidden"><div style="width: 59%; height: 100%; background: {{accent}}"></div></div>
+<span style="font-family: 'Instrument Sans', system-ui, sans-serif; font-size: 14px; font-weight: 700; text-align: right">59%</span>
+</div>
+</div></div>
+</figure>
+<div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(260px, 1fr)); gap: 14px">
+<div style="display: flex; flex-direction: column; gap: 6px; padding: 18px 20px; border: 2px solid #111111; border-radius: 22px; background: #FFFFFF">
+<span style="font-family: 'Instrument Sans', system-ui, sans-serif; font-size: 12px; font-weight: 700; letter-spacing: 0.08em; text-transform: uppercase; color: #111111">What we see</span>
+<span style="font-size: 16px; line-height: 1.55">59% of people listed on project submissions are women, higher than their 47% share of members. 72% of members identify as students.</span>
+</div>
+<div style="display: flex; flex-direction: column; gap: 6px; padding: 18px 20px; border: 2px solid #111111; border-radius: 22px; background: #FFD23F">
+<span style="font-family: 'Instrument Sans', system-ui, sans-serif; font-size: 12px; font-weight: 700; letter-spacing: 0.08em; text-transform: uppercase; color: #111111">What it looks like</span>
+<span style="font-size: 16px; line-height: 1.55">Tink-Her-Hack alone produced 2,581 project submissions, built by women across Kerala close to home.</span>
+</div>
+</div>
+</div>
+</section>
+<section style="border-bottom: 2px solid #111111">
+<div style="max-width: 1280px; margin: 0 auto; padding-left: clamp(20px, 4vw, 56px); padding-right: clamp(20px, 4vw, 56px); box-sizing: border-box; padding-top: clamp(64px, 8vw, 104px); padding-bottom: clamp(64px, 8vw, 104px); display: flex; flex-direction: column; gap: 30px">
+<div style="display: flex; flex-wrap: wrap; gap: 20px 48px; align-items: flex-end; justify-content: space-between">
+<div style="display: flex; flex-direction: column; gap: 18px; flex: 1 1 620px; min-width: 0">
+<span style="align-self: flex-start; display: inline-flex; align-items: center; gap: 8px; padding: 6px 14px; border-radius: 999px; font-weight: 700; font-size: 13px; letter-spacing: 0.04em; text-transform: uppercase; background: #111111; color: #FAF7F0">Story 3 · Growth</span>
+<h2 style="margin: 0; font-family: 'Bricolage Grotesque', 'Instrument Sans', system-ui, sans-serif; font-weight: 800; font-size: clamp(42px, 5.6vw, 84px); line-height: 1; letter-spacing: -0.035em; color: #111111">Growing, <em style="font-style: normal; background: #FFD23F; color: #111111; padding: 0 0.18em; border-radius: 0.18em; box-decoration-break: clone; -webkit-box-decoration-break: clone">year on year.</em></h2>
+</div>
+</div>
+<div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(260px, 1fr)); gap: 28px">
+<figure style="margin: 0; display: flex; flex-direction: column; gap: 10px"><figcaption style="font-weight: 600">New members per year</figcaption>
+<div style="overflow-x: auto"><div style="min-width: 520px"><div style="height: 240px; display: flex; align-items: flex-end; gap: 8px; border-bottom: 2px solid #111111; padding-top: 24px">
+<div style="flex: 1; display: flex; flex-direction: column; align-items: center; justify-content: flex-end; gap: 4px; height: 100%"><span style="font-family: 'Instrument Sans', system-ui, sans-serif; font-size: 11px; font-weight: 700">12,146</span><div role="img" aria-label="2024: 12,146" style="width: 100%; height: 54%; background: {{accent}}; border: 2px solid #111111; border-bottom: none; box-sizing: border-box"></div></div>
+<div style="flex: 1; display: flex; flex-direction: column; align-items: center; justify-content: flex-end; gap: 4px; height: 100%"><span style="font-family: 'Instrument Sans', system-ui, sans-serif; font-size: 11px; font-weight: 700">22,404</span><div role="img" aria-label="2025: 22,404" style="width: 100%; height: 100%; background: {{accent}}; border: 2px solid #111111; border-bottom: none; box-sizing: border-box"></div></div>
+<div style="flex: 1; display: flex; flex-direction: column; align-items: center; justify-content: flex-end; gap: 4px; height: 100%"><span style="font-family: 'Instrument Sans', system-ui, sans-serif; font-size: 11px; font-weight: 700">17,837</span><div role="img" aria-label="2026: 17,837" style="width: 100%; height: 80%; background: repeating-linear-gradient(45deg, {{accent2}} 0 5px, #FAF7F0 5px 10px); border: 2px solid #111111; border-bottom: none; box-sizing: border-box"></div></div>
+</div>
+<div style="display: flex; gap: 8px; padding-top: 6px"><span style="flex: 1; text-align: center; font-family: 'Instrument Sans', system-ui, sans-serif; font-size: 11px; color: #4B4740">2024</span><span style="flex: 1; text-align: center; font-family: 'Instrument Sans', system-ui, sans-serif; font-size: 11px; color: #4B4740">2025</span><span style="flex: 1; text-align: center; font-family: 'Instrument Sans', system-ui, sans-serif; font-size: 11px; color: #4B4740">2026</span></div></div></div>
+</figure>
+<figure style="margin: 0; display: flex; flex-direction: column; gap: 10px"><figcaption style="font-weight: 600">Events held per year</figcaption>
+<div style="overflow-x: auto"><div style="min-width: 520px"><div style="height: 240px; display: flex; align-items: flex-end; gap: 8px; border-bottom: 2px solid #111111; padding-top: 24px">
+<div style="flex: 1; display: flex; flex-direction: column; align-items: center; justify-content: flex-end; gap: 4px; height: 100%"><span style="font-family: 'Instrument Sans', system-ui, sans-serif; font-size: 11px; font-weight: 700">360</span><div role="img" aria-label="2024: 360" style="width: 100%; height: 26%; background: {{accent}}; border: 2px solid #111111; border-bottom: none; box-sizing: border-box"></div></div>
+<div style="flex: 1; display: flex; flex-direction: column; align-items: center; justify-content: flex-end; gap: 4px; height: 100%"><span style="font-family: 'Instrument Sans', system-ui, sans-serif; font-size: 11px; font-weight: 700">1,195</span><div role="img" aria-label="2025: 1,195" style="width: 100%; height: 85%; background: {{accent}}; border: 2px solid #111111; border-bottom: none; box-sizing: border-box"></div></div>
+<div style="flex: 1; display: flex; flex-direction: column; align-items: center; justify-content: flex-end; gap: 4px; height: 100%"><span style="font-family: 'Instrument Sans', system-ui, sans-serif; font-size: 11px; font-weight: 700">1,399</span><div role="img" aria-label="2026: 1,399" style="width: 100%; height: 100%; background: repeating-linear-gradient(45deg, {{accent2}} 0 5px, #FAF7F0 5px 10px); border: 2px solid #111111; border-bottom: none; box-sizing: border-box"></div></div>
+</div>
+<div style="display: flex; gap: 8px; padding-top: 6px"><span style="flex: 1; text-align: center; font-family: 'Instrument Sans', system-ui, sans-serif; font-size: 11px; color: #4B4740">2024</span><span style="flex: 1; text-align: center; font-family: 'Instrument Sans', system-ui, sans-serif; font-size: 11px; color: #4B4740">2025</span><span style="flex: 1; text-align: center; font-family: 'Instrument Sans', system-ui, sans-serif; font-size: 11px; color: #4B4740">2026</span></div></div></div>
+</figure>
+<figure style="margin: 0; display: flex; flex-direction: column; gap: 10px"><figcaption style="font-weight: 600">Projects submitted per year</figcaption>
+<div style="overflow-x: auto"><div style="min-width: 520px"><div style="height: 240px; display: flex; align-items: flex-end; gap: 8px; border-bottom: 2px solid #111111; padding-top: 24px">
+<div style="flex: 1; display: flex; flex-direction: column; align-items: center; justify-content: flex-end; gap: 4px; height: 100%"><span style="font-family: 'Instrument Sans', system-ui, sans-serif; font-size: 11px; font-weight: 700">546</span><div role="img" aria-label="2024: 546" style="width: 100%; height: 11%; background: {{accent}}; border: 2px solid #111111; border-bottom: none; box-sizing: border-box"></div></div>
+<div style="flex: 1; display: flex; flex-direction: column; align-items: center; justify-content: flex-end; gap: 4px; height: 100%"><span style="font-family: 'Instrument Sans', system-ui, sans-serif; font-size: 11px; font-weight: 700">4,701</span><div role="img" aria-label="2025: 4,701" style="width: 100%; height: 97%; background: {{accent}}; border: 2px solid #111111; border-bottom: none; box-sizing: border-box"></div></div>
+<div style="flex: 1; display: flex; flex-direction: column; align-items: center; justify-content: flex-end; gap: 4px; height: 100%"><span style="font-family: 'Instrument Sans', system-ui, sans-serif; font-size: 11px; font-weight: 700">4,836</span><div role="img" aria-label="2026: 4,836" style="width: 100%; height: 100%; background: repeating-linear-gradient(45deg, {{accent2}} 0 5px, #FAF7F0 5px 10px); border: 2px solid #111111; border-bottom: none; box-sizing: border-box"></div></div>
+</div>
+<div style="display: flex; gap: 8px; padding-top: 6px"><span style="flex: 1; text-align: center; font-family: 'Instrument Sans', system-ui, sans-serif; font-size: 11px; color: #4B4740">2024</span><span style="flex: 1; text-align: center; font-family: 'Instrument Sans', system-ui, sans-serif; font-size: 11px; color: #4B4740">2025</span><span style="flex: 1; text-align: center; font-family: 'Instrument Sans', system-ui, sans-serif; font-size: 11px; color: #4B4740">2026</span></div></div></div>
+</figure>
+</div>
+<div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(260px, 1fr)); gap: 14px">
+<div style="display: flex; flex-direction: column; gap: 6px; padding: 18px 20px; border: 2px solid #111111; border-radius: 22px; background: #FFFFFF">
+<span style="font-family: 'Instrument Sans', system-ui, sans-serif; font-size: 12px; font-weight: 700; letter-spacing: 0.08em; text-transform: uppercase; color: #111111">What we see</span>
+<span style="font-size: 16px; line-height: 1.55">By mid-October, 2026 already has more events and projects than all of 2025.</span>
+</div>
+<div style="display: flex; flex-direction: column; gap: 6px; padding: 18px 20px; border: 2px solid #111111; border-radius: 22px; background: #FFD23F">
+<span style="font-family: 'Instrument Sans', system-ui, sans-serif; font-size: 12px; font-weight: 700; letter-spacing: 0.08em; text-transform: uppercase; color: #111111">What it looks like</span>
+<span style="font-size: 16px; line-height: 1.55">In September 2026, Useless Projects 3.0 ran at 67 venues at once, with 3,419 students checking in.</span>
+</div>
+</div>
+</div>
+</section>
+<!-- STORY 5 · WHERE (3D landscape) -->
+<section style="background: #111111; color: #FAF7F0; border-bottom: 2px solid #111111">
+<div style="max-width: 1280px; margin: 0 auto; padding-left: clamp(20px, 4vw, 56px); padding-right: clamp(20px, 4vw, 56px); box-sizing: border-box; padding-top: clamp(64px, 8vw, 104px); padding-bottom: clamp(64px, 8vw, 104px); display: flex; flex-direction: column; gap: 30px">
+<div style="display: flex; flex-wrap: wrap; gap: 20px 48px; align-items: flex-end; justify-content: space-between">
+<div style="display: flex; flex-direction: column; gap: 18px; flex: 1 1 620px; min-width: 0">
+<span style="align-self: flex-start; display: inline-flex; align-items: center; gap: 8px; padding: 6px 14px; border-radius: 999px; font-weight: 700; font-size: 13px; letter-spacing: 0.04em; text-transform: uppercase; background: {{accent}}; color: #111111">Story 4 · Where</span>
+<h2 style="margin: 0; font-family: 'Bricolage Grotesque', 'Instrument Sans', system-ui, sans-serif; font-weight: 800; font-size: clamp(42px, 5.6vw, 84px); line-height: 1; letter-spacing: -0.035em; color: #FAF7F0">A movement with a <em style="color: {{accent}}">map.</em></h2>
+</div>
+<p style="margin: 0; font-size: 18px; line-height: 1.6; color: #D8D2C7; max-width: 420px">Active campus communities by district. Ernakulam leads; Wayanad has none yet.</p>
+</div>
+<div style="display: flex; flex-wrap: wrap; gap: 24px">
+<div style="flex: 999 1 560px; min-width: 0; display: flex; flex-direction: column; gap: 10px">
+<div style="position: relative; height: clamp(440px, 46vw, 600px); border: 2px solid #3A3733; border-radius: 22px; overflow: hidden; background-color: #161513">
+<canvas ref="{{setMap}}" role="img" aria-label="3D landscape of Kerala with a hexagonal column on each district. Column height shows the number of active campus communities: Ernakulam 17, Thrissur 10, Alappuzha, Kottayam and Thiruvananthapuram 6 each, Kozhikode and Malappuram 5, Kollam 4, Idukki, Palakkad and Pathanamthitta 3, Kannur and Kasaragod 2, Wayanad none. The table alongside has the same data." style="display: block; width: 100%; height: 100%; touch-action: pan-y"></canvas>
+<sc-if value="{{mapFailed}}" hint-placeholder-val="{{ false }}">
+<div style="position: absolute; inset: 0; display: flex; align-items: center; justify-content: center; padding: 24px; text-align: center; color: #B9B2A6">The 3D map needs WebGL. The table alongside has the same data.</div>
+</sc-if>
+<span style="position: absolute; left: 14px; top: 12px; background: #FAF7F0; color: #111111; border-radius: 14px; padding: 6px 12px; font-size: 14px; font-weight: 600">{{mapLabel}}</span>
+</div>
+<span style="font-size: 13px; color: #D8D2C7">Mapping: column height = 0.5 + 0.34 × number of active campuses (a fixed, linear scale). Column positions approximate each district’s location; the coastline is simplified.</span>
+</div>
+<div style="flex: 1 1 320px; min-width: 0; overflow-x: auto">
+<table style="width: 100%; border-collapse: collapse; font-size: 15px; color: #FAF7F0">
+<caption style="text-align: left; padding-bottom: 10px; font-weight: 600">Active campus communities by district, Oct 2026</caption>
+<thead><tr><th scope="col" style="text-align: left; padding: 8px 0; border-bottom: 2px solid #FAF7F0">District</th><th scope="col" style="text-align: right; padding: 8px 0; border-bottom: 2px solid #FAF7F0">Campuses</th></tr></thead>
+<tbody>
+<tr><td style="padding: 7px 0; border-bottom: 1px solid #3A3733">Ernakulam</td><td style="padding: 7px 0; border-bottom: 1px solid #3A3733; text-align: right; font-family: 'Instrument Sans', system-ui, sans-serif">17</td></tr>
+<tr><td style="padding: 7px 0; border-bottom: 1px solid #3A3733">Thrissur</td><td style="padding: 7px 0; border-bottom: 1px solid #3A3733; text-align: right; font-family: 'Instrument Sans', system-ui, sans-serif">10</td></tr>
+<tr><td style="padding: 7px 0; border-bottom: 1px solid #3A3733">Alappuzha</td><td style="padding: 7px 0; border-bottom: 1px solid #3A3733; text-align: right; font-family: 'Instrument Sans', system-ui, sans-serif">6</td></tr>
+<tr><td style="padding: 7px 0; border-bottom: 1px solid #3A3733">Kottayam</td><td style="padding: 7px 0; border-bottom: 1px solid #3A3733; text-align: right; font-family: 'Instrument Sans', system-ui, sans-serif">6</td></tr>
+<tr><td style="padding: 7px 0; border-bottom: 1px solid #3A3733">Thiruvananthapuram</td><td style="padding: 7px 0; border-bottom: 1px solid #3A3733; text-align: right; font-family: 'Instrument Sans', system-ui, sans-serif">6</td></tr>
+<tr><td style="padding: 7px 0; border-bottom: 1px solid #3A3733">Kozhikode</td><td style="padding: 7px 0; border-bottom: 1px solid #3A3733; text-align: right; font-family: 'Instrument Sans', system-ui, sans-serif">5</td></tr>
+<tr><td style="padding: 7px 0; border-bottom: 1px solid #3A3733">Malappuram</td><td style="padding: 7px 0; border-bottom: 1px solid #3A3733; text-align: right; font-family: 'Instrument Sans', system-ui, sans-serif">5</td></tr>
+<tr><td style="padding: 7px 0; border-bottom: 1px solid #3A3733">Kollam</td><td style="padding: 7px 0; border-bottom: 1px solid #3A3733; text-align: right; font-family: 'Instrument Sans', system-ui, sans-serif">4</td></tr>
+<tr><td style="padding: 7px 0; border-bottom: 1px solid #3A3733">Idukki</td><td style="padding: 7px 0; border-bottom: 1px solid #3A3733; text-align: right; font-family: 'Instrument Sans', system-ui, sans-serif">3</td></tr>
+<tr><td style="padding: 7px 0; border-bottom: 1px solid #3A3733">Palakkad</td><td style="padding: 7px 0; border-bottom: 1px solid #3A3733; text-align: right; font-family: 'Instrument Sans', system-ui, sans-serif">3</td></tr>
+<tr><td style="padding: 7px 0; border-bottom: 1px solid #3A3733">Pathanamthitta</td><td style="padding: 7px 0; border-bottom: 1px solid #3A3733; text-align: right; font-family: 'Instrument Sans', system-ui, sans-serif">3</td></tr>
+<tr><td style="padding: 7px 0; border-bottom: 1px solid #3A3733">Kannur</td><td style="padding: 7px 0; border-bottom: 1px solid #3A3733; text-align: right; font-family: 'Instrument Sans', system-ui, sans-serif">2</td></tr>
+<tr><td style="padding: 7px 0; border-bottom: 1px solid #3A3733">Kasaragod</td><td style="padding: 7px 0; border-bottom: 1px solid #3A3733; text-align: right; font-family: 'Instrument Sans', system-ui, sans-serif">2</td></tr>
+<tr><td style="padding: 7px 0; border-bottom: 1px solid #3A3733">Wayanad</td><td style="padding: 7px 0; border-bottom: 1px solid #3A3733; text-align: right; font-family: 'Instrument Sans', system-ui, sans-serif">0</td></tr>
+</tbody>
+</table>
+</div>
+</div>
+</div>
+</section>
+<section style="border-bottom: 2px solid #111111">
+<div style="max-width: 1280px; margin: 0 auto; padding-left: clamp(20px, 4vw, 56px); padding-right: clamp(20px, 4vw, 56px); box-sizing: border-box; padding-top: clamp(64px, 8vw, 104px); padding-bottom: clamp(64px, 8vw, 104px); display: flex; flex-direction: column; gap: 30px">
+<div style="display: flex; flex-wrap: wrap; gap: 20px 48px; align-items: flex-end; justify-content: space-between">
+<div style="display: flex; flex-direction: column; gap: 18px; flex: 1 1 620px; min-width: 0">
+<span style="align-self: flex-start; display: inline-flex; align-items: center; gap: 8px; padding: 6px 14px; border-radius: 999px; font-weight: 700; font-size: 13px; letter-spacing: 0.04em; text-transform: uppercase; background: #111111; color: #FAF7F0">Story 5 · Opportunities</span>
+<h2 style="margin: 0; font-family: 'Bricolage Grotesque', 'Instrument Sans', system-ui, sans-serif; font-weight: 800; font-size: clamp(42px, 5.6vw, 84px); line-height: 1; letter-spacing: -0.035em; color: #111111">Doors <em style="font-style: normal; background: #FFD23F; color: #111111; padding: 0 0.18em; border-radius: 0.18em; box-decoration-break: clone; -webkit-box-decoration-break: clone">opened.</em></h2>
+</div>
+</div>
+<figure style="margin: 0; display: flex; flex-direction: column; gap: 12px; border-top: 2px solid #111111; padding-top: 16px">
+<figcaption style="font-weight: 700; font-size: 16px">Opportunities shared on the platform, by kind</figcaption>
+<div style="overflow-x: auto"><div style="min-width: 460px; display: flex; flex-direction: column; gap: 10px">
+<div style="display: grid; grid-template-columns: minmax(150px, 220px) 1fr minmax(70px, auto); gap: 12px; align-items: center">
+<span style="font-size: 15px; line-height: 1.3">Fellowships</span>
+<div style="height: 26px; background: #EAE3D3; border: 2px solid #111111; border-radius: 3px; overflow: hidden"><div style="width: 100%; height: 100%; background: {{accent}}"></div></div>
+<span style="font-family: 'Instrument Sans', system-ui, sans-serif; font-size: 14px; font-weight: 700; text-align: right">46</span>
+</div>
+<div style="display: grid; grid-template-columns: minmax(150px, 220px) 1fr minmax(70px, auto); gap: 12px; align-items: center">
+<span style="font-size: 15px; line-height: 1.3">Jobs</span>
+<div style="height: 26px; background: #EAE3D3; border: 2px solid #111111; border-radius: 3px; overflow: hidden"><div style="width: 80%; height: 100%; background: {{accent}}"></div></div>
+<span style="font-family: 'Instrument Sans', system-ui, sans-serif; font-size: 14px; font-weight: 700; text-align: right">37</span>
+</div>
+<div style="display: grid; grid-template-columns: minmax(150px, 220px) 1fr minmax(70px, auto); gap: 12px; align-items: center">
+<span style="font-size: 15px; line-height: 1.3">Internships</span>
+<div style="height: 26px; background: #EAE3D3; border: 2px solid #111111; border-radius: 3px; overflow: hidden"><div style="width: 74%; height: 100%; background: {{accent}}"></div></div>
+<span style="font-family: 'Instrument Sans', system-ui, sans-serif; font-size: 14px; font-weight: 700; text-align: right">34</span>
+</div>
+<div style="display: grid; grid-template-columns: minmax(150px, 220px) 1fr minmax(70px, auto); gap: 12px; align-items: center">
+<span style="font-size: 15px; line-height: 1.3">Volunteering roles</span>
+<div style="height: 26px; background: #EAE3D3; border: 2px solid #111111; border-radius: 3px; overflow: hidden"><div style="width: 72%; height: 100%; background: {{accent}}"></div></div>
+<span style="font-family: 'Instrument Sans', system-ui, sans-serif; font-size: 14px; font-weight: 700; text-align: right">33</span>
+</div>
+</div></div>
+</figure>
+<div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(260px, 1fr)); gap: 14px">
+<div style="display: flex; flex-direction: column; gap: 6px; padding: 18px 20px; border: 2px solid #111111; border-radius: 22px; background: #FFFFFF">
+<span style="font-family: 'Instrument Sans', system-ui, sans-serif; font-size: 12px; font-weight: 700; letter-spacing: 0.08em; text-transform: uppercase; color: #111111">What we see</span>
+<span style="font-size: 16px; line-height: 1.55">151 fellowships, jobs, internships and volunteering roles have been shared with the community.</span>
+</div>
+<div style="display: flex; flex-direction: column; gap: 6px; padding: 18px 20px; border: 2px solid #111111; border-radius: 22px; background: #FFD23F">
+<span style="font-family: 'Instrument Sans', system-ui, sans-serif; font-size: 12px; font-weight: 700; letter-spacing: 0.08em; text-transform: uppercase; color: #111111">What it looks like</span>
+<span style="font-size: 16px; line-height: 1.55">Listings range from local roles in Kozhikode to the Build for Bharat Fellowship and international scholarships.</span>
+</div>
+</div>
+</div>
+</section>
+<!-- EVENTS TEASER -->
+<section style="background: #FAF7F0; border-bottom: 2px solid #111111">
+<div style="max-width: 1280px; margin: 0 auto; padding-left: clamp(20px, 4vw, 56px); padding-right: clamp(20px, 4vw, 56px); box-sizing: border-box; padding-top: clamp(56px, 7vw, 96px); padding-bottom: clamp(56px, 7vw, 96px); display: flex; flex-wrap: wrap; gap: 32px 64px; align-items: center">
+<div style="flex: 1 1 520px; min-width: 0; display: flex; flex-direction: column; gap: 16px">
+<h2 style="margin: 0; font-family: 'Bricolage Grotesque', 'Instrument Sans', system-ui, sans-serif; font-weight: 800; font-size: clamp(38px, 4.6vw, 68px); line-height: 1; letter-spacing: -0.035em; color: #111111">Every flagship event <em style="font-style: normal; background: #FFD23F; color: #111111; padding: 0 0.18em; border-radius: 0.18em; box-decoration-break: clone; -webkit-box-decoration-break: clone">leaves a record.</em></h2>
+<p style="margin: 0; font-size: 18px; line-height: 1.6; color: #2C2925; max-width: 640px">Useless Projects, Tink-Her-Hack and LAYOVER each have a permanent page: who came, what they built and what happened afterwards, with participation kept separate from outcomes.</p>
+</div>
+<a href="major-events.html" style="display: inline-flex; align-items: center; gap: 10px; min-height: 52px; padding: 0 26px; border-radius: 999px; font-weight: 700; font-size: 16px; box-sizing: border-box; border: 2px solid #111111; background: #111111; color: #FAF7F0; box-shadow: 4px 4px 0 {{accent}}">Open the events archive →</a>
+</div>
+</section>
+<footer style="background: #111111; color: #CFC8BC">
+<div style="max-width: 1280px; margin: 0 auto; padding-left: clamp(20px, 4vw, 56px); padding-right: clamp(20px, 4vw, 56px); box-sizing: border-box; padding-top: 64px; padding-bottom: 36px; display: flex; flex-wrap: wrap; gap: 48px; justify-content: space-between">
+<div style="flex: 1 1 300px; max-width: 400px; display: flex; flex-direction: column; gap: 14px">
+<span style="font-family: 'Bricolage Grotesque', 'Instrument Sans', system-ui, sans-serif; font-weight: 800; font-size: 44px; line-height: 1; color: #FAF7F0">tinkerhub</span>
+<span style="font-size: 15px; line-height: 1.6">TinkerHub Foundation is a non-profit, student-focused learning community in Kerala. Students learn by building real things, together, for free.</span>
+<span style="font-size: 14px; color: #9C958A">TinkerSpace Kochi: Kalamassery, near CUSAT · TinkerSpace Kozhikode: Medical College P.O.</span>
+</div>
+<div style="display: flex; flex-wrap: wrap; gap: 40px">
+<div style="display: flex; flex-direction: column; gap: 10px; min-width: 150px">
+<span style="font-family: 'Instrument Sans', system-ui, sans-serif; font-size: 12px; font-weight: 700; letter-spacing: 0.08em; text-transform: uppercase; color: #9C958A">Explore</span>
+<a href="programs.html" style="color: #FAF7F0; font-size: 15px">Programs</a>
+<a href="events-community.html" style="color: #FAF7F0; font-size: 15px">Opportunities</a>
+<a href="events-community.html#campuses" style="color: #FAF7F0; font-size: 15px">Campus communities</a>
+<a href="index.html#stories" style="color: #FAF7F0; font-size: 15px">Stories</a>
+</div>
+<div style="display: flex; flex-direction: column; gap: 10px; min-width: 150px">
+<span style="font-family: 'Instrument Sans', system-ui, sans-serif; font-size: 12px; font-weight: 700; letter-spacing: 0.08em; text-transform: uppercase; color: #9C958A">Our work</span>
+<a href="impact.html" style="color: #FAF7F0; font-size: 15px">Impact</a>
+<a href="major-events.html" style="color: #FAF7F0; font-size: 15px">Major events</a>
+<a href="reports.html" style="color: #FAF7F0; font-size: 15px">Reports</a>
+<a href="reports.html#newsletters" style="color: #FAF7F0; font-size: 15px">Newsletter</a>
+</div>
+<div style="display: flex; flex-direction: column; gap: 10px; min-width: 150px">
+<span style="font-family: 'Instrument Sans', system-ui, sans-serif; font-size: 12px; font-weight: 700; letter-spacing: 0.08em; text-transform: uppercase; color: #9C958A">Get involved</span>
+<a href="partner.html" style="color: #FAF7F0; font-size: 15px">Partner with us</a>
+<a href="https://tinkerhub.org/donate" style="color: #FAF7F0; font-size: 15px">Donate</a>
+<a href="https://tinkerhub-foundation.notion.site/Volunteer-with-TinkerHub-198bd5ba1a8680358d99fe60055bc892" style="color: #FAF7F0; font-size: 15px">Volunteer</a>
+<a href="https://airtable.com/appdFV7VvqOIlQ36v/shrKV8t5K5JgtfUOj" style="color: #FAF7F0; font-size: 15px">Start a campus</a>
+</div>
+<div style="display: flex; flex-direction: column; gap: 10px; min-width: 150px">
+<span style="font-family: 'Instrument Sans', system-ui, sans-serif; font-size: 12px; font-weight: 700; letter-spacing: 0.08em; text-transform: uppercase; color: #9C958A">Read</span>
+<a href="https://medium.com/tinkerhub" style="color: #FAF7F0; font-size: 15px">Stories on Medium</a>
+<a href="https://tinkerhub.org/events" style="color: #FAF7F0; font-size: 15px">Live events calendar</a>
+<a href="https://tinkerhub.org" style="color: #FAF7F0; font-size: 15px">tinkerhub.org</a>
+</div>
+</div>
+</div>
+<div style="max-width: 1280px; margin: 0 auto; padding-left: clamp(20px, 4vw, 56px); padding-right: clamp(20px, 4vw, 56px); box-sizing: border-box; padding-top: 18px; padding-bottom: 30px; border-top: 1px solid #2E2C29; display: flex; flex-wrap: wrap; gap: 8px 24px; justify-content: space-between; font-size: 13px; color: #9C958A">
+<span>© 2026 TinkerHub Foundation</span>
+<span>Made with care in Kerala</span>
+</div>
+</footer>
+</div>
+</template>
+<script>
+const TK = {
+  reduce() { try { return !!(window.matchMedia && window.matchMedia("(prefers-reduced-motion: reduce)").matches); } catch (e) { return false; } },
+  low() { const c = navigator.hardwareConcurrency || 8; const m = navigator.deviceMemory || 8; return c <= 4 || m <= 4 || (window.innerWidth || 1200) < 640; },
+  whenThree(owner, cb, n) {
+    n = n || 0;
+    if (owner.disposed) return;
+    if (window.THREE) { cb(window.THREE); return; }
+    if (n > 120) { cb(null); return; }
+    owner.timers.push(setTimeout(() => TK.whenThree(owner, cb, n + 1), 120));
+  },
+  lazy(owner, el, fn) {
+    if (!el) return;
+    if (!window.IntersectionObserver) { fn(); return; }
+    const io = new IntersectionObserver((es) => { if (es.some((e) => e.isIntersecting)) { io.disconnect(); fn(); } }, { rootMargin: "300px 0px" });
+    io.observe(el);
+    owner.disposers.push(() => io.disconnect());
+  },
+  stage(T, canvas, owner, fov) {
+    const low = TK.low();
+    const renderer = new T.WebGLRenderer({ canvas: canvas, antialias: !low, alpha: true, powerPreference: "low-power" });
+    renderer.setPixelRatio(Math.min(window.devicePixelRatio || 1, low ? 1.25 : 1.75));
+    renderer.setClearColor(0x000000, 0);
+    const scene = new T.Scene();
+    const camera = new T.PerspectiveCamera(fov || 35, 1, 0.1, 300);
+    scene.add(new T.HemisphereLight(0xffffff, 0x8f8a80, 0.9));
+    const sun = new T.DirectionalLight(0xffffff, 0.85);
+    sun.position.set(5, 10, 7);
+    scene.add(sun);
+    const st = { T: T, renderer: renderer, scene: scene, camera: camera, canvas: canvas, visible: true, update: null, raf: 0, low: low, reduce: TK.reduce(), clock: new T.Clock(), acc: [], acc2: [], ink: new T.LineBasicMaterial({ color: 0x111111 }) };
+    const resize = () => {
+      const w = canvas.clientWidth || 400, h = canvas.clientHeight || 400;
+      renderer.setSize(w, h, false);
+      camera.aspect = w / h;
+      camera.updateProjectionMatrix();
+    };
+    resize();
+    let ro = null, io = null;
+    if (window.ResizeObserver) { ro = new ResizeObserver(resize); ro.observe(canvas); }
+    if (window.IntersectionObserver) { io = new IntersectionObserver((es) => { st.visible = es[0].isIntersecting; }); io.observe(canvas); }
+    const cA = new T.Color(), cB = new T.Color();
+    const loop = () => {
+      if (owner.disposed) return;
+      st.raf = requestAnimationFrame(loop);
+      const dt = Math.min(st.clock.getDelta(), 0.05);
+      if (!st.visible) return;
+      cA.set(owner.props.accent ?? "#FF5A36");
+      cB.set(owner.props.accent2 ?? "#2346C8");
+      st.acc.forEach((m) => m.color.copy(cA));
+      st.acc2.forEach((m) => m.color.copy(cB));
+      if (st.update) st.update(dt, st.clock.elapsedTime);
+      renderer.render(scene, camera);
+    };
+    st.start = () => loop();
+    owner.disposers.push(() => {
+      cancelAnimationFrame(st.raf);
+      if (ro) ro.disconnect();
+      if (io) io.disconnect();
+      scene.traverse((o) => {
+        if (o.geometry) o.geometry.dispose();
+        if (o.material) (Array.isArray(o.material) ? o.material : [o.material]).forEach((m) => m.dispose());
+      });
+      renderer.dispose();
+    });
+    return st;
+  },
+  mat(st, color, role) {
+    const m = new st.T.MeshToonMaterial({ color: color });
+    if (role === "a") st.acc.push(m);
+    if (role === "b") st.acc2.push(m);
+    return m;
+  },
+  solid(st, geo, color, role) {
+    const m = new st.T.Mesh(geo, TK.mat(st, color, role));
+    m.add(new st.T.LineSegments(new st.T.EdgesGeometry(geo, 25), st.ink));
+    return m;
+  },
+  wire(st, geo, role) {
+    const lm = new st.T.LineBasicMaterial({ color: 0x2346c8, transparent: true, opacity: 1 });
+    if (role === "b") st.acc2.push(lm);
+    if (role === "a") st.acc.push(lm);
+    return new st.T.LineSegments(new st.T.EdgesGeometry(geo, 1), lm);
+  },
+  pointer(owner, el, h) {
+    const rel = (e) => { const r = el.getBoundingClientRect(); return { x: ((e.clientX - r.left) / r.width) * 2 - 1, y: -((e.clientY - r.top) / r.height) * 2 + 1, cx: e.clientX }; };
+    const mv = (e) => h.move && h.move(rel(e), e);
+    const dn = (e) => h.down && h.down(rel(e), e);
+    const lv = (e) => h.leave && h.leave(e);
+    const up = (e) => h.up && h.up(e);
+    el.addEventListener("pointermove", mv);
+    el.addEventListener("pointerdown", dn);
+    el.addEventListener("pointerleave", lv);
+    window.addEventListener("pointerup", up);
+    owner.disposers.push(() => { el.removeEventListener("pointermove", mv); el.removeEventListener("pointerdown", dn); el.removeEventListener("pointerleave", lv); window.removeEventListener("pointerup", up); });
+  },
+  gear(st, r, teeth, depth, color, role) {
+    const T = st.T, sh = new T.Shape(), step = Math.PI * 2 / teeth;
+    for (let i = 0; i < teeth; i++) {
+      const a = i * step;
+      [[r, a], [r + 0.3, a + step * 0.15], [r + 0.3, a + step * 0.45], [r, a + step * 0.6]].forEach((q, k) => {
+        const x = Math.cos(q[1]) * q[0], y = Math.sin(q[1]) * q[0];
+        if (i === 0 && k === 0) sh.moveTo(x, y); else sh.lineTo(x, y);
+      });
+    }
+    sh.closePath();
+    const hole = new T.Path();
+    hole.absarc(0, 0, r * 0.36, 0, Math.PI * 2, true);
+    sh.holes.push(hole);
+    const g = new T.ExtrudeGeometry(sh, { depth: depth, bevelEnabled: false, curveSegments: 12 });
+    g.translate(0, 0, -depth / 2);
+    return TK.solid(st, g, color, role);
+  },
+  robot(st) {
+    const T = st.T, g = new T.Group();
+    const body = TK.solid(st, new T.BoxGeometry(0.9, 0.85, 0.7), 0xf5f1e8); body.position.y = 0.95; g.add(body);
+    const head = TK.solid(st, new T.BoxGeometry(0.66, 0.52, 0.54), 0x2346c8, "b"); head.position.y = 1.68; g.add(head);
+    [-0.15, 0.15].forEach((x) => { const e = TK.solid(st, new T.BoxGeometry(0.12, 0.1, 0.05), 0xff5a36, "a"); e.position.set(x, 1.72, 0.28); g.add(e); });
+    [-0.62, 0.62].forEach((x) => { const a = TK.solid(st, new T.BoxGeometry(0.22, 0.7, 0.22), 0xff5a36, "a"); a.position.set(x, 1.0, 0); g.add(a); });
+    [-0.22, 0.22].forEach((x) => { const l = TK.solid(st, new T.BoxGeometry(0.26, 0.55, 0.26), 0x9a958c); l.position.set(x, 0.28, 0); g.add(l); });
+    const ant = TK.solid(st, new T.CylinderGeometry(0.04, 0.04, 0.35, 6), 0x111111); ant.position.y = 2.1; g.add(ant);
+    const tip = TK.solid(st, new T.SphereGeometry(0.1, 10, 8), 0xffe15a); tip.position.y = 2.32; g.add(tip);
+    return g;
+  },
+  board(st) {
+    const T = st.T, g = new T.Group();
+    g.add(TK.solid(st, new T.BoxGeometry(2.0, 0.12, 1.3), 0x2346c8, "b"));
+    const chip = TK.solid(st, new T.BoxGeometry(0.6, 0.12, 0.6), 0x111111); chip.position.set(-0.3, 0.12, 0); g.add(chip);
+    const pinGeo = new T.BoxGeometry(0.08, 0.16, 0.08), pinMat = new T.MeshToonMaterial({ color: 0xf5f1e8 });
+    for (let i = 0; i < 7; i++) { const pin = new T.Mesh(pinGeo, pinMat); pin.position.set(-0.85 + i * 0.27, 0.13, 0.5); g.add(pin); }
+    const led = TK.solid(st, new T.CylinderGeometry(0.12, 0.12, 0.28, 10), 0xff5a36, "a"); led.position.set(0.6, 0.2, -0.2); g.add(led);
+    return g;
+  },
+  lerp(a, b, k) { return a + (b - a) * k; },
+  ease(t) { t = Math.max(0, Math.min(1, t)); return 1 - Math.pow(1 - t, 3); }
+};
+
+class Component extends DCLogic {
+  constructor(props) {
+    super(props);
+    this.state = { mapHover: null, mapFailed: false };
+    this.disposers = []; this.timers = [];
+    this.setMap = (el) => { this.mapEl = el; };
+  }
+  componentDidMount() {
+    TK.whenThree(this, (T) => {
+      if (!T) { this.setState({ mapFailed: true }); return; }
+      TK.lazy(this, this.mapEl, () => { try { this.initMap(T); } catch (e) { this.setState({ mapFailed: true }); } });
+    });
+  }
+  componentWillUnmount() {
+    this.disposed = true;
+    this.timers.forEach((t) => clearTimeout(t));
+    this.disposers.forEach((f) => { try { f(); } catch (e) {} });
+  }
+  initMap(T) {
+    if (!this.mapEl) return;
+    const st = TK.stage(T, this.mapEl, this, 40);
+    const { scene, camera } = st;
+    camera.position.set(0, 29, 12);
+    camera.lookAt(1.2, 1, 1.2);
+    const root = new T.Group();
+    scene.add(root);
+    const K = 4.2;
+    const toXZ = (lon, lat) => [(lon - 76.1) * K, -(lat - 10.5) * K];
+    const border = [[74.95, 12.75], [75.15, 12.2], [75.35, 11.8], [75.65, 11.4], [75.85, 11.0], [76.0, 10.6], [76.1, 10.2], [76.2, 9.9], [76.3, 9.5], [76.4, 9.1], [76.55, 8.8], [76.85, 8.45], [77.1, 8.25], [77.25, 8.5], [77.2, 9.0], [77.3, 9.5], [77.25, 9.9], [77.2, 10.2], [76.85, 10.45], [76.9, 10.8], [76.7, 11.2], [76.4, 11.6], [76.0, 11.95], [75.6, 12.3], [75.3, 12.8]];
+    const sh = new T.Shape();
+    border.forEach((b, i) => { const q = toXZ(b[0], b[1]); if (i === 0) sh.moveTo(q[0], -q[1]); else sh.lineTo(q[0], -q[1]); });
+    sh.closePath();
+    const landGeo = new T.ExtrudeGeometry(sh, { depth: 0.35, bevelEnabled: false });
+    const land = new T.Mesh(landGeo, new T.MeshToonMaterial({ color: 0xf5f1e8 }));
+    land.add(new T.LineSegments(new T.EdgesGeometry(landGeo, 20), st.ink));
+    land.rotation.x = -Math.PI / 2;
+    root.add(land);
+    const sea = new T.Mesh(new T.PlaneGeometry(70, 70), new T.MeshBasicMaterial({ color: 0x1e1d1b }));
+    sea.rotation.x = -Math.PI / 2; sea.position.y = -0.02;
+    root.add(sea);
+    const seaGrid = new T.GridHelper(70, 70, 0x2c2a27, 0x2c2a27);
+    seaGrid.position.y = -0.01;
+    root.add(seaGrid);
+    const D = [["Kasaragod", 75.15, 12.45, 2], ["Kannur", 75.45, 11.95, 2], ["Wayanad", 76.1, 11.65, 0], ["Kozhikode", 75.85, 11.3, 5], ["Malappuram", 76.1, 11.05, 5], ["Palakkad", 76.6, 10.8, 3], ["Thrissur", 76.25, 10.5, 10], ["Ernakulam", 76.4, 10.05, 17], ["Idukki", 76.95, 9.85, 3], ["Kottayam", 76.65, 9.6, 6], ["Alappuzha", 76.45, 9.4, 6], ["Pathanamthitta", 76.85, 9.25, 3], ["Kollam", 76.7, 8.95, 4], ["Thiruvananthapuram", 76.95, 8.55, 6]];
+    const cols = [];
+    D.forEach((d) => {
+      const q = toXZ(d[1], d[2]);
+      const h = d[3] ? 0.5 + d[3] * 0.34 : 0.6;
+      const geo = new T.CylinderGeometry(0.46, 0.46, h, 6);
+      geo.translate(0, h / 2, 0);
+      let m;
+      if (d[3]) {
+        m = TK.solid(st, geo, 0xff5a36, "a");
+      } else {
+        const lm = new T.LineBasicMaterial({ color: 0x2346c8 });
+        st.acc2.push(lm);
+        m = new T.Mesh(geo, new T.MeshBasicMaterial({ visible: false }));
+        m.add(new T.LineSegments(new T.EdgesGeometry(geo, 20), lm));
+      }
+      m.position.set(q[0], 0.35, q[1]);
+      m.scale.y = st.reduce ? 1 : 0.001;
+      m.userData = { name: d[0], count: d[3] };
+      root.add(m);
+      cols.push(m);
+    });
+    const ray = new T.Raycaster();
+    const ndc = new T.Vector2();
+    let hovered = null, dragging = false, lastX = 0, spin = 0;
+    TK.pointer(this, this.mapEl, {
+      move: (r, e) => {
+        if (dragging) { spin += (e.clientX - lastX) * 0.006; lastX = e.clientX; }
+        ndc.set(r.x, r.y);
+        ray.setFromCamera(ndc, camera);
+        const hit = ray.intersectObjects(cols, false);
+        const m = hit.length ? hit[0].object : null;
+        if (m !== hovered) { hovered = m; this.mapEl.style.cursor = m ? "pointer" : "grab"; this.setState({ mapHover: m ? m.userData : null }); }
+      },
+      down: (r, e) => { dragging = true; lastX = e.clientX; },
+      up: () => { dragging = false; }
+    });
+    let grown = 0;
+    st.update = (dt, t) => {
+      grown += dt;
+      cols.forEach((c, i) => {
+        const g = st.reduce ? 1 : TK.ease((grown - i * 0.08) / 0.7);
+        c.scale.y = Math.max(g * (c === hovered ? 1.08 : 1), 0.001);
+      });
+      if (!dragging && !st.reduce) spin *= 0.98;
+      const sway = st.reduce ? 0 : Math.sin(t * 0.22) * 0.12;
+      root.rotation.y += ((sway + spin) - root.rotation.y) * 0.08;
+    };
+    st.start();
+  }
+  renderVals() {
+    const h = this.state.mapHover;
+    return {
+      accent: this.props.accent ?? "#FF5A36",
+      accent2: this.props.accent2 ?? "#2346C8",
+      setMap: this.setMap, mapFailed: this.state.mapFailed,
+      mapLabel: h ? (h.count ? h.name + " · " + h.count + " active campuses" : h.name + " · no campus yet") : "Hover or tap a district"
+    };
+  }
+}
+TinkerRuntime.mount(Component, document.getElementById("page"), document.getElementById("app"), {"accent": "#FF5A36", "accent2": "#2346C8"});
+</script>
+</body>
+</html>

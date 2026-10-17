@@ -1,0 +1,153 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>TinkerHub site standard</title>
+<meta name="description" content="TinkerHub is a free, student-run learning community in Kerala where students learn tech by building real projects together.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Bricolage+Grotesque:opsz,wght@12..96,500..800&amp;family=Instrument+Sans:wght@400..700&amp;display=swap" rel="stylesheet">
+<style>
+body{margin:0;background:#FAF7F0}
+a{color:inherit;text-decoration:none}
+a:hover{opacity:.86}
+input::placeholder,textarea::placeholder{color:#77716A}
+a:focus-visible,button:focus-visible,input:focus-visible,select:focus-visible,textarea:focus-visible{outline:3px solid #2346C8;outline-offset:3px}
+.tv-tick{animation:tvtick 46s linear infinite}
+@keyframes tvtick{from{transform:translateX(0)}to{transform:translateX(-50%)}}
+@media (prefers-reduced-motion: reduce){.tv-tick{animation:none}}
+</style>
+<script src="../vendor/preact.umd.js"></script>
+<script src="../vendor/three.min.js"></script>
+<script src="../js/tinker-runtime.js"></script>
+</head>
+<body>
+<div id="app"></div>
+<template id="page">
+<div style="font-family: 'Instrument Sans', system-ui, -apple-system, 'Segoe UI', sans-serif; color: #111111; background: #FAF7F0; width: 100%; overflow: hidden; font-size: 17px; line-height: 1.55">
+<section style="background-color: #FFF1DC; border-bottom: 2px solid #111111">
+<div style="max-width: 1280px; margin: 0 auto; padding-left: clamp(20px, 4vw, 56px); padding-right: clamp(20px, 4vw, 56px); box-sizing: border-box; padding-top: 64px; padding-bottom: 56px; display: flex; flex-direction: column; gap: 16px">
+<span style="font-family: 'Instrument Sans', system-ui, sans-serif; font-size: 12px; font-weight: 700; letter-spacing: 0.08em; text-transform: uppercase; color: {{accent2}}">Internal reference · not a public page</span>
+<h1 style="margin: 0; font-family: 'Bricolage Grotesque', 'Instrument Sans', system-ui, sans-serif; font-weight: 800; font-size: clamp(52px, 6.4vw, 100px); line-height: 0.95; letter-spacing: -0.04em">The TinkerHub <em style="font-style: normal; background: #FFD23F; color: #111111; padding: 0 0.18em; border-radius: 0.18em; box-decoration-break: clone; -webkit-box-decoration-break: clone">site standard.</em></h1>
+<p style="margin: 0; font-size: 19px; line-height: 1.6; color: #2C2925; max-width: 760px">One set of rules for every page, so the site stays consistent as the team adds programs, events and reports. If something new does not fit these rules, change the rules here first.</p>
+</div>
+</section>
+<section style="border-bottom: 2px solid #111111">
+<div style="max-width: 1280px; margin: 0 auto; padding-left: clamp(20px, 4vw, 56px); padding-right: clamp(20px, 4vw, 56px); box-sizing: border-box; padding-top: 56px; padding-bottom: 56px; display: flex; flex-wrap: wrap; gap: 28px 56px">
+<div style="flex: 1 1 280px; max-width: 340px; display: flex; flex-direction: column; gap: 10px"><span style="font-family: 'Instrument Sans', system-ui, sans-serif; font-size: 12px; font-weight: 700; letter-spacing: 0.08em; text-transform: uppercase; color: {{accent2}}">01</span>
+<h3 style="margin: 0; font-family: 'Bricolage Grotesque', 'Instrument Sans', system-ui, sans-serif; font-weight: 800; font-size: 36px; line-height: 1.05; letter-spacing: -0.02em; color: #111111">Program taxonomy</h3>
+</div>
+<div style="flex: 3 1 640px; min-width: 0; display: flex; flex-direction: column; gap: 14px">
+<p style="margin: 0; font-size: 16px; line-height: 1.6; color: #2C2925; max-width: 760px">TinkerHub’s official action plan, as published on tinkerhub.org, is the only way programs are grouped. Every program, event and opportunity is filed under exactly one track. Do not create new top-level programs.</p>
+<div style="border-bottom: 1px solid #D9D1C1"><div style="display: flex; flex-wrap: wrap; gap: 4px 24px; padding: 12px 0; border-top: 1px solid #D9D1C1"><span style="font-weight: 700; flex: 0 0 220px">01 · Learn &amp; Lead</span><span style="flex: 1 1 320px; font-size: 15px; line-height: 1.55">Peer-driven learning stations and mentor-guided projects. Students who learn go on to lead the next group. <span style="color: #4B4740">Includes: Learning programs, Campus communities, Study circles.</span></span></div>
+<div style="display: flex; flex-wrap: wrap; gap: 4px 24px; padding: 12px 0; border-top: 1px solid #D9D1C1"><span style="font-weight: 700; flex: 0 0 220px">02 · Build &amp; Innovate</span><span style="flex: 1 1 320px; font-size: 15px; line-height: 1.55">Turn ideas into working things through hands-on bootcamps and hackathons. <span style="color: #4B4740">Includes: Hackathons, Bootcamps, Useless Projects, Tink-Her-Hack.</span></span></div>
+<div style="display: flex; flex-wrap: wrap; gap: 4px 24px; padding: 12px 0; border-top: 1px solid #D9D1C1"><span style="font-weight: 700; flex: 0 0 220px">03 · Connect &amp; Grow</span><span style="flex: 1 1 320px; font-size: 15px; line-height: 1.55">Meet practitioners and fellow makers at meetups, talks and TinkerDays. <span style="color: #4B4740">Includes: AI Wednesdays, Maker Thursdays, Talks, TinkerDays.</span></span></div>
+<div style="display: flex; flex-wrap: wrap; gap: 4px 24px; padding: 12px 0; border-top: 1px solid #D9D1C1"><span style="font-weight: 700; flex: 0 0 220px">04 · Skill Up</span><span style="flex: 1 1 320px; font-size: 15px; line-height: 1.55">Training for careers, and internships, fellowships and jobs shared with the community. <span style="color: #4B4740">Includes: Opportunities board, Fellowships, Internships.</span></span></div>
+<div style="display: flex; flex-wrap: wrap; gap: 4px 24px; padding: 12px 0; border-top: 1px solid #D9D1C1"><span style="font-weight: 700; flex: 0 0 220px">05 · Tinker &amp; Shine</span><span style="flex: 1 1 320px; font-size: 15px; line-height: 1.55">Use maker spaces with real tools, and get recognised for what you build. <span style="color: #4B4740">Includes: TinkerSpace Kochi, TinkerSpace Kozhikode, Maker of the Month, Campus of the Month.</span></span></div>
+</div>
+</div>
+</div>
+</section>
+<section style="border-bottom: 2px solid #111111">
+<div style="max-width: 1280px; margin: 0 auto; padding-left: clamp(20px, 4vw, 56px); padding-right: clamp(20px, 4vw, 56px); box-sizing: border-box; padding-top: 56px; padding-bottom: 56px; display: flex; flex-wrap: wrap; gap: 28px 56px">
+<div style="flex: 1 1 280px; max-width: 340px; display: flex; flex-direction: column; gap: 10px"><span style="font-family: 'Instrument Sans', system-ui, sans-serif; font-size: 12px; font-weight: 700; letter-spacing: 0.08em; text-transform: uppercase; color: {{accent2}}">02</span>
+<h3 style="margin: 0; font-family: 'Bricolage Grotesque', 'Instrument Sans', system-ui, sans-serif; font-weight: 800; font-size: 36px; line-height: 1.05; letter-spacing: -0.02em; color: #111111">Pages and navigation</h3>
+</div>
+<div style="flex: 3 1 640px; min-width: 0; display: flex; flex-direction: column; gap: 14px">
+<div style="border-bottom: 1px solid #D9D1C1"><div style="display: flex; flex-wrap: wrap; gap: 4px 24px; padding: 12px 0; border-top: 1px solid #D9D1C1"><span style="font-weight: 700; flex: 0 0 220px">Home</span><span style="flex: 1 1 320px; font-size: 15px; line-height: 1.55">Story first: dark 3D hero, project ticker, featured projects, number band, five track cards, this week, two stories, partners, orange invitation.</span></div>
+<div style="display: flex; flex-wrap: wrap; gap: 4px 24px; padding: 12px 0; border-top: 1px solid #D9D1C1"><span style="font-weight: 700; flex: 0 0 220px">Programs</span><span style="flex: 1 1 320px; font-size: 15px; line-height: 1.55">The five tracks, the 3D workbench, and the campus-lead guide.</span></div>
+<div style="display: flex; flex-wrap: wrap; gap: 4px 24px; padding: 12px 0; border-top: 1px solid #D9D1C1"><span style="font-weight: 700; flex: 0 0 220px">Events &amp; Community</span><span style="flex: 1 1 320px; font-size: 15px; line-height: 1.55">What’s on, filtered by track; the campus finder and network.</span></div>
+<div style="display: flex; flex-wrap: wrap; gap: 4px 24px; padding: 12px 0; border-top: 1px solid #D9D1C1"><span style="font-weight: 700; flex: 0 0 220px">Impact</span><span style="flex: 1 1 320px; font-size: 15px; line-height: 1.55">Five short stories with charts and the Kerala map. Links to the events archive.</span></div>
+<div style="display: flex; flex-wrap: wrap; gap: 4px 24px; padding: 12px 0; border-top: 1px solid #D9D1C1"><span style="font-weight: 700; flex: 0 0 220px">Impact · Major events</span><span style="flex: 1 1 320px; font-size: 15px; line-height: 1.55">One record per flagship event: overview, reach, what happened, what changed, related links.</span></div>
+<div style="display: flex; flex-wrap: wrap; gap: 4px 24px; padding: 12px 0; border-top: 1px solid #D9D1C1"><span style="font-weight: 700; flex: 0 0 220px">Reports</span><span style="flex: 1 1 320px; font-size: 15px; line-height: 1.55">Publication archive and the Kolaambi newsletter.</span></div>
+<div style="display: flex; flex-wrap: wrap; gap: 4px 24px; padding: 12px 0; border-top: 1px solid #D9D1C1"><span style="font-weight: 700; flex: 0 0 220px">Partner with us</span><span style="flex: 1 1 320px; font-size: 15px; line-height: 1.55">Government, CSR and donor routes, quotable facts, contact.</span></div>
+</div>
+<p style="margin: 0; font-size: 15px; line-height: 1.6; color: #4B4740; max-width: 640px">Primary navigation holds these five links plus one action button. Nothing else goes in the main menu.</p>
+</div>
+</div>
+</section>
+<section style="border-bottom: 2px solid #111111">
+<div style="max-width: 1280px; margin: 0 auto; padding-left: clamp(20px, 4vw, 56px); padding-right: clamp(20px, 4vw, 56px); box-sizing: border-box; padding-top: 56px; padding-bottom: 56px; display: flex; flex-wrap: wrap; gap: 28px 56px">
+<div style="flex: 1 1 280px; max-width: 340px; display: flex; flex-direction: column; gap: 10px"><span style="font-family: 'Instrument Sans', system-ui, sans-serif; font-size: 12px; font-weight: 700; letter-spacing: 0.08em; text-transform: uppercase; color: {{accent2}}">03</span>
+<h3 style="margin: 0; font-family: 'Bricolage Grotesque', 'Instrument Sans', system-ui, sans-serif; font-weight: 800; font-size: 36px; line-height: 1.05; letter-spacing: -0.02em; color: #111111">Section template</h3>
+</div>
+<div style="flex: 3 1 640px; min-width: 0; display: flex; flex-direction: column; gap: 14px">
+<div style="border-bottom: 1px solid #D9D1C1"><div style="display: flex; flex-wrap: wrap; gap: 4px 24px; padding: 12px 0; border-top: 1px solid #D9D1C1"><span style="font-weight: 700; flex: 0 0 220px">Label</span><span style="flex: 1 1 320px; font-size: 15px; line-height: 1.55">One pill with the section name.</span></div>
+<div style="display: flex; flex-wrap: wrap; gap: 4px 24px; padding: 12px 0; border-top: 1px solid #D9D1C1"><span style="font-weight: 700; flex: 0 0 220px">Headline</span><span style="flex: 1 1 320px; font-size: 15px; line-height: 1.55">One idea, one yellow-highlighted word at most.</span></div>
+<div style="display: flex; flex-wrap: wrap; gap: 4px 24px; padding: 12px 0; border-top: 1px solid #D9D1C1"><span style="font-weight: 700; flex: 0 0 220px">Intro</span><span style="flex: 1 1 320px; font-size: 15px; line-height: 1.55">One or two plain-English sentences, max 420px wide.</span></div>
+<div style="display: flex; flex-wrap: wrap; gap: 4px 24px; padding: 12px 0; border-top: 1px solid #D9D1C1"><span style="font-weight: 700; flex: 0 0 220px">Content</span><span style="flex: 1 1 320px; font-size: 15px; line-height: 1.55">Vary the pattern from section to section: bento cards, number bands, tickers, tickets, lists. Never two of the same in a row.</span></div>
+<div style="display: flex; flex-wrap: wrap; gap: 4px 24px; padding: 12px 0; border-top: 1px solid #D9D1C1"><span style="font-weight: 700; flex: 0 0 220px">Action</span><span style="flex: 1 1 320px; font-size: 15px; line-height: 1.55">One primary button per section. Secondary links are ghost buttons or text links.</span></div>
+</div>
+</div>
+</div>
+</section>
+<section style="border-bottom: 2px solid #111111">
+<div style="max-width: 1280px; margin: 0 auto; padding-left: clamp(20px, 4vw, 56px); padding-right: clamp(20px, 4vw, 56px); box-sizing: border-box; padding-top: 56px; padding-bottom: 56px; display: flex; flex-wrap: wrap; gap: 28px 56px">
+<div style="flex: 1 1 280px; max-width: 340px; display: flex; flex-direction: column; gap: 10px"><span style="font-family: 'Instrument Sans', system-ui, sans-serif; font-size: 12px; font-weight: 700; letter-spacing: 0.08em; text-transform: uppercase; color: {{accent2}}">04</span>
+<h3 style="margin: 0; font-family: 'Bricolage Grotesque', 'Instrument Sans', system-ui, sans-serif; font-weight: 800; font-size: 36px; line-height: 1.05; letter-spacing: -0.02em; color: #111111">Type and colour</h3>
+</div>
+<div style="flex: 3 1 640px; min-width: 0; display: flex; flex-direction: column; gap: 14px">
+<div style="border-bottom: 1px solid #D9D1C1"><div style="display: flex; flex-wrap: wrap; gap: 4px 24px; padding: 12px 0; border-top: 1px solid #D9D1C1"><span style="font-weight: 700; flex: 0 0 220px">Display</span><span style="flex: 1 1 320px; font-size: 15px; line-height: 1.55">Bricolage Grotesque, extra bold, tight spacing.</span></div>
+<div style="display: flex; flex-wrap: wrap; gap: 4px 24px; padding: 12px 0; border-top: 1px solid #D9D1C1"><span style="font-weight: 700; flex: 0 0 220px">Body</span><span style="flex: 1 1 320px; font-size: 15px; line-height: 1.55">Instrument Sans, 15 to 19px, line height 1.55.</span></div>
+<div style="display: flex; flex-wrap: wrap; gap: 4px 24px; padding: 12px 0; border-top: 1px solid #D9D1C1"><span style="font-weight: 700; flex: 0 0 220px">Labels</span><span style="flex: 1 1 320px; font-size: 15px; line-height: 1.55">Instrument Sans bold, 12 to 13px, uppercase pills.</span></div>
+<div style="display: flex; flex-wrap: wrap; gap: 4px 24px; padding: 12px 0; border-top: 1px solid #D9D1C1"><span style="font-weight: 700; flex: 0 0 220px">Stickers</span><span style="flex: 1 1 320px; font-size: 15px; line-height: 1.55">Rotated pill labels, only beside 3D scenes.</span></div>
+</div>
+<div style="display: flex; flex-wrap: wrap; gap: 16px"><div style="display: flex; flex-direction: column; gap: 8px; min-width: 150px; flex: 1"><div style="height: 72px; border: 2px solid #111111; border-radius: 14px; background: #FAF7F0"></div><span style="font-weight: 700">Paper</span><span style="font-family: 'Instrument Sans', system-ui, sans-serif; font-size: 12px">#FAF7F0</span><span style="font-size: 13px; color: #4B4740; line-height: 1.45">Default background.</span></div>
+<div style="display: flex; flex-direction: column; gap: 8px; min-width: 150px; flex: 1"><div style="height: 72px; border: 2px solid #111111; border-radius: 14px; background: #FFF1DC"></div><span style="font-weight: 700">Cream</span><span style="font-family: 'Instrument Sans', system-ui, sans-serif; font-size: 12px">#FFF1DC</span><span style="font-size: 13px; color: #4B4740; line-height: 1.45">Alternate light sections.</span></div>
+<div style="display: flex; flex-direction: column; gap: 8px; min-width: 150px; flex: 1"><div style="height: 72px; border: 2px solid #111111; border-radius: 14px; background: #111111"></div><span style="font-weight: 700">Ink</span><span style="font-family: 'Instrument Sans', system-ui, sans-serif; font-size: 12px">#111111</span><span style="font-size: 13px; color: #4B4740; line-height: 1.45">Text, borders, dark sections.</span></div>
+<div style="display: flex; flex-direction: column; gap: 8px; min-width: 150px; flex: 1"><div style="height: 72px; border: 2px solid #111111; border-radius: 14px; background: {{accent}}"></div><span style="font-weight: 700">Signal</span><span style="font-family: 'Instrument Sans', system-ui, sans-serif; font-size: 12px">{{accent}}</span><span style="font-size: 13px; color: #4B4740; line-height: 1.45">Primary buttons; highlights on dark backgrounds. Never as small text on light.</span></div>
+<div style="display: flex; flex-direction: column; gap: 8px; min-width: 150px; flex: 1"><div style="height: 72px; border: 2px solid #111111; border-radius: 14px; background: {{accent2}}"></div><span style="font-weight: 700">Blueprint</span><span style="font-family: 'Instrument Sans', system-ui, sans-serif; font-size: 12px">{{accent2}}</span><span style="font-size: 13px; color: #4B4740; line-height: 1.45">Labels, links and data on light backgrounds.</span></div>
+<div style="display: flex; flex-direction: column; gap: 8px; min-width: 150px; flex: 1"><div style="height: 72px; border: 2px solid #111111; border-radius: 14px; background: #FFD23F"></div><span style="font-weight: 700">Sunshine</span><span style="font-family: 'Instrument Sans', system-ui, sans-serif; font-size: 12px">#FFD23F</span><span style="font-size: 13px; color: #4B4740; line-height: 1.45">Highlighted words, tickers and stickers.</span></div>
+</div>
+</div>
+</div>
+</section>
+<section style="border-bottom: 2px solid #111111">
+<div style="max-width: 1280px; margin: 0 auto; padding-left: clamp(20px, 4vw, 56px); padding-right: clamp(20px, 4vw, 56px); box-sizing: border-box; padding-top: 56px; padding-bottom: 56px; display: flex; flex-wrap: wrap; gap: 28px 56px">
+<div style="flex: 1 1 280px; max-width: 340px; display: flex; flex-direction: column; gap: 10px"><span style="font-family: 'Instrument Sans', system-ui, sans-serif; font-size: 12px; font-weight: 700; letter-spacing: 0.08em; text-transform: uppercase; color: {{accent2}}">05</span>
+<h3 style="margin: 0; font-family: 'Bricolage Grotesque', 'Instrument Sans', system-ui, sans-serif; font-weight: 800; font-size: 36px; line-height: 1.05; letter-spacing: -0.02em; color: #111111">Numbers</h3>
+</div>
+<div style="flex: 3 1 640px; min-width: 0; display: flex; flex-direction: column; gap: 14px">
+<div style="border-bottom: 1px solid #D9D1C1"><div style="display: flex; flex-wrap: wrap; gap: 4px 24px; padding: 12px 0; border-top: 1px solid #D9D1C1"><span style="font-weight: 700; flex: 0 0 220px">Home</span><span style="flex: 1 1 320px; font-size: 15px; line-height: 1.55">Four metrics, no more.</span></div>
+<div style="display: flex; flex-wrap: wrap; gap: 4px 24px; padding: 12px 0; border-top: 1px solid #D9D1C1"><span style="font-weight: 700; flex: 0 0 220px">Every number</span><span style="flex: 1 1 320px; font-size: 15px; line-height: 1.55">Rounded and plain: “26,000+ students”, not raw totals with footnotes.</span></div>
+<div style="display: flex; flex-wrap: wrap; gap: 4px 24px; padding: 12px 0; border-top: 1px solid #D9D1C1"><span style="font-weight: 700; flex: 0 0 220px">Gaps</span><span style="flex: 1 1 320px; font-size: 15px; line-height: 1.55">If something is not ready to show, leave it out. No empty sections or placeholders.</span></div>
+<div style="display: flex; flex-wrap: wrap; gap: 4px 24px; padding: 12px 0; border-top: 1px solid #D9D1C1"><span style="font-weight: 700; flex: 0 0 220px">Money</span><span style="flex: 1 1 320px; font-size: 15px; line-height: 1.55">Only from approved financial reports.</span></div>
+</div>
+</div>
+</div>
+</section>
+<section style="border-bottom: 2px solid #111111">
+<div style="max-width: 1280px; margin: 0 auto; padding-left: clamp(20px, 4vw, 56px); padding-right: clamp(20px, 4vw, 56px); box-sizing: border-box; padding-top: 56px; padding-bottom: 56px; display: flex; flex-wrap: wrap; gap: 28px 56px">
+<div style="flex: 1 1 280px; max-width: 340px; display: flex; flex-direction: column; gap: 10px"><span style="font-family: 'Instrument Sans', system-ui, sans-serif; font-size: 12px; font-weight: 700; letter-spacing: 0.08em; text-transform: uppercase; color: {{accent2}}">06</span>
+<h3 style="margin: 0; font-family: 'Bricolage Grotesque', 'Instrument Sans', system-ui, sans-serif; font-weight: 800; font-size: 36px; line-height: 1.05; letter-spacing: -0.02em; color: #111111">Three.js</h3>
+</div>
+<div style="flex: 3 1 640px; min-width: 0; display: flex; flex-direction: column; gap: 14px">
+<div style="border-bottom: 1px solid #D9D1C1"><div style="display: flex; flex-wrap: wrap; gap: 4px 24px; padding: 12px 0; border-top: 1px solid #D9D1C1"><span style="font-weight: 700; flex: 0 0 220px">Where</span><span style="flex: 1 1 320px; font-size: 15px; line-height: 1.55">Hero, the Programs workbench, the campus network, the Kerala map on Impact, and the closing scene. Nowhere else.</span></div>
+<div style="display: flex; flex-wrap: wrap; gap: 4px 24px; padding: 12px 0; border-top: 1px solid #D9D1C1"><span style="font-weight: 700; flex: 0 0 220px">Never</span><span style="flex: 1 1 320px; font-size: 15px; line-height: 1.55">On reports, finance, governance or event records. Those use plain charts and tables.</span></div>
+<div style="display: flex; flex-wrap: wrap; gap: 4px 24px; padding: 12px 0; border-top: 1px solid #D9D1C1"><span style="font-weight: 700; flex: 0 0 220px">Always</span><span style="flex: 1 1 320px; font-size: 15px; line-height: 1.55">Real text beside the scene, a WebGL fallback, reduced-motion support, and lazy loading.</span></div>
+</div>
+</div>
+</div>
+</section>
+<section style="border-bottom: 2px solid #111111">
+<div style="max-width: 1280px; margin: 0 auto; padding-left: clamp(20px, 4vw, 56px); padding-right: clamp(20px, 4vw, 56px); box-sizing: border-box; padding-top: 56px; padding-bottom: 56px; display: flex; flex-wrap: wrap; gap: 28px 56px">
+<div style="flex: 1 1 280px; max-width: 340px; display: flex; flex-direction: column; gap: 10px"><span style="font-family: 'Instrument Sans', system-ui, sans-serif; font-size: 12px; font-weight: 700; letter-spacing: 0.08em; text-transform: uppercase; color: {{accent2}}">07</span>
+<h3 style="margin: 0; font-family: 'Bricolage Grotesque', 'Instrument Sans', system-ui, sans-serif; font-weight: 800; font-size: 36px; line-height: 1.05; letter-spacing: -0.02em; color: #111111">Writing</h3>
+</div>
+<div style="flex: 3 1 640px; min-width: 0; display: flex; flex-direction: column; gap: 14px">
+<div style="border-bottom: 1px solid #D9D1C1"><div style="display: flex; flex-wrap: wrap; gap: 4px 24px; padding: 12px 0; border-top: 1px solid #D9D1C1"><span style="font-weight: 700; flex: 0 0 220px">Voice</span><span style="flex: 1 1 320px; font-size: 15px; line-height: 1.55">Friendly, specific, plain English. Short sentences.</span></div>
+<div style="display: flex; flex-wrap: wrap; gap: 4px 24px; padding: 12px 0; border-top: 1px solid #D9D1C1"><span style="font-weight: 700; flex: 0 0 220px">Avoid</span><span style="flex: 1 1 320px; font-size: 15px; line-height: 1.55">“Empower the next generation”, hype words, and claims without a source.</span></div>
+<div style="display: flex; flex-wrap: wrap; gap: 4px 24px; padding: 12px 0; border-top: 1px solid #D9D1C1"><span style="font-weight: 700; flex: 0 0 220px">People</span><span style="flex: 1 1 320px; font-size: 15px; line-height: 1.55">Maker names and stories only with the maker’s approval.</span></div>
+<div style="display: flex; flex-wrap: wrap; gap: 4px 24px; padding: 12px 0; border-top: 1px solid #D9D1C1"><span style="font-weight: 700; flex: 0 0 220px">Status words</span><span style="flex: 1 1 320px; font-size: 15px; line-height: 1.55">Upcoming · Applications open · Completed · Closed.</span></div>
+</div>
+</div>
+</div>
+</section>
+</div>
+</template>
+<script>
+class Component extends DCLogic { renderVals() { return { accent: this.props.accent ?? "#FF5A36", accent2: this.props.accent2 ?? "#2346C8" }; } }
+TinkerRuntime.mount(Component, document.getElementById("page"), document.getElementById("app"), {"accent": "#FF5A36", "accent2": "#2346C8"});
+</script>
+</body>
+</html>

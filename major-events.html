@@ -1,0 +1,316 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>Major events archive — TinkerHub</title>
+<meta name="description" content="TinkerHub is a free, student-run learning community in Kerala where students learn tech by building real projects together.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Bricolage+Grotesque:opsz,wght@12..96,500..800&amp;family=Instrument+Sans:wght@400..700&amp;display=swap" rel="stylesheet">
+<style>
+body{margin:0;background:#FAF7F0}
+a{color:inherit;text-decoration:none}
+a:hover{opacity:.86}
+input::placeholder,textarea::placeholder{color:#77716A}
+a:focus-visible,button:focus-visible,input:focus-visible,select:focus-visible,textarea:focus-visible{outline:3px solid #2346C8;outline-offset:3px}
+.tv-tick{animation:tvtick 46s linear infinite}
+@keyframes tvtick{from{transform:translateX(0)}to{transform:translateX(-50%)}}
+@media (prefers-reduced-motion: reduce){.tv-tick{animation:none}}
+</style>
+<script src="vendor/preact.umd.js"></script>
+<script src="vendor/three.min.js"></script>
+<script src="js/tinker-runtime.js"></script>
+</head>
+<body>
+<div id="app"></div>
+<template id="page">
+<div style="font-family: 'Instrument Sans', system-ui, -apple-system, 'Segoe UI', sans-serif; color: #111111; background: #FAF7F0; width: 100%; overflow: hidden; font-size: 17px; line-height: 1.55">
+<header style="background: #FAF7F0; border-bottom: 2px solid #111111">
+<div style="background: #111111; color: #FAF7F0; overflow: hidden; border-bottom: 2px solid #111111">
+<div class="tv-tick" aria-hidden="true" style="display: flex; width: max-content; padding: 7px 0; font-family: 'Instrument Sans', system-ui, sans-serif; font-size: 12px; letter-spacing: 0.08em; text-transform: uppercase"><span style="padding: 0 28px">New events every week at TinkerSpace Kochi &amp; Kozhikode</span><span style="padding: 0 28px; color: {{accent}}">✦</span><span style="padding: 0 28px">72 campus communities across 13 districts</span><span style="padding: 0 28px; color: {{accent}}">✦</span><span style="padding: 0 28px">Free for students</span><span style="padding: 0 28px; color: {{accent}}">✦</span><span style="padding: 0 28px">Be kind · Get involved · Make a change</span><span style="padding: 0 28px; color: {{accent}}">✦</span><span style="padding: 0 28px">New events every week at TinkerSpace Kochi &amp; Kozhikode</span><span style="padding: 0 28px; color: {{accent}}">✦</span><span style="padding: 0 28px">72 campus communities across 13 districts</span><span style="padding: 0 28px; color: {{accent}}">✦</span><span style="padding: 0 28px">Free for students</span><span style="padding: 0 28px; color: {{accent}}">✦</span><span style="padding: 0 28px">Be kind · Get involved · Make a change</span><span style="padding: 0 28px; color: {{accent}}">✦</span></div>
+</div>
+<nav aria-label="Primary" style="max-width: 1280px; margin: 0 auto; padding-left: clamp(20px, 4vw, 56px); padding-right: clamp(20px, 4vw, 56px); box-sizing: border-box; padding-top: 14px; padding-bottom: 14px; display: flex; flex-wrap: wrap; align-items: center; justify-content: space-between; gap: 12px 28px">
+<a href="index.html" style="display: flex; align-items: baseline; gap: 8px">
+<span style="font-family: 'Bricolage Grotesque', 'Instrument Sans', system-ui, sans-serif; font-weight: 800; font-size: 34px; line-height: 1; letter-spacing: -0.02em">tinkerhub</span>
+<span style="font-family: 'Instrument Sans', system-ui, sans-serif; font-size: 11px; color: #4B4740">foundation</span>
+</a>
+<div style="display: flex; flex-wrap: wrap; align-items: center; gap: 6px 22px; font-weight: 600; font-size: 15px">
+<a href="programs.html" style="padding: 6px 2px; border-bottom: 2px solid transparent">Programs</a>
+<a href="events-community.html" style="padding: 6px 2px; border-bottom: 2px solid transparent">Events &amp; Community</a>
+<a href="impact.html" aria-current="page" style="padding: 6px 2px; border-bottom: 2px solid #111111">Impact</a>
+<a href="reports.html" style="padding: 6px 2px; border-bottom: 2px solid transparent">Reports</a>
+<a href="partner.html" style="padding: 6px 2px; border-bottom: 2px solid transparent">Partner with us</a>
+<a href="events-community.html" style="background: #111111; color: #FAF7F0; padding: 0 18px; min-height: 44px; display: inline-flex; align-items: center; border-radius: 14px">Get involved →</a>
+</div>
+</nav>
+</header>
+<!-- HEADER -->
+<section style="background-color: #FFF1DC; border-bottom: 2px solid #111111">
+<div style="max-width: 1280px; margin: 0 auto; padding-left: clamp(20px, 4vw, 56px); padding-right: clamp(20px, 4vw, 56px); box-sizing: border-box; padding-top: clamp(48px, 6vw, 88px); padding-bottom: clamp(36px, 4vw, 56px); display: flex; flex-direction: column; gap: 20px">
+<div style="display: flex; gap: 14px; flex-wrap: wrap"><a href="impact.html" style="font-family: 'Instrument Sans', system-ui, sans-serif; font-size: 12px; text-decoration: underline">Impact</a><span style="font-family: 'Instrument Sans', system-ui, sans-serif; font-size: 12px; font-weight: 700; letter-spacing: 0.08em; text-transform: uppercase; color: #4B4740">/ events</span>
+</div>
+<h1 style="margin: 0; font-family: 'Bricolage Grotesque', 'Instrument Sans', system-ui, sans-serif; font-weight: 800; font-size: clamp(50px, 7vw, 108px); line-height: 0.95; letter-spacing: -0.04em">Every major event <em style="font-style: normal; background: #FFD23F; color: #111111; padding: 0 0.18em; border-radius: 0.18em; box-decoration-break: clone; -webkit-box-decoration-break: clone">leaves a record.</em></h1>
+<p style="margin: 0; font-size: 19px; line-height: 1.6; color: #2C2925; max-width: 760px">Flagship events, edition by edition: who came, what they built, and what happened next.</p>
+</div>
+</section>
+
+<sc-if value="{{showIndex}}" hint-placeholder-val="{{ true }}">
+<section style="background: #FAF7F0; border-bottom: 2px solid #111111">
+<div style="max-width: 1280px; margin: 0 auto; padding-left: clamp(20px, 4vw, 56px); padding-right: clamp(20px, 4vw, 56px); box-sizing: border-box; padding-top: clamp(40px, 5vw, 64px); padding-bottom: clamp(64px, 8vw, 104px); display: flex; flex-direction: column; gap: 28px">
+<div role="group" aria-label="Filter by series" style="display: flex; flex-wrap: wrap; gap: 8px">
+<sc-for list="{{seriesChips}}" as="sc" hint-placeholder-count="4">
+<sc-if value="{{sc.on}}" hint-placeholder-val="{{ false }}"><button type="button" onClick="{{sc.pick}}" aria-pressed="true" style="font-family: inherit; cursor: pointer; min-height: 40px; padding: 0 16px; border-radius: 999px; border: 2px solid #111111; background: #111111; color: #FAF7F0; font-weight: 600; font-size: 14px">{{sc.label}}</button></sc-if>
+<sc-if value="{{sc.off}}" hint-placeholder-val="{{ true }}"><button type="button" onClick="{{sc.pick}}" aria-pressed="false" style="font-family: inherit; cursor: pointer; min-height: 40px; padding: 0 16px; border-radius: 999px; border: 2px solid #111111; background: transparent; color: #111111; font-weight: 600; font-size: 14px">{{sc.label}}</button></sc-if>
+</sc-for>
+</div>
+<div style="display: grid; grid-template-columns: repeat(auto-fill, minmax(340px, 1fr)); gap: 22px">
+<sc-for list="{{cards}}" as="c" hint-placeholder-count="6">
+<button type="button" onClick="{{c.open}}" style="font-family: inherit; text-align: left; cursor: pointer; background: #FFFFFF; color: #111111; border: 2px solid #111111; border-radius: 22px; padding: 0; overflow: hidden; display: flex; flex-direction: column">
+<span style="display: flex; justify-content: space-between; align-items: flex-end; padding: 18px 20px; min-height: 120px; box-sizing: border-box; background: {{c.bg}}; color: {{c.fg}}; border-bottom: 2px solid #111111; width: 100%; background-image: linear-gradient(rgba(17,17,17,0.08) 1px, transparent 1px), linear-gradient(90deg, rgba(17,17,17,0.08) 1px, transparent 1px); background-size: 18px 18px">
+<span style="font-family: 'Bricolage Grotesque', 'Instrument Sans', system-ui, sans-serif; font-weight: 800; font-size: 64px; line-height: 0.85">{{c.year}}</span>
+<span style="font-family: 'Instrument Sans', system-ui, sans-serif; font-size: 11px; text-transform: uppercase; letter-spacing: 0.06em">{{c.series}}</span>
+</span>
+<span style="padding: 18px 20px 20px; display: flex; flex-direction: column; gap: 12px; width: 100%; box-sizing: border-box">
+<span style="font-family: 'Bricolage Grotesque', 'Instrument Sans', system-ui, sans-serif; font-weight: 800; font-size: 32px; line-height: 1">{{c.name}}</span>
+<span style="font-family: 'Instrument Sans', system-ui, sans-serif; font-size: 12px; color: #4B4740">{{c.dates}} · {{c.venuesLabel}}</span>
+<span style="display: grid; grid-template-columns: repeat(3, minmax(0, 1fr)); gap: 10px; border-top: 2px solid #111111; padding-top: 12px">
+<span style="display: flex; flex-direction: column"><span style="font-family: 'Bricolage Grotesque', 'Instrument Sans', system-ui, sans-serif; font-weight: 800; font-size: 28px; line-height: 1">{{c.att}}</span><span style="font-size: 12px; color: #4B4740">attended</span></span>
+<span style="display: flex; flex-direction: column"><span style="font-family: 'Bricolage Grotesque', 'Instrument Sans', system-ui, sans-serif; font-weight: 800; font-size: 28px; line-height: 1">{{c.proj}}</span><span style="font-size: 12px; color: #4B4740">projects</span></span>
+<span style="display: flex; flex-direction: column"><span style="font-family: 'Bricolage Grotesque', 'Instrument Sans', system-ui, sans-serif; font-weight: 800; font-size: 28px; line-height: 1">{{c.first}}</span><span style="font-size: 12px; color: #4B4740">first-timers</span></span>
+</span>
+<span style="font-weight: 600; font-size: 15px; text-decoration: underline; text-underline-offset: 4px">Open the event record →</span>
+</span>
+</button>
+</sc-for>
+</div>
+</div>
+</section>
+</sc-if>
+
+<sc-if value="{{showDetail}}" hint-placeholder-val="{{ false }}">
+<article aria-labelledby="ev-title">
+<!-- A · OVERVIEW -->
+<section style="background: #111111; color: #FAF7F0; border-bottom: 2px solid #111111">
+<div style="max-width: 1280px; margin: 0 auto; padding-left: clamp(20px, 4vw, 56px); padding-right: clamp(20px, 4vw, 56px); box-sizing: border-box; padding-top: clamp(40px, 5vw, 64px); padding-bottom: clamp(48px, 6vw, 80px); display: flex; flex-direction: column; gap: 24px">
+<button type="button" onClick="{{back}}" style="align-self: flex-start; font-family: inherit; cursor: pointer; min-height: 44px; padding: 0 16px; border-radius: 14px; border: 2px solid #FAF7F0; background: transparent; color: #FAF7F0; font-weight: 600">← All major events</button>
+<div style="display: flex; flex-wrap: wrap; gap: 10px 20px"><span style="font-family: 'Instrument Sans', system-ui, sans-serif; font-size: 12px; font-weight: 700; letter-spacing: 0.08em; text-transform: uppercase; color: {{accent}}">A · Overview</span>
+<span style="font-family: 'Instrument Sans', system-ui, sans-serif; font-size: 12px; font-weight: 700; letter-spacing: 0.08em; text-transform: uppercase; color: #B9B2A6">{{ev.series}} · {{ev.year}}</span>
+</div>
+<h2 id="ev-title" style="margin: 0; font-family: 'Bricolage Grotesque', 'Instrument Sans', system-ui, sans-serif; font-weight: 800; font-weight: 400; font-size: clamp(56px, 8vw, 128px); line-height: 0.9; letter-spacing: -0.02em">{{ev.name}}</h2>
+<dl style="margin: 0; display: grid; grid-template-columns: repeat(auto-fit, minmax(240px, 1fr)); gap: 18px 32px">
+<div><dt style="font-family: 'Instrument Sans', system-ui, sans-serif; font-size: 11px; text-transform: uppercase; color: #B9B2A6">Purpose</dt><dd style="margin: 6px 0 0; font-size: 16px; line-height: 1.55">{{ev.purpose}}</dd></div>
+<div><dt style="font-family: 'Instrument Sans', system-ui, sans-serif; font-size: 11px; text-transform: uppercase; color: #B9B2A6">Who it was for</dt><dd style="margin: 6px 0 0; font-size: 16px; line-height: 1.55">{{ev.audience}}</dd></div>
+<div><dt style="font-family: 'Instrument Sans', system-ui, sans-serif; font-size: 11px; text-transform: uppercase; color: #B9B2A6">When and where</dt><dd style="margin: 6px 0 0; font-size: 16px; line-height: 1.55">{{ev.dates}} · {{ev.fmt}}</dd></div>
+<div><dt style="font-family: 'Instrument Sans', system-ui, sans-serif; font-size: 11px; text-transform: uppercase; color: #B9B2A6">Organisers and partners</dt><dd style="margin: 6px 0 0; font-size: 16px; line-height: 1.55">TinkerHub with host campus communities. {{ev.partners}}</dd></div>
+</dl>
+</div>
+</section>
+
+<!-- B · PARTICIPATION -->
+<section style="background: #FAF7F0; border-bottom: 2px solid #111111">
+<div style="max-width: 1280px; margin: 0 auto; padding-left: clamp(20px, 4vw, 56px); padding-right: clamp(20px, 4vw, 56px); box-sizing: border-box; padding-top: clamp(56px, 7vw, 88px); padding-bottom: clamp(56px, 7vw, 88px); display: flex; flex-direction: column; gap: 28px">
+<div style="display: flex; gap: 14px; align-items: baseline"><span style="font-family: 'Instrument Sans', system-ui, sans-serif; font-size: 12px; font-weight: 700; letter-spacing: 0.08em; text-transform: uppercase; color: {{accent2}}">B</span>
+<h3 style="margin: 0; font-family: 'Bricolage Grotesque', 'Instrument Sans', system-ui, sans-serif; font-weight: 800; font-size: clamp(30px, 3vw, 40px); line-height: 1.05; letter-spacing: -0.02em; color: #111111">Participation and reach</h3>
+</div>
+<div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(190px, 1fr)); gap: 24px">
+<div style="display: flex; flex-direction: column; gap: 6px; padding-top: 14px; border-top: 2px solid #111111">
+<span style="font-family: 'Bricolage Grotesque', 'Instrument Sans', system-ui, sans-serif; font-weight: 800; font-size: clamp(40px, 3.6vw, 56px); line-height: 0.95">{{ev.regsF}}</span>
+<span style="font-weight: 600; font-size: 15px">registered</span>
+<span style="font-size: 13px; color: #4B4740; line-height: 1.45">Sign-ups. Not everyone who registers comes.</span>
+</div>
+<div style="display: flex; flex-direction: column; gap: 6px; padding-top: 14px; border-top: 2px solid #111111">
+<span style="font-family: 'Bricolage Grotesque', 'Instrument Sans', system-ui, sans-serif; font-weight: 800; font-size: clamp(40px, 3.6vw, 56px); line-height: 0.95">{{ev.attF}}</span>
+<span style="font-weight: 600; font-size: 15px">attended</span>
+<span style="font-size: 13px; color: #4B4740; line-height: 1.45">Unique people who checked in.</span>
+</div>
+<div style="display: flex; flex-direction: column; gap: 6px; padding-top: 14px; border-top: 2px solid #111111">
+<span style="font-family: 'Bricolage Grotesque', 'Instrument Sans', system-ui, sans-serif; font-weight: 800; font-size: clamp(40px, 3.6vw, 56px); line-height: 0.95">{{ev.firstF}}</span>
+<span style="font-weight: 600; font-size: 15px">first-timers</span>
+<span style="font-size: 13px; color: #4B4740; line-height: 1.45">Attendees whose first TinkerHub check-in was this event.</span>
+</div>
+<div style="display: flex; flex-direction: column; gap: 6px; padding-top: 14px; border-top: 2px solid #111111">
+<span style="font-family: 'Bricolage Grotesque', 'Instrument Sans', system-ui, sans-serif; font-weight: 800; font-size: clamp(40px, 3.6vw, 56px); line-height: 0.95">{{ev.instsF}}</span>
+<span style="font-weight: 600; font-size: 15px">institutions represented</span>
+<span style="font-size: 13px; color: #4B4740; line-height: 1.45">Distinct colleges on attendee profiles.</span>
+</div>
+<div style="display: flex; flex-direction: column; gap: 6px; padding-top: 14px; border-top: 2px solid #111111">
+<span style="font-family: 'Bricolage Grotesque', 'Instrument Sans', system-ui, sans-serif; font-weight: 800; font-size: clamp(40px, 3.6vw, 56px); line-height: 0.95">{{ev.venues}}</span>
+<span style="font-weight: 600; font-size: 15px">venues</span>
+<span style="font-size: 13px; color: #4B4740; line-height: 1.45">Physical venues recorded.</span>
+</div>
+<div style="display: flex; flex-direction: column; gap: 6px; padding-top: 14px; border-top: 2px solid #111111">
+<span style="font-family: 'Bricolage Grotesque', 'Instrument Sans', system-ui, sans-serif; font-weight: 800; font-size: clamp(40px, 3.6vw, 56px); line-height: 0.95">{{ev.women}}</span>
+<span style="font-weight: 600; font-size: 15px">women</span>
+<span style="font-size: 13px; color: #4B4740; line-height: 1.45">Share of attendees with recorded gender.</span>
+</div>
+</div>
+<figure style="margin: 0; display: flex; flex-direction: column; gap: 10px; max-width: 760px">
+<figcaption style="font-weight: 600">Registered versus attended</figcaption>
+<div style="display: grid; grid-template-columns: 110px 1fr 80px; gap: 10px; align-items: center"><span style="font-size: 14px">Registered</span><div style="height: 22px; border: 2px solid #111111; background: #EAE3D3"><div style="width: 100%; height: 100%; background: #111111"></div></div><span style="font-family: 'Instrument Sans', system-ui, sans-serif; font-size: 13px; text-align: right">{{ev.regsF}}</span></div>
+<div style="display: grid; grid-template-columns: 110px 1fr 80px; gap: 10px; align-items: center"><span style="font-size: 14px">Attended</span><div style="height: 22px; border: 2px solid #111111; background: #EAE3D3"><div style="width: {{ev.attPct}}; height: 100%; background: {{accent}}"></div></div><span style="font-family: 'Instrument Sans', system-ui, sans-serif; font-size: 13px; text-align: right">{{ev.attF}}</span></div>
+<span style="font-size: 13px; color: #4B4740">{{ev.attPct}} of registrations turned into attendance.</span>
+</figure>
+</div>
+</section>
+
+<!-- C · WHAT HAPPENED -->
+<section style="background: #FFFFFF; border-bottom: 2px solid #111111">
+<div style="max-width: 1280px; margin: 0 auto; padding-left: clamp(20px, 4vw, 56px); padding-right: clamp(20px, 4vw, 56px); box-sizing: border-box; padding-top: clamp(56px, 7vw, 88px); padding-bottom: clamp(56px, 7vw, 88px); display: flex; flex-direction: column; gap: 28px">
+<div style="display: flex; gap: 14px; align-items: baseline"><span style="font-family: 'Instrument Sans', system-ui, sans-serif; font-size: 12px; font-weight: 700; letter-spacing: 0.08em; text-transform: uppercase; color: {{accent2}}">C</span>
+<h3 style="margin: 0; font-family: 'Bricolage Grotesque', 'Instrument Sans', system-ui, sans-serif; font-weight: 800; font-size: clamp(30px, 3vw, 40px); line-height: 1.05; letter-spacing: -0.02em; color: #111111">What happened</h3>
+</div>
+<p style="margin: 0; font-size: 18px; line-height: 1.6; color: #2C2925; max-width: 760px">{{ev.fmt}}. Teams built at the host venues and submitted their projects on the TinkerHub platform. A few of them are below.</p>
+<div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(260px, 1fr)); gap: 18px">
+<sc-for list="{{ev.projects}}" as="pj" hint-placeholder-count="3">
+<div style="border: 2px solid #111111; border-radius: 22px; padding: 20px; display: flex; flex-direction: column; gap: 8px; background: #FAF7F0">
+<span style="font-family: 'Instrument Sans', system-ui, sans-serif; font-size: 12px; font-weight: 700; letter-spacing: 0.08em; text-transform: uppercase; color: {{accent2}}">{{pj.type}} · built here</span>
+<span style="font-family: 'Bricolage Grotesque', 'Instrument Sans', system-ui, sans-serif; font-weight: 800; font-size: 28px; line-height: 1.05">{{pj.n}}</span>
+<span style="font-size: 15px; line-height: 1.5">{{pj.t}}</span>
+</div>
+</sc-for>
+</div>
+</div>
+</section>
+
+<!-- D · WHAT CHANGED -->
+<section style="background-color: #FFF1DC; border-bottom: 2px solid #111111">
+<div style="max-width: 1280px; margin: 0 auto; padding-left: clamp(20px, 4vw, 56px); padding-right: clamp(20px, 4vw, 56px); box-sizing: border-box; padding-top: clamp(64px, 8vw, 104px); padding-bottom: clamp(64px, 8vw, 104px); display: flex; flex-direction: column; gap: 30px">
+<div style="display: flex; gap: 14px; align-items: baseline"><span style="font-family: 'Instrument Sans', system-ui, sans-serif; font-size: 12px; font-weight: 700; letter-spacing: 0.08em; text-transform: uppercase; color: {{accent2}}">D</span>
+<h3 style="margin: 0; font-family: 'Bricolage Grotesque', 'Instrument Sans', system-ui, sans-serif; font-weight: 800; font-size: clamp(30px, 3vw, 40px); line-height: 1.05; letter-spacing: -0.02em; color: #111111">What changed because of it</h3>
+</div>
+<p style="margin: 0; font-size: 18px; line-height: 1.6; color: #2C2925; max-width: 720px">What students made on the day, and what they did next.</p>
+<div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); gap: 22px">
+<div style="background: #FFFFFF; border: 2px solid #111111; border-radius: 22px; padding: 24px; display: flex; flex-direction: column; gap: 16px">
+<span style="font-family: 'Instrument Sans', system-ui, sans-serif; font-size: 12px; font-weight: 700; letter-spacing: 0.08em; text-transform: uppercase; color: #4B4740">Immediate outputs · on the day</span>
+<div style="display: flex; flex-wrap: wrap; gap: 24px">
+<div><span style="font-family: 'Bricolage Grotesque', 'Instrument Sans', system-ui, sans-serif; font-weight: 800; font-size: 52px; line-height: 0.95">{{ev.projF}}</span><br><span style="font-size: 14px">projects submitted</span></div>
+<div><span style="font-family: 'Bricolage Grotesque', 'Instrument Sans', system-ui, sans-serif; font-weight: 800; font-size: 52px; line-height: 0.95">{{ev.buildersF}}</span><br><span style="font-size: 14px">people listed as builders</span></div>
+</div>
+</div>
+<div style="background: #FFFFFF; border: 2px solid #111111; border-radius: 22px; padding: 24px; display: flex; flex-direction: column; gap: 16px">
+<span style="font-family: 'Instrument Sans', system-ui, sans-serif; font-size: 12px; font-weight: 700; letter-spacing: 0.08em; text-transform: uppercase; color: {{accent2}}">Afterwards · follow-on activity</span>
+<div style="display: flex; flex-wrap: wrap; gap: 24px">
+<div><span style="font-family: 'Bricolage Grotesque', 'Instrument Sans', system-ui, sans-serif; font-weight: 800; font-size: 52px; line-height: 0.95">{{ev.retF}}</span><br><span style="font-size: 14px">came back to another event within 180 days</span></div>
+<div><span style="font-family: 'Bricolage Grotesque', 'Instrument Sans', system-ui, sans-serif; font-weight: 800; font-size: 52px; line-height: 0.95">{{ev.againF}}</span><br><span style="font-size: 14px">builders went on to submit another project</span></div>
+</div>
+<span style="font-size: 14px; color: #4B4740">{{ev.retNote}}</span>
+</div>
+<div style="background: #FFFFFF; border: 2px solid #111111; border-radius: 22px; padding: 24px; display: flex; flex-direction: column; gap: 12px">
+<span style="font-family: 'Instrument Sans', system-ui, sans-serif; font-size: 12px; font-weight: 700; letter-spacing: 0.08em; text-transform: uppercase; color: #4B4740">Participant feedback</span>
+<span><span style="font-family: 'Bricolage Grotesque', 'Instrument Sans', system-ui, sans-serif; font-weight: 800; font-size: 52px; line-height: 0.95">{{ev.fba}}</span><span style="font-family: 'Bricolage Grotesque', 'Instrument Sans', system-ui, sans-serif; font-weight: 800; font-size: 26px"> / 7</span></span>
+<span style="font-size: 14px">average overall experience, from {{ev.fbnF}} responses</span>
+</div>
+</div>
+</div>
+</section>
+
+<!-- G · CONTINUE -->
+<section style="background: #FFFFFF; border-bottom: 2px solid #111111">
+<div style="max-width: 1280px; margin: 0 auto; padding-left: clamp(20px, 4vw, 56px); padding-right: clamp(20px, 4vw, 56px); box-sizing: border-box; padding-top: clamp(48px, 6vw, 80px); padding-bottom: clamp(48px, 6vw, 80px); display: flex; flex-direction: column; gap: 20px">
+<div style="display: flex; gap: 14px; align-items: baseline"><span style="font-family: 'Instrument Sans', system-ui, sans-serif; font-size: 12px; font-weight: 700; letter-spacing: 0.08em; text-transform: uppercase; color: {{accent2}}">E</span>
+<h3 style="margin: 0; font-family: 'Bricolage Grotesque', 'Instrument Sans', system-ui, sans-serif; font-weight: 800; font-size: clamp(30px, 3vw, 40px); line-height: 1.05; letter-spacing: -0.02em; color: #111111">Continue the story</h3>
+</div>
+<sc-for list="{{ev.coverage}}" as="cv" hint-placeholder-count="1">
+<a href="{{cv.href}}" style="display: flex; flex-direction: column; gap: 4px; border: 2px solid #111111; border-radius: 22px; padding: 14px 16px; background: #FFF1DC; max-width: 720px">
+<span style="font-weight: 700; font-size: 12px; text-transform: uppercase; letter-spacing: 0.06em">In the newsletter · {{cv.date}}</span><span style="font-weight: 600">{{cv.t}}</span>
+</a>
+</sc-for>
+<div style="display: flex; flex-wrap: wrap; gap: 10px">
+<sc-for list="{{ev.siblings}}" as="sb" hint-placeholder-count="2">
+<button type="button" onClick="{{sb.open}}" style="font-family: inherit; cursor: pointer; min-height: 46px; padding: 0 16px; border-radius: 14px; border: 2px solid #111111; background: #FAF7F0; color: #111111; font-weight: 600">Other edition: {{sb.name}} →</button>
+</sc-for>
+<a href="programs.html" style="display: inline-flex; align-items: center; gap: 10px; min-height: 52px; padding: 0 26px; border-radius: 999px; font-weight: 700; font-size: 16px; box-sizing: border-box; border: 2px solid #111111; background: transparent; color: #111111">The program behind it</a>
+<a href="events-community.html" style="display: inline-flex; align-items: center; gap: 10px; min-height: 52px; padding: 0 26px; border-radius: 999px; font-weight: 700; font-size: 16px; box-sizing: border-box; border: 2px solid #111111; background: transparent; color: #111111">Upcoming events</a>
+<a href="reports.html#newsletters" style="display: inline-flex; align-items: center; gap: 10px; min-height: 52px; padding: 0 26px; border-radius: 999px; font-weight: 700; font-size: 16px; box-sizing: border-box; border: 2px solid #111111; background: transparent; color: #111111">Newsletters</a>
+</div>
+</div>
+</section>
+</article>
+</sc-if>
+<footer style="background: #111111; color: #CFC8BC">
+<div style="max-width: 1280px; margin: 0 auto; padding-left: clamp(20px, 4vw, 56px); padding-right: clamp(20px, 4vw, 56px); box-sizing: border-box; padding-top: 64px; padding-bottom: 36px; display: flex; flex-wrap: wrap; gap: 48px; justify-content: space-between">
+<div style="flex: 1 1 300px; max-width: 400px; display: flex; flex-direction: column; gap: 14px">
+<span style="font-family: 'Bricolage Grotesque', 'Instrument Sans', system-ui, sans-serif; font-weight: 800; font-size: 44px; line-height: 1; color: #FAF7F0">tinkerhub</span>
+<span style="font-size: 15px; line-height: 1.6">TinkerHub Foundation is a non-profit, student-focused learning community in Kerala. Students learn by building real things, together, for free.</span>
+<span style="font-size: 14px; color: #9C958A">TinkerSpace Kochi: Kalamassery, near CUSAT · TinkerSpace Kozhikode: Medical College P.O.</span>
+</div>
+<div style="display: flex; flex-wrap: wrap; gap: 40px">
+<div style="display: flex; flex-direction: column; gap: 10px; min-width: 150px">
+<span style="font-family: 'Instrument Sans', system-ui, sans-serif; font-size: 12px; font-weight: 700; letter-spacing: 0.08em; text-transform: uppercase; color: #9C958A">Explore</span>
+<a href="programs.html" style="color: #FAF7F0; font-size: 15px">Programs</a>
+<a href="events-community.html" style="color: #FAF7F0; font-size: 15px">Opportunities</a>
+<a href="events-community.html#campuses" style="color: #FAF7F0; font-size: 15px">Campus communities</a>
+<a href="index.html#stories" style="color: #FAF7F0; font-size: 15px">Stories</a>
+</div>
+<div style="display: flex; flex-direction: column; gap: 10px; min-width: 150px">
+<span style="font-family: 'Instrument Sans', system-ui, sans-serif; font-size: 12px; font-weight: 700; letter-spacing: 0.08em; text-transform: uppercase; color: #9C958A">Our work</span>
+<a href="impact.html" style="color: #FAF7F0; font-size: 15px">Impact</a>
+<a href="major-events.html" style="color: #FAF7F0; font-size: 15px">Major events</a>
+<a href="reports.html" style="color: #FAF7F0; font-size: 15px">Reports</a>
+<a href="reports.html#newsletters" style="color: #FAF7F0; font-size: 15px">Newsletter</a>
+</div>
+<div style="display: flex; flex-direction: column; gap: 10px; min-width: 150px">
+<span style="font-family: 'Instrument Sans', system-ui, sans-serif; font-size: 12px; font-weight: 700; letter-spacing: 0.08em; text-transform: uppercase; color: #9C958A">Get involved</span>
+<a href="partner.html" style="color: #FAF7F0; font-size: 15px">Partner with us</a>
+<a href="https://tinkerhub.org/donate" style="color: #FAF7F0; font-size: 15px">Donate</a>
+<a href="https://tinkerhub-foundation.notion.site/Volunteer-with-TinkerHub-198bd5ba1a8680358d99fe60055bc892" style="color: #FAF7F0; font-size: 15px">Volunteer</a>
+<a href="https://airtable.com/appdFV7VvqOIlQ36v/shrKV8t5K5JgtfUOj" style="color: #FAF7F0; font-size: 15px">Start a campus</a>
+</div>
+<div style="display: flex; flex-direction: column; gap: 10px; min-width: 150px">
+<span style="font-family: 'Instrument Sans', system-ui, sans-serif; font-size: 12px; font-weight: 700; letter-spacing: 0.08em; text-transform: uppercase; color: #9C958A">Read</span>
+<a href="https://medium.com/tinkerhub" style="color: #FAF7F0; font-size: 15px">Stories on Medium</a>
+<a href="https://tinkerhub.org/events" style="color: #FAF7F0; font-size: 15px">Live events calendar</a>
+<a href="https://tinkerhub.org" style="color: #FAF7F0; font-size: 15px">tinkerhub.org</a>
+</div>
+</div>
+</div>
+<div style="max-width: 1280px; margin: 0 auto; padding-left: clamp(20px, 4vw, 56px); padding-right: clamp(20px, 4vw, 56px); box-sizing: border-box; padding-top: 18px; padding-bottom: 30px; border-top: 1px solid #2E2C29; display: flex; flex-wrap: wrap; gap: 8px 24px; justify-content: space-between; font-size: 13px; color: #9C958A">
+<span>© 2026 TinkerHub Foundation</span>
+<span>Made with care in Kerala</span>
+</div>
+</footer>
+</div>
+</template>
+<script>
+const EVARCH = [{"id": "up3", "series": "Useless Projects", "name": "Useless Projects 3.0", "year": "2026", "dates": "3 – 22 Sep 2026", "end": "2026-09-22", "fmt": "Overnight make-a-thon at campus venues across Kerala", "purpose": "Lower the stakes so first-time builders finish something: teams build gloriously pointless projects, and pick up real skills on the way.", "audience": "Students across Kerala. Beginners welcome.", "partners": "No external partners recorded on the platform.", "regs": 5266, "att": 3419, "venues": 67, "insts": 69, "women": "46%", "first": 1603, "proj": 1645, "builders": 2977, "ret": 427, "retClosed": false, "again": 34, "fbn": 698, "fba": "6.50", "projects": [["Goofball", "An incompetent Magic 8-Ball running local language models, with many personalities.", "Hardware"], ["Thankan Bot", "A cheeky desk robot that flees, screaming, when you reach for your water.", "Hardware"], ["Selfie Wiper", "A windshield wiper, for your selfie camera.", "Hardware"]], "coverage": []}, {"id": "up2", "series": "Useless Projects", "name": "Useless Projects 2.0", "year": "2025", "dates": "1 – 15 Aug 2025", "end": "2025-08-15", "fmt": "Overnight make-a-thon at campus venues across Kerala", "purpose": "Lower the stakes so first-time builders finish something: teams build gloriously pointless projects, and pick up real skills on the way.", "audience": "Students across Kerala. Beginners welcome.", "partners": "No external partners recorded on the platform.", "regs": 5019, "att": 3282, "venues": 60, "insts": 60, "women": "46%", "first": 1334, "proj": 1721, "builders": 3069, "ret": 1130, "retClosed": true, "again": 831, "fbn": 713, "fba": "6.42", "projects": [["Confused Bluetooth Wheelchair", "Where forward means backward, and logic takes a holiday.", "Hardware"], ["Useless Mirror", "A mirror that moves away when you approach.", "Hardware"], ["VANIS", "A vanishing autonomous navigation system.", "Hardware"]], "coverage": []}, {"id": "up1", "series": "Useless Projects", "name": "Useless Projects", "year": "2024", "dates": "25 Oct – 4 Nov 2024", "end": "2024-11-04", "fmt": "18-hour overnight make-a-thon at campus venues", "purpose": "Lower the stakes so first-time builders finish something: teams build gloriously pointless projects, and pick up real skills on the way.", "audience": "Students across Kerala. Beginners welcome.", "partners": "No external partners recorded on the platform.", "regs": 2555, "att": 1814, "venues": 33, "insts": 50, "women": "38%", "first": 1128, "proj": 477, "builders": 1179, "ret": 708, "retClosed": true, "again": 513, "fbn": 1165, "fba": "6.42", "projects": [["Touch-Me-Not Bot", "A robot that hurls Malayalam insults at anything that passes too close.", "Hardware"], ["Happiness Project", "A personal compliment provider to brighten someone’s day.", "Software"], ["Los Angeles Drive", "Drive through LA with nostalgia and music.", "Software"]], "coverage": [["Kolaambi · Flip, Flip, Flip, TinkerHub is 10!", "10 Jan 2025", "https://tinkerhub.substack.com/p/flip-flip-flip-tinkerhub-is-10", "Reports 2,561 participants across 33 venues. That figure matches registrations (2,555 on the platform), not check-ins (1,814)."]]}, {"id": "thh4", "series": "Tink-Her-Hack", "name": "Tink-Her-Hack 4.0", "year": "2026", "dates": "13 Feb – 3 Mar 2026", "end": "2026-03-03", "fmt": "Women-only hackathon at many campus venues at once", "purpose": "Bring women students into building, close to home: venues across the state mean nobody has to travel far or stay away overnight.", "audience": "Women students across Kerala. Beginner-friendly.", "partners": "No external partners recorded on the platform.", "regs": 3744, "att": 2838, "venues": 67, "insts": 92, "women": "Women-only", "first": 1251, "proj": 1393, "builders": 2527, "ret": 703, "retClosed": true, "again": 386, "fbn": 589, "fba": "6.24", "projects": [["Knocksos", "Real-time health and safety alerts that keep you connected.", "Hardware"], ["Smart Accident-Prevention Car", "A Bluetooth-controlled car that detects and prevents collisions.", "Hardware"], ["Rent a Driveway", "Turn your driveway into a parking spot for others.", "Software"]], "coverage": []}, {"id": "thh3", "series": "Tink-Her-Hack", "name": "Tink-Her-Hack 3.0", "year": "2025", "dates": "24 Jan – 9 Feb 2025", "end": "2025-02-09", "fmt": "Women-only hackathon at many campus venues at once", "purpose": "Bring women students into building, close to home: venues across the state mean nobody has to travel far or stay away overnight.", "audience": "Women students across Kerala. Beginner-friendly.", "partners": "TinkerHub Foundation (organiser).", "regs": 3970, "att": 3018, "venues": 63, "insts": 97, "women": "Women-only", "first": 2033, "proj": 1188, "builders": 2931, "ret": 958, "retClosed": true, "again": 790, "fbn": 694, "fba": "6.32", "projects": [["Nirbhaya", "A women’s safety device with GPS tracking, SMS alerts and fall detection.", "Hardware"], ["OFFLINGO", "A portable bilingual translator that works offline in remote areas.", "Hardware"], ["SenseFlow", "Arduino home automation for sensing, safety and security.", "Hardware"]], "coverage": [["Kolaambi · Flip, Flip, Flip, TinkerHub is 10!", "10 Jan 2025", "https://tinkerhub.substack.com/p/flip-flip-flip-tinkerhub-is-10", "Call for participants, mentors and host venues before the event."]]}, {"id": "layover", "series": "LAYOVER", "name": "LAYOVER", "year": "2026", "dates": "10 – 11 Oct 2026", "end": "2026-10-11", "fmt": "Hackathon at TinkerSpace Calicut", "purpose": "A two-day build sprint at TinkerSpace Calicut.", "audience": "Students and young makers.", "partners": "TinkerHub Foundation; TinkerSpace Calicut.", "regs": 497, "att": 161, "venues": 1, "insts": 48, "women": "37%", "first": 17, "proj": 79, "builders": 121, "ret": 12, "retClosed": false, "again": 0, "fbn": 72, "fba": "6.35", "projects": [["roam3d", "AI dreams imaginary worlds. This lets you drive the real one.", "Software"], ["poyalo", "Every place has a comic story; every plan, a reality check.", "Software"], ["Black Box", "True heading, zero magnetism.", "Hardware"]], "coverage": []}];
+class Component extends DCLogic {
+  constructor(props) {
+    super(props);
+    this.state = { series: "All", sel: null };
+  }
+  renderVals() {
+    const accent = this.props.accent ?? "#FF5A36";
+    const accent2 = this.props.accent2 ?? "#2346C8";
+    const f = (n) => Number(n).toLocaleString("en-IN");
+    const colors = { "Useless Projects": [accent, "#111111"], "Tink-Her-Hack": [accent2, "#F5F1E8"], "LAYOVER": ["#FFE15A", "#111111"] };
+    const open = (id) => () => { this.setState({ sel: id }); };
+    const series = ["All", "Useless Projects", "Tink-Her-Hack", "LAYOVER"];
+    const cards = EVARCH.filter((e) => this.state.series === "All" || e.series === this.state.series).map((e) => ({
+      name: e.name, year: e.year, series: e.series, dates: e.dates, venuesLabel: e.venues + (e.venues === 1 ? " venue" : " venues"),
+      att: f(e.att), proj: f(e.proj), first: f(e.first), bg: colors[e.series][0], fg: colors[e.series][1], open: open(e.id)
+    }));
+    const e = EVARCH.find((x) => x.id === this.state.sel);
+    let ev = null;
+    if (e) {
+      ev = Object.assign({}, e, {
+        regsF: f(e.regs), attF: f(e.att), firstF: f(e.first), instsF: f(e.insts), projF: f(e.proj), buildersF: f(e.builders), fbnF: f(e.fbn),
+        attPct: Math.round(e.att / e.regs * 100) + "%",
+        retF: f(e.ret), againF: f(e.again),
+        retNote: e.retClosed ? Math.round(e.ret / e.att * 100) + "% of attendees came back within six months." : "Still counting: this edition finished recently.",
+        projects: e.projects.map((p) => ({ n: p[0], t: p[1], type: p[2] })),
+        coverage: e.coverage.map((c) => ({ t: c[0], date: c[1], href: c[2], note: c[3] })),
+        siblings: EVARCH.filter((x) => x.series === e.series && x.id !== e.id).map((x) => ({ name: x.name, open: open(x.id) }))
+      });
+    }
+    return {
+      accent, accent2,
+      seriesChips: series.map((s) => ({ label: s, on: this.state.series === s, off: this.state.series !== s, pick: () => this.setState({ series: s }) })),
+      cards, showIndex: !e, showDetail: !!e, ev: ev || { projects: [], coverage: [], siblings: [] },
+      back: () => this.setState({ sel: null })
+    };
+  }
+}
+TinkerRuntime.mount(Component, document.getElementById("page"), document.getElementById("app"), {"accent": "#FF5A36", "accent2": "#2346C8"});
+</script>
+</body>
+</html>

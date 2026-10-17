@@ -1,0 +1,398 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>Reports & newsletter — TinkerHub</title>
+<meta name="description" content="TinkerHub is a free, student-run learning community in Kerala where students learn tech by building real projects together.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Bricolage+Grotesque:opsz,wght@12..96,500..800&amp;family=Instrument+Sans:wght@400..700&amp;display=swap" rel="stylesheet">
+<style>
+body{margin:0;background:#FAF7F0}
+a{color:inherit;text-decoration:none}
+a:hover{opacity:.86}
+input::placeholder,textarea::placeholder{color:#77716A}
+a:focus-visible,button:focus-visible,input:focus-visible,select:focus-visible,textarea:focus-visible{outline:3px solid #2346C8;outline-offset:3px}
+.tv-tick{animation:tvtick 46s linear infinite}
+@keyframes tvtick{from{transform:translateX(0)}to{transform:translateX(-50%)}}
+@media (prefers-reduced-motion: reduce){.tv-tick{animation:none}}
+</style>
+<script src="vendor/preact.umd.js"></script>
+<script src="vendor/three.min.js"></script>
+<script src="js/tinker-runtime.js"></script>
+</head>
+<body>
+<div id="app"></div>
+<template id="page">
+<div style="font-family: 'Instrument Sans', system-ui, -apple-system, 'Segoe UI', sans-serif; color: #111111; background: #FAF7F0; width: 100%; overflow: hidden; font-size: 17px; line-height: 1.55">
+<header style="background: #FAF7F0; border-bottom: 2px solid #111111">
+<div style="background: #111111; color: #FAF7F0; overflow: hidden; border-bottom: 2px solid #111111">
+<div class="tv-tick" aria-hidden="true" style="display: flex; width: max-content; padding: 7px 0; font-family: 'Instrument Sans', system-ui, sans-serif; font-size: 12px; letter-spacing: 0.08em; text-transform: uppercase"><span style="padding: 0 28px">New events every week at TinkerSpace Kochi &amp; Kozhikode</span><span style="padding: 0 28px; color: {{accent}}">✦</span><span style="padding: 0 28px">72 campus communities across 13 districts</span><span style="padding: 0 28px; color: {{accent}}">✦</span><span style="padding: 0 28px">Free for students</span><span style="padding: 0 28px; color: {{accent}}">✦</span><span style="padding: 0 28px">Be kind · Get involved · Make a change</span><span style="padding: 0 28px; color: {{accent}}">✦</span><span style="padding: 0 28px">New events every week at TinkerSpace Kochi &amp; Kozhikode</span><span style="padding: 0 28px; color: {{accent}}">✦</span><span style="padding: 0 28px">72 campus communities across 13 districts</span><span style="padding: 0 28px; color: {{accent}}">✦</span><span style="padding: 0 28px">Free for students</span><span style="padding: 0 28px; color: {{accent}}">✦</span><span style="padding: 0 28px">Be kind · Get involved · Make a change</span><span style="padding: 0 28px; color: {{accent}}">✦</span></div>
+</div>
+<nav aria-label="Primary" style="max-width: 1280px; margin: 0 auto; padding-left: clamp(20px, 4vw, 56px); padding-right: clamp(20px, 4vw, 56px); box-sizing: border-box; padding-top: 14px; padding-bottom: 14px; display: flex; flex-wrap: wrap; align-items: center; justify-content: space-between; gap: 12px 28px">
+<a href="index.html" style="display: flex; align-items: baseline; gap: 8px">
+<span style="font-family: 'Bricolage Grotesque', 'Instrument Sans', system-ui, sans-serif; font-weight: 800; font-size: 34px; line-height: 1; letter-spacing: -0.02em">tinkerhub</span>
+<span style="font-family: 'Instrument Sans', system-ui, sans-serif; font-size: 11px; color: #4B4740">foundation</span>
+</a>
+<div style="display: flex; flex-wrap: wrap; align-items: center; gap: 6px 22px; font-weight: 600; font-size: 15px">
+<a href="programs.html" style="padding: 6px 2px; border-bottom: 2px solid transparent">Programs</a>
+<a href="events-community.html" style="padding: 6px 2px; border-bottom: 2px solid transparent">Events &amp; Community</a>
+<a href="impact.html" style="padding: 6px 2px; border-bottom: 2px solid transparent">Impact</a>
+<a href="reports.html" aria-current="page" style="padding: 6px 2px; border-bottom: 2px solid #111111">Reports</a>
+<a href="partner.html" style="padding: 6px 2px; border-bottom: 2px solid transparent">Partner with us</a>
+<a href="events-community.html" style="background: #111111; color: #FAF7F0; padding: 0 18px; min-height: 44px; display: inline-flex; align-items: center; border-radius: 14px">Get involved →</a>
+</div>
+</nav>
+</header>
+<!-- HEADER -->
+<section style="background-color: #FFF1DC; border-bottom: 2px solid #111111">
+<div style="max-width: 1280px; margin: 0 auto; padding-left: clamp(20px, 4vw, 56px); padding-right: clamp(20px, 4vw, 56px); box-sizing: border-box; padding-top: clamp(48px, 6vw, 88px); padding-bottom: clamp(40px, 5vw, 72px); display: flex; flex-direction: column; gap: 22px">
+<div style="display: flex; gap: 14px"><span style="font-family: 'Instrument Sans', system-ui, sans-serif; font-size: 12px; font-weight: 700; letter-spacing: 0.08em; text-transform: uppercase; color: {{accent2}}">/reports</span>
+<span style="font-family: 'Instrument Sans', system-ui, sans-serif; font-size: 12px; font-weight: 700; letter-spacing: 0.08em; text-transform: uppercase; color: #4B4740">Reports</span>
+</div>
+<h1 style="margin: 0; font-family: 'Bricolage Grotesque', 'Instrument Sans', system-ui, sans-serif; font-weight: 800; font-size: clamp(56px, 8vw, 124px); line-height: 0.95; letter-spacing: -0.04em">Our work, <em style="font-style: normal; background: #FFD23F; color: #111111; padding: 0 0.18em; border-radius: 0.18em; box-decoration-break: clone; -webkit-box-decoration-break: clone">openly.</em></h1>
+<p style="margin: 0; font-size: 19px; line-height: 1.6; color: #2C2925; max-width: 720px">Newsletters, event records and our impact story, all in one place.</p>
+<div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(240px, 1fr)); gap: 16px; margin-top: 10px">
+<a href="https://tinkerhub.substack.com/p/kolaambi-10-how-i-learned-ai-from" style="background: #FFFFFF; border: 2px solid #111111; border-radius: 22px; padding: 22px; display: flex; flex-direction: column; gap: 12px">
+<span style="font-family: 'Instrument Sans', system-ui, sans-serif; font-size: 12px; font-weight: 700; letter-spacing: 0.08em; text-transform: uppercase; color: #4B4740">Newsletter</span>
+<span style="font-family: 'Bricolage Grotesque', 'Instrument Sans', system-ui, sans-serif; font-weight: 800; font-size: 28px; line-height: 1.08">Kolaambi #10 · 15 Oct 2025</span>
+<span style="align-self: flex-start; font-family: 'Instrument Sans', system-ui, sans-serif; font-size: 11px; text-transform: uppercase; border-radius: 999px; padding: 3px 10px; background: {{accent2}}; color: #FFFFFF; border: 2px solid {{accent2}}">Published</span>
+<span style="font-weight: 600; font-size: 15px; text-decoration: underline; text-underline-offset: 4px; margin-top: auto">Read the latest issue →</span>
+</a>
+<a href="major-events.html" style="background: #FFFFFF; border: 2px solid #111111; border-radius: 22px; padding: 22px; display: flex; flex-direction: column; gap: 12px">
+<span style="font-family: 'Instrument Sans', system-ui, sans-serif; font-size: 12px; font-weight: 700; letter-spacing: 0.08em; text-transform: uppercase; color: #4B4740">Event impact</span>
+<span style="font-family: 'Bricolage Grotesque', 'Instrument Sans', system-ui, sans-serif; font-weight: 800; font-size: 28px; line-height: 1.08">Six flagship events on record</span>
+<span style="align-self: flex-start; font-family: 'Instrument Sans', system-ui, sans-serif; font-size: 11px; text-transform: uppercase; border-radius: 999px; padding: 3px 10px; background: {{accent2}}; color: #FFFFFF; border: 2px solid {{accent2}}">Published</span>
+<span style="font-weight: 600; font-size: 15px; text-decoration: underline; text-underline-offset: 4px; margin-top: auto">Open the events archive →</span>
+</a>
+<a href="impact.html" style="background: #FFFFFF; border: 2px solid #111111; border-radius: 22px; padding: 22px; display: flex; flex-direction: column; gap: 12px">
+<span style="font-family: 'Instrument Sans', system-ui, sans-serif; font-size: 12px; font-weight: 700; letter-spacing: 0.08em; text-transform: uppercase; color: #4B4740">Impact</span>
+<span style="font-family: 'Bricolage Grotesque', 'Instrument Sans', system-ui, sans-serif; font-weight: 800; font-size: 28px; line-height: 1.08">What changes when students build</span>
+<span style="align-self: flex-start; font-family: 'Instrument Sans', system-ui, sans-serif; font-size: 11px; text-transform: uppercase; border-radius: 999px; padding: 3px 10px; background: {{accent2}}; color: #FFFFFF; border: 2px solid {{accent2}}">Published</span>
+<span style="font-weight: 600; font-size: 15px; text-decoration: underline; text-underline-offset: 4px; margin-top: auto">Read the impact story →</span>
+</a>
+</div>
+</div>
+</section>
+
+
+<!-- ARCHIVE -->
+<section id="archive" style="background: #FAF7F0; border-bottom: 2px solid #111111">
+<div style="max-width: 1280px; margin: 0 auto; padding-left: clamp(20px, 4vw, 56px); padding-right: clamp(20px, 4vw, 56px); box-sizing: border-box; padding-top: clamp(56px, 7vw, 96px); padding-bottom: clamp(56px, 7vw, 96px); display: flex; flex-direction: column; gap: 26px">
+<div style="display: flex; flex-wrap: wrap; gap: 20px 48px; align-items: flex-end; justify-content: space-between">
+<div style="display: flex; flex-direction: column; gap: 18px; flex: 1 1 620px; min-width: 0">
+<span style="align-self: flex-start; display: inline-flex; align-items: center; gap: 8px; padding: 6px 14px; border-radius: 999px; font-weight: 700; font-size: 13px; letter-spacing: 0.04em; text-transform: uppercase; background: #111111; color: #FAF7F0">Publication archive</span>
+<h2 style="margin: 0; font-family: 'Bricolage Grotesque', 'Instrument Sans', system-ui, sans-serif; font-weight: 800; font-size: clamp(42px, 5.6vw, 84px); line-height: 1; letter-spacing: -0.035em; color: #111111">Everything we’ve <em style="font-style: normal; background: #FFD23F; color: #111111; padding: 0 0.18em; border-radius: 0.18em; box-decoration-break: clone; -webkit-box-decoration-break: clone">put on record.</em></h2>
+</div>
+</div>
+<div style="display: flex; flex-wrap: wrap; gap: 20px 32px; align-items: flex-end">
+<label style="display: flex; flex-direction: column; gap: 8px; flex: 1 1 280px; max-width: 420px"><span style="font-family: 'Instrument Sans', system-ui, sans-serif; font-size: 12px; font-weight: 700; letter-spacing: 0.08em; text-transform: uppercase; color: #4B4740">Search</span>
+<input type="search" value="{{q}}" onInput="{{onQ}}" placeholder="Useless Projects, Kolaambi, 2025…" style="font-family: inherit; font-size: 17px; color: #111111; background: #FFFFFF; border: 2px solid #111111; border-radius: 14px; padding: 0 16px; min-height: 50px; box-sizing: border-box; width: 100%"></label>
+<div style="display: flex; flex-direction: column; gap: 8px">
+<span style="font-family: 'Instrument Sans', system-ui, sans-serif; font-size: 12px; font-weight: 700; letter-spacing: 0.08em; text-transform: uppercase; color: #4B4740">Type</span>
+<div role="group" aria-label="Type" style="display: flex; flex-wrap: wrap; gap: 8px">
+<sc-for list="{{typeChips}}" as="tc" hint-placeholder-count="5">
+<sc-if value="{{tc.on}}" hint-placeholder-val="{{ false }}"><button type="button" onClick="{{tc.pick}}" aria-pressed="true" style="font-family: inherit; cursor: pointer; min-height: 40px; padding: 0 14px; border-radius: 999px; border: 2px solid #111111; background: #111111; color: #FAF7F0; font-weight: 600; font-size: 14px">{{tc.label}}</button></sc-if>
+<sc-if value="{{tc.off}}" hint-placeholder-val="{{ true }}"><button type="button" onClick="{{tc.pick}}" aria-pressed="false" style="font-family: inherit; cursor: pointer; min-height: 40px; padding: 0 14px; border-radius: 999px; border: 2px solid #111111; background: transparent; color: #111111; font-weight: 600; font-size: 14px">{{tc.label}}</button></sc-if>
+</sc-for>
+</div>
+</div>
+<div style="display: flex; flex-direction: column; gap: 8px">
+<span style="font-family: 'Instrument Sans', system-ui, sans-serif; font-size: 12px; font-weight: 700; letter-spacing: 0.08em; text-transform: uppercase; color: #4B4740">Year</span>
+<div role="group" aria-label="Year" style="display: flex; flex-wrap: wrap; gap: 8px">
+<sc-for list="{{yearChips}}" as="yc" hint-placeholder-count="6">
+<sc-if value="{{yc.on}}" hint-placeholder-val="{{ false }}"><button type="button" onClick="{{yc.pick}}" aria-pressed="true" style="font-family: inherit; cursor: pointer; min-height: 40px; padding: 0 14px; border-radius: 999px; border: 2px solid #111111; background: #111111; color: #FAF7F0; font-weight: 600; font-size: 14px">{{yc.label}}</button></sc-if>
+<sc-if value="{{yc.off}}" hint-placeholder-val="{{ true }}"><button type="button" onClick="{{yc.pick}}" aria-pressed="false" style="font-family: inherit; cursor: pointer; min-height: 40px; padding: 0 14px; border-radius: 999px; border: 2px solid #111111; background: transparent; color: #111111; font-weight: 600; font-size: 14px">{{yc.label}}</button></sc-if>
+</sc-for>
+</div>
+</div>
+<div style="display: flex; flex-direction: column; gap: 8px">
+<span style="font-family: 'Instrument Sans', system-ui, sans-serif; font-size: 12px; font-weight: 700; letter-spacing: 0.08em; text-transform: uppercase; color: #4B4740">View</span>
+<div role="group" aria-label="View" style="display: flex; flex-wrap: wrap; gap: 8px">
+<sc-for list="{{viewChips}}" as="vc" hint-placeholder-count="2">
+<sc-if value="{{vc.on}}" hint-placeholder-val="{{ false }}"><button type="button" onClick="{{vc.pick}}" aria-pressed="true" style="font-family: inherit; cursor: pointer; min-height: 40px; padding: 0 14px; border-radius: 999px; border: 2px solid #111111; background: #111111; color: #FAF7F0; font-weight: 600; font-size: 14px">{{vc.label}}</button></sc-if>
+<sc-if value="{{vc.off}}" hint-placeholder-val="{{ true }}"><button type="button" onClick="{{vc.pick}}" aria-pressed="false" style="font-family: inherit; cursor: pointer; min-height: 40px; padding: 0 14px; border-radius: 999px; border: 2px solid #111111; background: transparent; color: #111111; font-weight: 600; font-size: 14px">{{vc.label}}</button></sc-if>
+</sc-for>
+</div>
+</div>
+</div>
+<div style="display: flex; justify-content: space-between; align-items: baseline"><span style="font-family: 'Instrument Sans', system-ui, sans-serif; font-size: 12px; font-weight: 700; letter-spacing: 0.08em; text-transform: uppercase; color: #4B4740">{{count}}</span>
+</div>
+<sc-if value="{{gridView}}" hint-placeholder-val="{{ true }}">
+<div style="display: grid; grid-template-columns: repeat(auto-fill, minmax(280px, 1fr)); gap: 18px">
+<sc-for list="{{items}}" as="it" hint-placeholder-count="6">
+<a href="{{it.href}}" style="background: #FFFFFF; border: 2px solid #111111; border-radius: 22px; overflow: hidden; display: flex; flex-direction: column">
+<span style="display: flex; justify-content: space-between; align-items: flex-end; padding: 14px 16px; min-height: 96px; box-sizing: border-box; background: {{it.bg}}; color: {{it.fg}}; border-bottom: 2px solid #111111">
+<span style="font-family: 'Bricolage Grotesque', 'Instrument Sans', system-ui, sans-serif; font-weight: 800; font-size: 44px; line-height: 0.85">{{it.year}}</span>
+<span style="font-family: 'Instrument Sans', system-ui, sans-serif; font-size: 11px; text-transform: uppercase">{{it.type}}</span>
+</span>
+<span style="padding: 16px; display: flex; flex-direction: column; gap: 8px; flex-grow: 1">
+<span style="font-family: 'Bricolage Grotesque', 'Instrument Sans', system-ui, sans-serif; font-weight: 800; font-size: 24px; line-height: 1.1">{{it.t}}</span>
+<span style="font-size: 14px; line-height: 1.5; color: #2C2925; flex-grow: 1">{{it.desc}}</span>
+<span style="font-family: 'Instrument Sans', system-ui, sans-serif; font-size: 11px; color: #4B4740">{{it.dl}} · {{it.fmt}}</span>
+</span>
+</a>
+</sc-for>
+</div>
+</sc-if>
+<sc-if value="{{listView}}" hint-placeholder-val="{{ false }}">
+<div style="overflow-x: auto; border: 2px solid #111111; border-radius: 14px; background: #FFFFFF">
+<table style="width: 100%; min-width: 720px; border-collapse: collapse; font-size: 15px">
+<caption style="text-align: left; padding: 12px 14px; font-weight: 600">Publications, newest first</caption>
+<thead><tr><th scope="col" style="text-align: left; padding: 10px 14px; border-bottom: 2px solid #111111">Title</th><th scope="col" style="text-align: left; padding: 10px 14px; border-bottom: 2px solid #111111">Type</th><th scope="col" style="text-align: left; padding: 10px 14px; border-bottom: 2px solid #111111">Published</th><th scope="col" style="text-align: left; padding: 10px 14px; border-bottom: 2px solid #111111">Format</th></tr></thead>
+<tbody>
+<sc-for list="{{items}}" as="it" hint-placeholder-count="6">
+<tr><td style="padding: 10px 14px; border-bottom: 1px solid #D9D1C1"><a href="{{it.href}}" style="text-decoration: underline; text-underline-offset: 3px; font-weight: 600">{{it.t}}</a></td><td style="padding: 10px 14px; border-bottom: 1px solid #D9D1C1">{{it.type}}</td><td style="padding: 10px 14px; border-bottom: 1px solid #D9D1C1; white-space: nowrap">{{it.dl}}</td><td style="padding: 10px 14px; border-bottom: 1px solid #D9D1C1">{{it.fmt}}</td></tr>
+</sc-for>
+</tbody>
+</table>
+</div>
+</sc-if>
+<sc-if value="{{noItems}}" hint-placeholder-val="{{ false }}">
+<div style="border: 2px dashed #111111; border-radius: 22px; padding: 22px">Nothing matches. Try another search or filter.</div>
+</sc-if>
+</div>
+</section>
+
+<!-- NEWSLETTERS -->
+<section id="newsletters" style="background-color: #FFF1DC; border-bottom: 2px solid #111111">
+<div style="max-width: 1280px; margin: 0 auto; padding-left: clamp(20px, 4vw, 56px); padding-right: clamp(20px, 4vw, 56px); box-sizing: border-box; padding-top: clamp(56px, 7vw, 96px); padding-bottom: clamp(56px, 7vw, 96px); display: flex; flex-wrap: wrap; gap: 40px 64px; align-items: flex-start">
+<div style="flex: 1 1 420px; min-width: 0; display: flex; flex-direction: column; gap: 18px">
+<div style="display: flex; gap: 14px"><span style="font-family: 'Instrument Sans', system-ui, sans-serif; font-size: 12px; font-weight: 700; letter-spacing: 0.08em; text-transform: uppercase; color: {{accent2}}">/reports/newsletters</span>
+<span style="font-family: 'Instrument Sans', system-ui, sans-serif; font-size: 12px; font-weight: 700; letter-spacing: 0.08em; text-transform: uppercase; color: #4B4740">Newsletter</span>
+</div>
+<h2 style="margin: 0; font-family: 'Bricolage Grotesque', 'Instrument Sans', system-ui, sans-serif; font-weight: 800; font-size: clamp(42px, 5.6vw, 84px); line-height: 1; letter-spacing: -0.035em; color: #111111"><em style="font-style: normal; background: #FFD23F; color: #111111; padding: 0 0.18em; border-radius: 0.18em; box-decoration-break: clone; -webkit-box-decoration-break: clone">Kolaambi,</em> since 2020.</h2>
+<p style="margin: 0; font-size: 18px; line-height: 1.6; color: #2C2925; max-width: 640px">TinkerHub’s newsletter: programs, people, projects and opportunities. Published on Substack, where over 31,000 people subscribe.</p>
+<div style="display: flex; flex-wrap: wrap; gap: 12px"><a href="https://tinkerhub.substack.com/about" style="display: inline-flex; align-items: center; gap: 10px; min-height: 52px; padding: 0 26px; border-radius: 999px; font-weight: 700; font-size: 16px; box-sizing: border-box; border: 2px solid #111111; background: {{accent}}; color: #111111; box-shadow: 4px 4px 0 #111111">Subscribe on Substack →</a>
+<a href="https://tinkerhub.substack.com/archive" style="display: inline-flex; align-items: center; gap: 10px; min-height: 52px; padding: 0 26px; border-radius: 999px; font-weight: 700; font-size: 16px; box-sizing: border-box; border: 2px solid #111111; background: transparent; color: #111111">Full archive</a>
+</div>
+<span style="font-size: 13px; color: #4B4740">Subscribing happens on Substack under its privacy policy. This site does not collect your email.</span>
+</div>
+<div style="flex: 1 1 480px; min-width: 0; display: flex; flex-direction: column; border-top: 2px solid #111111">
+<sc-for list="{{latestNews}}" as="nl" hint-placeholder-count="4">
+<a href="{{nl.href}}" style="display: flex; flex-wrap: wrap; gap: 4px 20px; align-items: baseline; padding: 16px 0; border-bottom: 2px solid #111111; background: rgba(245,241,232,0.85)">
+<span style="font-family: 'Instrument Sans', system-ui, sans-serif; font-size: 12px; font-weight: 700; min-width: 110px">{{nl.dl}}</span>
+<span style="font-family: 'Bricolage Grotesque', 'Instrument Sans', system-ui, sans-serif; font-weight: 800; font-size: 24px; line-height: 1.12; flex: 1 1 280px">{{nl.t}}</span>
+</a>
+</sc-for>
+</div>
+</div>
+</section>
+
+<footer style="background: #111111; color: #CFC8BC">
+<div style="max-width: 1280px; margin: 0 auto; padding-left: clamp(20px, 4vw, 56px); padding-right: clamp(20px, 4vw, 56px); box-sizing: border-box; padding-top: 64px; padding-bottom: 36px; display: flex; flex-wrap: wrap; gap: 48px; justify-content: space-between">
+<div style="flex: 1 1 300px; max-width: 400px; display: flex; flex-direction: column; gap: 14px">
+<span style="font-family: 'Bricolage Grotesque', 'Instrument Sans', system-ui, sans-serif; font-weight: 800; font-size: 44px; line-height: 1; color: #FAF7F0">tinkerhub</span>
+<span style="font-size: 15px; line-height: 1.6">TinkerHub Foundation is a non-profit, student-focused learning community in Kerala. Students learn by building real things, together, for free.</span>
+<span style="font-size: 14px; color: #9C958A">TinkerSpace Kochi: Kalamassery, near CUSAT · TinkerSpace Kozhikode: Medical College P.O.</span>
+</div>
+<div style="display: flex; flex-wrap: wrap; gap: 40px">
+<div style="display: flex; flex-direction: column; gap: 10px; min-width: 150px">
+<span style="font-family: 'Instrument Sans', system-ui, sans-serif; font-size: 12px; font-weight: 700; letter-spacing: 0.08em; text-transform: uppercase; color: #9C958A">Explore</span>
+<a href="programs.html" style="color: #FAF7F0; font-size: 15px">Programs</a>
+<a href="events-community.html" style="color: #FAF7F0; font-size: 15px">Opportunities</a>
+<a href="events-community.html#campuses" style="color: #FAF7F0; font-size: 15px">Campus communities</a>
+<a href="index.html#stories" style="color: #FAF7F0; font-size: 15px">Stories</a>
+</div>
+<div style="display: flex; flex-direction: column; gap: 10px; min-width: 150px">
+<span style="font-family: 'Instrument Sans', system-ui, sans-serif; font-size: 12px; font-weight: 700; letter-spacing: 0.08em; text-transform: uppercase; color: #9C958A">Our work</span>
+<a href="impact.html" style="color: #FAF7F0; font-size: 15px">Impact</a>
+<a href="major-events.html" style="color: #FAF7F0; font-size: 15px">Major events</a>
+<a href="reports.html" style="color: #FAF7F0; font-size: 15px">Reports</a>
+<a href="reports.html#newsletters" style="color: #FAF7F0; font-size: 15px">Newsletter</a>
+</div>
+<div style="display: flex; flex-direction: column; gap: 10px; min-width: 150px">
+<span style="font-family: 'Instrument Sans', system-ui, sans-serif; font-size: 12px; font-weight: 700; letter-spacing: 0.08em; text-transform: uppercase; color: #9C958A">Get involved</span>
+<a href="partner.html" style="color: #FAF7F0; font-size: 15px">Partner with us</a>
+<a href="https://tinkerhub.org/donate" style="color: #FAF7F0; font-size: 15px">Donate</a>
+<a href="https://tinkerhub-foundation.notion.site/Volunteer-with-TinkerHub-198bd5ba1a8680358d99fe60055bc892" style="color: #FAF7F0; font-size: 15px">Volunteer</a>
+<a href="https://airtable.com/appdFV7VvqOIlQ36v/shrKV8t5K5JgtfUOj" style="color: #FAF7F0; font-size: 15px">Start a campus</a>
+</div>
+<div style="display: flex; flex-direction: column; gap: 10px; min-width: 150px">
+<span style="font-family: 'Instrument Sans', system-ui, sans-serif; font-size: 12px; font-weight: 700; letter-spacing: 0.08em; text-transform: uppercase; color: #9C958A">Read</span>
+<a href="https://medium.com/tinkerhub" style="color: #FAF7F0; font-size: 15px">Stories on Medium</a>
+<a href="https://tinkerhub.org/events" style="color: #FAF7F0; font-size: 15px">Live events calendar</a>
+<a href="https://tinkerhub.org" style="color: #FAF7F0; font-size: 15px">tinkerhub.org</a>
+</div>
+</div>
+</div>
+<div style="max-width: 1280px; margin: 0 auto; padding-left: clamp(20px, 4vw, 56px); padding-right: clamp(20px, 4vw, 56px); box-sizing: border-box; padding-top: 18px; padding-bottom: 30px; border-top: 1px solid #2E2C29; display: flex; flex-wrap: wrap; gap: 8px 24px; justify-content: space-between; font-size: 13px; color: #9C958A">
+<span>© 2026 TinkerHub Foundation</span>
+<span>Made with care in Kerala</span>
+</div>
+</footer>
+</div>
+</template>
+<script>
+const PUBS = [{"t": "Kolaambi #10: How I Learned AI from Kerala", "type": "Newsletter", "date": "2025-10-15", "dl": "15 Oct 2025", "year": "2025", "desc": "Monthly newsletter on tech, people and communities.", "fmt": "Web · Substack", "href": "https://tinkerhub.substack.com/p/kolaambi-10-how-i-learned-ai-from"}, {"t": "Kolaambi #9: When the Map Stops Working, Learn the Terrain", "type": "Newsletter", "date": "2025-08-07", "dl": "7 Aug 2025", "year": "2025", "desc": "Monthly newsletter on tech, people and communities.", "fmt": "Web · Substack", "href": "https://tinkerhub.substack.com/p/kolaambi-9-when-the-map-stops-working"}, {"t": "Kolaambi #8: Nobody Cares. Do you?", "type": "Newsletter", "date": "2025-05-20", "dl": "20 May 2025", "year": "2025", "desc": "Monthly newsletter on tech, people and communities.", "fmt": "Web · Substack", "href": "https://tinkerhub.substack.com/p/kolaambi-8-nobody-cares-do-you"}, {"t": "Kolaambi #7: Taste Is the New Tech, Apparently", "type": "Newsletter", "date": "2025-04-21", "dl": "21 Apr 2025", "year": "2025", "desc": "Monthly newsletter on tech, people and communities.", "fmt": "Web · Substack", "href": "https://tinkerhub.substack.com/p/kolaambi-7-taste-is-the-new-tech"}, {"t": "Innovation Overdrive", "type": "Newsletter", "date": "2025-03-20", "dl": "20 Mar 2025", "year": "2025", "desc": "Highlights from recent programs and events.", "fmt": "Web · Substack", "href": "https://tinkerhub.substack.com/p/innovation-overdrive"}, {"t": "Unfurling the Sails to Fish Out Marvels", "type": "Newsletter", "date": "2025-02-10", "dl": "10 Feb 2025", "year": "2025", "desc": "Turning nervous first times into memorable best times.", "fmt": "Web · Substack", "href": "https://tinkerhub.substack.com/p/unfurling-the-sails-to-fish-out-marvels"}, {"t": "Flip, Flip, Flip, TinkerHub is 10!", "type": "Newsletter", "date": "2025-01-10", "dl": "10 Jan 2025", "year": "2025", "desc": "Ten years of TinkerHub: UNESCO-APEID, Useless Projects, TinkerDays and the Tink-Her-Hack 3.0 call.", "fmt": "Web · Substack", "href": "https://tinkerhub.substack.com/p/flip-flip-flip-tinkerhub-is-10"}, {"t": "It’s Happening Tomorrow! TinkerSpace Carnival", "type": "Newsletter", "date": "2024-12-13", "dl": "13 Dec 2024", "year": "2024", "desc": "Countdown to the TinkerSpace Carnival.", "fmt": "Web · Substack", "href": "https://tinkerhub.substack.com/p/its-happening-tomorrow-tinkerspace"}, {"t": "Knock Knock!", "type": "Newsletter", "date": "2024-12-01", "dl": "Dec 2024", "year": "2024", "desc": "Invitation to the TinkerSpace Carnival.", "fmt": "Web · Substack", "href": "https://tinkerhub.substack.com/p/tinkerspace-carnival"}, {"t": "TinkerHub Tides: Chronicle of Innovation & Inclusion", "type": "Newsletter", "date": "2024-01-01", "dl": "2024", "year": "2024", "desc": "A quarterly round-up of programs and community news.", "fmt": "Web · Substack", "href": "https://tinkerhub.substack.com/p/tinkerhub-tides-the-q1-chronicle"}, {"t": "TinkerHub Monthly Marvels: September 2023", "type": "Newsletter", "date": "2023-09-30", "dl": "Sept 2023", "year": "2023", "desc": "Monthly round-up from the community.", "fmt": "Web · Substack", "href": "https://tinkerhub.substack.com/p/tinkerhub-monthly-buzz-september"}, {"t": "Kolaambi #1 to #6", "type": "Newsletter", "date": "2020-10-08", "dl": "2020 – 2022", "year": "2020", "desc": "The first run of Kolaambi, from the launch issue in October 2020.", "fmt": "Web · Substack archive", "href": "https://tinkerhub.substack.com/archive"}, {"t": "Useless Projects 3.0: event record", "type": "Event impact", "date": "2026-09-22", "dl": "Sept 2026", "year": "2026", "desc": "67 venues, 3,419 students, 1,645 projects.", "fmt": "Web page", "href": "major-events.html"}, {"t": "Tink-Her-Hack 4.0: event record", "type": "Event impact", "date": "2026-03-03", "dl": "Mar 2026", "year": "2026", "desc": "Women-only hackathon at 67 venues: participation, projects, follow-on activity.", "fmt": "Web page", "href": "major-events.html"}, {"t": "LAYOVER: event record", "type": "Event impact", "date": "2026-10-11", "dl": "Oct 2026", "year": "2026", "desc": "Two-day hackathon at TinkerSpace Calicut.", "fmt": "Web page", "href": "major-events.html"}, {"t": "Useless Projects 2.0: event record", "type": "Event impact", "date": "2025-08-15", "dl": "Aug 2025", "year": "2025", "desc": "60 venues, 3,282 students, 1,721 projects.", "fmt": "Web page", "href": "major-events.html"}, {"t": "Tink-Her-Hack 3.0: event record", "type": "Event impact", "date": "2025-02-09", "dl": "Feb 2025", "year": "2025", "desc": "Participation, projects and 180-day follow-on activity.", "fmt": "Web page", "href": "major-events.html"}, {"t": "Useless Projects: event record", "type": "Event impact", "date": "2024-11-04", "dl": "Nov 2024", "year": "2024", "desc": "The first edition: participation, projects and follow-on activity.", "fmt": "Web page", "href": "major-events.html"}, {"t": "Impact evidence and metric definitions", "type": "Impact", "date": "2026-10-17", "dl": "17 Oct 2026", "year": "2026", "desc": "Who comes, what they build, and where they go next.", "fmt": "Web page", "href": "impact.html"}];
+const TK = {
+  reduce() { try { return !!(window.matchMedia && window.matchMedia("(prefers-reduced-motion: reduce)").matches); } catch (e) { return false; } },
+  low() { const c = navigator.hardwareConcurrency || 8; const m = navigator.deviceMemory || 8; return c <= 4 || m <= 4 || (window.innerWidth || 1200) < 640; },
+  whenThree(owner, cb, n) {
+    n = n || 0;
+    if (owner.disposed) return;
+    if (window.THREE) { cb(window.THREE); return; }
+    if (n > 120) { cb(null); return; }
+    owner.timers.push(setTimeout(() => TK.whenThree(owner, cb, n + 1), 120));
+  },
+  lazy(owner, el, fn) {
+    if (!el) return;
+    if (!window.IntersectionObserver) { fn(); return; }
+    const io = new IntersectionObserver((es) => { if (es.some((e) => e.isIntersecting)) { io.disconnect(); fn(); } }, { rootMargin: "300px 0px" });
+    io.observe(el);
+    owner.disposers.push(() => io.disconnect());
+  },
+  stage(T, canvas, owner, fov) {
+    const low = TK.low();
+    const renderer = new T.WebGLRenderer({ canvas: canvas, antialias: !low, alpha: true, powerPreference: "low-power" });
+    renderer.setPixelRatio(Math.min(window.devicePixelRatio || 1, low ? 1.25 : 1.75));
+    renderer.setClearColor(0x000000, 0);
+    const scene = new T.Scene();
+    const camera = new T.PerspectiveCamera(fov || 35, 1, 0.1, 300);
+    scene.add(new T.HemisphereLight(0xffffff, 0x8f8a80, 0.9));
+    const sun = new T.DirectionalLight(0xffffff, 0.85);
+    sun.position.set(5, 10, 7);
+    scene.add(sun);
+    const st = { T: T, renderer: renderer, scene: scene, camera: camera, canvas: canvas, visible: true, update: null, raf: 0, low: low, reduce: TK.reduce(), clock: new T.Clock(), acc: [], acc2: [], ink: new T.LineBasicMaterial({ color: 0x111111 }) };
+    const resize = () => {
+      const w = canvas.clientWidth || 400, h = canvas.clientHeight || 400;
+      renderer.setSize(w, h, false);
+      camera.aspect = w / h;
+      camera.updateProjectionMatrix();
+    };
+    resize();
+    let ro = null, io = null;
+    if (window.ResizeObserver) { ro = new ResizeObserver(resize); ro.observe(canvas); }
+    if (window.IntersectionObserver) { io = new IntersectionObserver((es) => { st.visible = es[0].isIntersecting; }); io.observe(canvas); }
+    const cA = new T.Color(), cB = new T.Color();
+    const loop = () => {
+      if (owner.disposed) return;
+      st.raf = requestAnimationFrame(loop);
+      const dt = Math.min(st.clock.getDelta(), 0.05);
+      if (!st.visible) return;
+      cA.set(owner.props.accent ?? "#FF5A36");
+      cB.set(owner.props.accent2 ?? "#2346C8");
+      st.acc.forEach((m) => m.color.copy(cA));
+      st.acc2.forEach((m) => m.color.copy(cB));
+      if (st.update) st.update(dt, st.clock.elapsedTime);
+      renderer.render(scene, camera);
+    };
+    st.start = () => loop();
+    owner.disposers.push(() => {
+      cancelAnimationFrame(st.raf);
+      if (ro) ro.disconnect();
+      if (io) io.disconnect();
+      scene.traverse((o) => {
+        if (o.geometry) o.geometry.dispose();
+        if (o.material) (Array.isArray(o.material) ? o.material : [o.material]).forEach((m) => m.dispose());
+      });
+      renderer.dispose();
+    });
+    return st;
+  },
+  mat(st, color, role) {
+    const m = new st.T.MeshToonMaterial({ color: color });
+    if (role === "a") st.acc.push(m);
+    if (role === "b") st.acc2.push(m);
+    return m;
+  },
+  solid(st, geo, color, role) {
+    const m = new st.T.Mesh(geo, TK.mat(st, color, role));
+    m.add(new st.T.LineSegments(new st.T.EdgesGeometry(geo, 25), st.ink));
+    return m;
+  },
+  wire(st, geo, role) {
+    const lm = new st.T.LineBasicMaterial({ color: 0x2346c8, transparent: true, opacity: 1 });
+    if (role === "b") st.acc2.push(lm);
+    if (role === "a") st.acc.push(lm);
+    return new st.T.LineSegments(new st.T.EdgesGeometry(geo, 1), lm);
+  },
+  pointer(owner, el, h) {
+    const rel = (e) => { const r = el.getBoundingClientRect(); return { x: ((e.clientX - r.left) / r.width) * 2 - 1, y: -((e.clientY - r.top) / r.height) * 2 + 1, cx: e.clientX }; };
+    const mv = (e) => h.move && h.move(rel(e), e);
+    const dn = (e) => h.down && h.down(rel(e), e);
+    const lv = (e) => h.leave && h.leave(e);
+    const up = (e) => h.up && h.up(e);
+    el.addEventListener("pointermove", mv);
+    el.addEventListener("pointerdown", dn);
+    el.addEventListener("pointerleave", lv);
+    window.addEventListener("pointerup", up);
+    owner.disposers.push(() => { el.removeEventListener("pointermove", mv); el.removeEventListener("pointerdown", dn); el.removeEventListener("pointerleave", lv); window.removeEventListener("pointerup", up); });
+  },
+  gear(st, r, teeth, depth, color, role) {
+    const T = st.T, sh = new T.Shape(), step = Math.PI * 2 / teeth;
+    for (let i = 0; i < teeth; i++) {
+      const a = i * step;
+      [[r, a], [r + 0.3, a + step * 0.15], [r + 0.3, a + step * 0.45], [r, a + step * 0.6]].forEach((q, k) => {
+        const x = Math.cos(q[1]) * q[0], y = Math.sin(q[1]) * q[0];
+        if (i === 0 && k === 0) sh.moveTo(x, y); else sh.lineTo(x, y);
+      });
+    }
+    sh.closePath();
+    const hole = new T.Path();
+    hole.absarc(0, 0, r * 0.36, 0, Math.PI * 2, true);
+    sh.holes.push(hole);
+    const g = new T.ExtrudeGeometry(sh, { depth: depth, bevelEnabled: false, curveSegments: 12 });
+    g.translate(0, 0, -depth / 2);
+    return TK.solid(st, g, color, role);
+  },
+  robot(st) {
+    const T = st.T, g = new T.Group();
+    const body = TK.solid(st, new T.BoxGeometry(0.9, 0.85, 0.7), 0xf5f1e8); body.position.y = 0.95; g.add(body);
+    const head = TK.solid(st, new T.BoxGeometry(0.66, 0.52, 0.54), 0x2346c8, "b"); head.position.y = 1.68; g.add(head);
+    [-0.15, 0.15].forEach((x) => { const e = TK.solid(st, new T.BoxGeometry(0.12, 0.1, 0.05), 0xff5a36, "a"); e.position.set(x, 1.72, 0.28); g.add(e); });
+    [-0.62, 0.62].forEach((x) => { const a = TK.solid(st, new T.BoxGeometry(0.22, 0.7, 0.22), 0xff5a36, "a"); a.position.set(x, 1.0, 0); g.add(a); });
+    [-0.22, 0.22].forEach((x) => { const l = TK.solid(st, new T.BoxGeometry(0.26, 0.55, 0.26), 0x9a958c); l.position.set(x, 0.28, 0); g.add(l); });
+    const ant = TK.solid(st, new T.CylinderGeometry(0.04, 0.04, 0.35, 6), 0x111111); ant.position.y = 2.1; g.add(ant);
+    const tip = TK.solid(st, new T.SphereGeometry(0.1, 10, 8), 0xffe15a); tip.position.y = 2.32; g.add(tip);
+    return g;
+  },
+  board(st) {
+    const T = st.T, g = new T.Group();
+    g.add(TK.solid(st, new T.BoxGeometry(2.0, 0.12, 1.3), 0x2346c8, "b"));
+    const chip = TK.solid(st, new T.BoxGeometry(0.6, 0.12, 0.6), 0x111111); chip.position.set(-0.3, 0.12, 0); g.add(chip);
+    const pinGeo = new T.BoxGeometry(0.08, 0.16, 0.08), pinMat = new T.MeshToonMaterial({ color: 0xf5f1e8 });
+    for (let i = 0; i < 7; i++) { const pin = new T.Mesh(pinGeo, pinMat); pin.position.set(-0.85 + i * 0.27, 0.13, 0.5); g.add(pin); }
+    const led = TK.solid(st, new T.CylinderGeometry(0.12, 0.12, 0.28, 10), 0xff5a36, "a"); led.position.set(0.6, 0.2, -0.2); g.add(led);
+    return g;
+  },
+  lerp(a, b, k) { return a + (b - a) * k; },
+  ease(t) { t = Math.max(0, Math.min(1, t)); return 1 - Math.pow(1 - t, 3); }
+};
+
+class Component extends DCLogic {
+  constructor(props) {
+    super(props);
+    this.state = { q: "", type: "All", year: "All", view: "Editorial" };
+
+    this.onQ = (e) => this.setState({ q: e && e.target ? e.target.value : "" });
+  }
+  renderVals() {
+    const accent = this.props.accent ?? "#FF5A36";
+    const accent2 = this.props.accent2 ?? "#2346C8";
+    const colors = { "Newsletter": ["#FFE15A", "#111111"], "Event impact": [accent, "#111111"], "Impact": [accent2, "#F5F1E8"] };
+    const q = (this.state.q || "").trim().toLowerCase();
+    const items = PUBS.filter((p) => (this.state.type === "All" || p.type === this.state.type) && (this.state.year === "All" || p.year === this.state.year) && (!q || (p.t + " " + p.desc + " " + p.type + " " + p.year).toLowerCase().indexOf(q) !== -1))
+      .sort((a, b) => b.date.localeCompare(a.date))
+      .map((p) => Object.assign({}, p, { bg: (colors[p.type] || ["#F5F1E8"])[0], fg: (colors[p.type] || ["#F5F1E8", "#111111"])[1] }));
+    const mk = (vals, key) => vals.map((v) => ({ label: v, on: this.state[key] === v, off: this.state[key] !== v, pick: () => this.setState({ [key]: v }) }));
+    const years = ["All"].concat(Array.from(new Set(PUBS.map((p) => p.year))).sort().reverse());
+    return {
+      accent, accent2,
+      q: this.state.q, onQ: this.onQ,
+      typeChips: mk(["All", "Newsletter", "Event impact", "Impact"], "type"),
+      yearChips: mk(years, "year"),
+      viewChips: mk(["Editorial", "List"], "view"),
+      gridView: this.state.view === "Editorial" && items.length > 0,
+      listView: this.state.view === "List" && items.length > 0,
+      noItems: items.length === 0,
+      items: items,
+      count: items.length + (items.length === 1 ? " publication" : " publications"),
+      latestNews: PUBS.filter((p) => p.type === "Newsletter").sort((a, b) => b.date.localeCompare(a.date)).slice(0, 5)
+    };
+  }
+}
+TinkerRuntime.mount(Component, document.getElementById("page"), document.getElementById("app"), {"accent": "#FF5A36", "accent2": "#2346C8"});
+</script>
+</body>
+</html>
